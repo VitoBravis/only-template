@@ -1,0 +1,19 @@
+import { getComponent } from '@/helpers/common';
+
+const Index = {
+    namespace: '${pageName}',
+    beforeEnter() {
+        // beforeEnter body
+    },
+    afterEnter() {
+        // afterEnter body
+    },
+    beforeLeave() {
+        // beforeLeave body
+    },
+    afterLeave() {
+        // afterLeave body
+    }
+}
+
+export default Index

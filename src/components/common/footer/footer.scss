@@ -1,0 +1,14 @@
+.footer {
+    $root: &;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+        fill: white;
+        width: 40px;
+        height: 18px;
+    }
+}

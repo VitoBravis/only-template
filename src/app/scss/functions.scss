@@ -1,0 +1,41 @@
+@use "sass:math";
+
+/**
+ * Функция для генерации резиновых значений относительно ширины экрана.
+ * Используется для указания размеров на каждом из ключевых брейкпоинтов
+ */
+@function vw($value, $base: fhd) {
+    @return $value / map-get($breakpoints, $base) * 100vw;
+}
+
+/*
+ * Функция для генерации резиновых значений относительно высоты экрана.
+ * Используется только в исключительных случаях
+ */
+@function vh($value, $base: 1080) {
+    @return $value / $base * 100vh;
+}
+
+/*
+ * Функция для генерации резиновых значений относительно ширины экрана.
+ * Делит страницу на несколько равных частей (По умолчанию - 24)
+ * и возвращает относительную ширину экрана равную колчиеству указанных колонок
+ */
+@function cols($value) {
+    @return $col-width * $value;
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function unit($size, $root-font-size: 16) {
+    @return ($size / $root-font-size);
+}
+
+@function rem($size, $root-font-size: 16) {
+    @return  unit($size, $root-font-size) * 1rem;
+}

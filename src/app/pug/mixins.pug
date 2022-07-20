@@ -1,0 +1,14 @@
+mixin img(props)
+    img(src=props.src alt=props.alt || '')&attributes(attributes)
+
+mixin svg(id)
+    svg(focusable = 'false')&attributes(attributes)
+        use(xlink:href=`#${id}`)
+
+mixin picture(props)
+    picture.picture(class= props.classList ? props.classList : '')&attributes(attributes)
+        if (props.sources)
+            each source in props.sources
+                source(srcset = source.srcset media=`(min-width: ${source.breakpoint}px)` || null)
+        if (props.img)
+            +img(props.img)
