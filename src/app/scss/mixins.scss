@@ -10,7 +10,6 @@
     }
 }
 
-//TODO: Формулу расчета шрифтов надо перепроверить
 @mixin font($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
     font-size: #{$mobile}px;
 
