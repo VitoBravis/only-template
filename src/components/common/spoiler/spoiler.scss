@@ -1,3 +1,100 @@
 .spoiler {
     $root: &;
+	 margin: 15px 200px;
+	 border: 1px dashed $black;
+	 border-radius: 5px;
+	 padding: 10px 15px;
+	 &__head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px;
+		cursor: pointer;
+		&-title {
+			font-size: 24px;
+			font-weight: 700;
+		}
+		&-icon {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 3px;
+				top: 0;
+				right: 0;
+				background-color: $black;
+				transform: rotate(90deg);
+				transition: transform .6s ease;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 3px;
+				top: 0;
+				right: 0;
+				background-color: $black;
+				transform: rotate(0deg);
+				transition: transform .6s ease;
+			}
+		}
+
+		&-icon.active {
+			
+			&::before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 3px;
+				top: 0;
+				right: 0;
+				background-color: $black;
+				transform: rotate(135deg);
+				transition: transform .6s ease;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 3px;
+				top: 0;
+				right: 0;
+				background-color: $black;
+				transform: rotate(45deg);
+				transition: transform .6s ease;
+			}
+		}
+		
+	 }
+
+	 &__collapse {
+		margin-top: 15px;
+		height: 100%;
+		overflow: hidden;
+
+	
+		transition: height .6s ease;
+	 }
+	 &__content {
+		padding: 5px 0;
+		height: inherit;
+	}
+	&__ul {
+		&-head {
+			font-size: 18px;
+			font-weight: 500;
+			margin: 15px 0 10px 0;
+		}
+	}
 }
+
+.list {
+	&__item:not(:last-child) {
+		margin-bottom: 10px;
+	}
+	&__item {
+		color: $themeColor;
+	}
+}
+
