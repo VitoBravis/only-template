@@ -3,5 +3,5 @@ mixin spoiler(props)
         each spoiler in props
             li.spoiler__item
                 button.spoiler__btn!= spoiler.title
-                    +svg('plus')
+                    +svg('plus')(width='20', height='20')
                 .spoiler__content!= spoiler.content
