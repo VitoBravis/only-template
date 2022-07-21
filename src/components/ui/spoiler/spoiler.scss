@@ -13,13 +13,13 @@
 }
 
 .spoiler__btn {
+    @include font(36, 27, 24, 24);
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: 1em;
     width: 100%;
     padding: 1.5rem 0;
     border: 0 none;
-    font-size: 1.8rem;
     text-align: start;
     color: $text-color-second;
     background: none;
@@ -28,6 +28,7 @@
     outline: none;
 
     & > svg {
+        @include font(36, 27, 27, 27);
         display: inline-block;
         width: .55em;
         height: .55em;
