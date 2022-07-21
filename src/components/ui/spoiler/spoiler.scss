@@ -1,6 +1,4 @@
 .spoiler {
-    $root: &;
-
     padding: 0;
     margin: 0;
     list-style: none;
@@ -30,8 +28,7 @@
     outline: none;
 
     & > svg {
-        content: '';
-        display: block;
+        display: inline-block;
         width: .55em;
         height: .55em;
         margin-top: .36em;
@@ -55,7 +52,7 @@
     max-height: 0;
     transition: max-height $duration;
 
-    & > p {
+    p {
         margin-top: 1em;
         margin-bottom: 1em;
     }
