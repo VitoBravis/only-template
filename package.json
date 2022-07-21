@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "webpack serve --mode=development",
+        "dev": "webpack serve --mode=development --hot --open",
         "build": "webpack --mode=production",
         "component:create": "node ./scripts/component/create.js",
         "component:remove": "node ./scripts/component/remove.js",

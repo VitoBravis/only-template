@@ -48,6 +48,7 @@ try {
 console.log('');
 
 module.exports = (env) => {
+
     const dev = env ? env.WEBPACK_SERVE : false;
     return {
         entry: {
@@ -228,10 +229,15 @@ module.exports = (env) => {
             }
         },
         target: ['web', 'es5'],
+		  watchOptions: {
+			aggregateTimeout: 600,
+		 },
         devServer: {
             contentBase: path.join(__dirname, 'dist'),
             compress: true,
             port: 3000,
+				watchContentBase: true,
+    			hot: true
         },
         devtool: dev && 'source-map',
         plugins: [

@@ -1,5 +1,5 @@
 mixin spoiler(props)
-   .spoiler(data-spoiler)&attributes(attributes)
+   .spoiler(data-spoiler=props.id)&attributes(attributes)
       .spoiler__head
          span.spoiler__head-title!=props.title
          span.spoiler__head-icon

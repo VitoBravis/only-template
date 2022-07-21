@@ -8,30 +8,30 @@ export default class Spoiler extends Component {
     }
 
 	clickHandler = (e: Event) => {
-		const spoiler = (<HTMLElement>e.target).closest('.spoiler__head')
 		
+		const spoiler = (<HTMLElement>e.target)
+		const parent = <HTMLElement>spoiler.parentNode
+		const id = parseInt(parent.dataset.spoiler)
+
+		const allSpoilers = document.querySelectorAll('[data-spoiler]')
+		const aciveSpoiler = allSpoilers[id]
+
+		console.log(aciveSpoiler)
+
         if (spoiler) {
 
-			const collapse = document.querySelector('.spoiler__collapse') as HTMLElement
-			const icon = document.querySelector('.spoiler__head-icon') as HTMLElement
+			const collapse = aciveSpoiler.querySelector('.spoiler__collapse') as HTMLElement
+			const icon = aciveSpoiler.querySelector('.spoiler__head-icon') as HTMLElement
 
-			console.log(collapse.offsetHeight)
-
-			if (icon.classList.contains('active')) {
-				icon.classList.remove('active')
+			if (aciveSpoiler.classList.contains('active')) {
+				aciveSpoiler.classList.remove('active')
 				collapse.style.height = '0px'
 			} else {
-				icon.classList.add('active')
+				// allSpoilers.forEach(item => item.classList.remove('active'))
+				aciveSpoiler.classList.add('active')
 				collapse.style.height = `${collapse.scrollHeight}px`
 			}
 
-
-			
-			
-
-			
-			
-			
 		  }
     }
 
