@@ -1,6 +1,7 @@
 .spoiler {
     $root: &;
-	 margin: 15px 200px;
+	width: 800px;
+	margin: 15px auto;
 	 border: 1px dashed $black;
 	 border-radius: 5px;
 	 padding: 10px 15px;
@@ -79,7 +80,7 @@
 	 }
 	 &__content {
 		padding: 5px 0;
-		height: inherit;
+
 	}
 	&__ul {
 		&-head {
