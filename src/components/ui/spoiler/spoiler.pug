@@ -1,0 +1,7 @@
+mixin spoiler(props)
+    ul.spoiler&attributes(attributes)
+        each spoiler in props
+            li.spoiler__item
+                button.spoiler__btn!= spoiler.title
+                    +svg('plus')
+                .spoiler__content!= spoiler.content
