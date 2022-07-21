@@ -1,0 +1,155 @@
+.accordion {
+    $root: &;
+
+    &__head-title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        color: #012B34;
+        border-top: 1px solid #E6E6E6;
+        padding-top: 30px;
+        cursor: pointer;
+        transition: color 0.3s ease-in;
+    }
+        
+    &__collapse{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in;
+    }
+
+    &__head-title.active{
+        color: #02818A;
+    }
+
+    &__head-title::after{
+        content: "\002B";
+        color: #02818A;
+        transition: transform 0.3s ease-in;
+    }
+    &__head-title.active::after{
+        transform: rotate(135deg);
+    }
+
+    &__element{
+        margin-bottom: 30px;
+    }
+}
+h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #012B34;
+    margin-bottom: 80px
+}
+.content{
+    margin: 80px 120px;
+    display: flex;
+    flex-direction: column;
+}
+.text-block{
+    width: 70%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000402;
+    opacity: 0.8;
+    padding: 10px 0;
+}
+
+
+
+@media(max-width: 1440px){
+    h1 {
+        font-size: 48px;
+        margin-bottom: 60px
+    }
+    .accordion__head-title {
+        font-size: 27px;
+        padding: 24px 0 20px;
+    }
+    .accordion__element{
+        margin-bottom: 4px;
+    }
+    .text-block {
+        font-size: 15px;
+        padding-top: 10px;
+        padding: 0;
+        margin-bottom: 26px;
+    }
+ }
+ @media (max-width: 1280px) {
+    .content {
+        margin: 70px 107px;
+    }
+    h1 {
+        font-size: 42px;
+        margin-bottom: 56px
+    }
+    .accordion__head-title {
+        font-size: 24px;
+        padding: 20px 0 16px;
+    }
+    .accordion__element{
+        margin-bottom: 4px;
+    }
+    .text-block {
+        font-size: 14px;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .content {
+        margin: 60px 40px;
+    }
+    h1 {
+        font-size: 42px;
+        margin-bottom: 50px
+    }
+    .accordion__head-title {
+        font-size: 27px;
+        padding: 24px 0 16px;
+    }
+    .accordion__element{
+        margin-bottom: 4px;
+    }
+    .text-block {
+        width: 90%;
+        font-size: 15px;
+        padding: 0;
+        margin-bottom: 16px;
+    }
+ }
+
+ @media (max-width: 375px) {
+    .content {
+        margin: 50px 24px;
+    }
+    h1 {
+        font-size: 30px;
+        margin-bottom: 40px
+    }
+    .accordion__head-title {
+        font-size: 24px;
+        padding: 20px 0 16px;
+    }
+    .accordion__element{
+        margin-bottom: 4px;
+    }
+    .text-block {
+        width: 90%;
+        font-size: 15px;
+        padding: 0;
+        margin-bottom: 16px;
+    }
+ }
