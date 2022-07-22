@@ -2,12 +2,12 @@ mixin spoiler(props)
     .spoiler&attributes(attributes)
         h1.spoiler__title
             |Lopem
-        ol.spoiler__collapse
-            li.spoiler__item(data-spoilers="#spollers__content-1")
-                button.spoler__btn
+        ul.spoiler__collapse
+            li.spoiler__item
+                button.spoiler__btn
                     span.spoler__item-title!= props.item1.title
-                p.spoiler__content(id="spollers__content-1")!=props.item1.text
-            li.spoiler__item(data-spoilers="#spollers__content-2")
-                button.spoler__btn
+                p.spoiler__content!=props.item1.text
+            li.spoiler__item
+                button.spoiler__btn
                     span.spoler__item-title!= props.item2.title
-                p.spoiler__content(id="spollers__content-2")!=props.item2.text
+                p.spoiler__content!=props.item2.text

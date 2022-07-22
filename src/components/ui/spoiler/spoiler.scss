@@ -15,6 +15,7 @@
     .spoiler__collapse {
         width: 1200px;
         margin: 0 auto;
+        padding: 0 2rem;
 
 
         .spoiler__item {
@@ -28,21 +29,30 @@
                 border-top: 1px solid goldenrod;
             }
 
+            &:focus {
+                .spoler__item-title {
 
-            &._active{
-             
+                    color: #02818A;
 
-               .spoler__btn::before{
-                transform: rotate(140deg);
-               }
-               .spoler__btn::after{
-                transform: rotate(-140deg);
-               }
-               
-                
+
+                }
             }
 
-            .spoler__btn {
+            &._active {
+
+
+                .spoiler__btn::before {
+                    transform: rotate(140deg);
+                }
+
+                .spoiler__btn::after {
+                    transform: rotate(-140deg);
+                }
+
+
+            }
+
+            .spoiler__btn {
 
                 border: 0 none;
                 background: none;
@@ -75,17 +85,9 @@
 
                 }
 
-               
-
-             
-
                 .spoler__item-title {
                     font-size: 2rem;
-
-
-
                     transition: color .3s linear;
-
 
                     &:hover,
                     &:focus {
@@ -101,15 +103,14 @@
                 margin-bottom: 1.5rem;
             }
 
-
-
             .spoiler__content {
                 font-size: 1.3rem;
                 width: 70%;
                 overflow: hidden;
                 max-height: 0;
-    
-                transition: max-height .3s linear ;
+                cursor: auto;
+
+                transition: max-height .2s linear;
             }
         }
 
