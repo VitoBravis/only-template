@@ -3,11 +3,9 @@ mixin spoiler(props)
         h1.spoiler__title
             |Lopem
         ul.spoiler__collapse
-            li.spoiler__item
-                button.spoiler__btn
-                    span.spoler__item-title!= props.item1.title
-                p.spoiler__content!=props.item1.text
-            li.spoiler__item
-                button.spoiler__btn
-                    span.spoler__item-title!= props.item2.title
-                p.spoiler__content!=props.item2.text
+            each spoiler in props
+                li.spoiler__item
+                    button.spoiler__btn
+                        span.spoler__item-title!= spoiler.title
+                    p.spoiler__content!=spoiler.text
+          

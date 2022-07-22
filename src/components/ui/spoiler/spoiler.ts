@@ -5,9 +5,9 @@ export default class Spoiler extends Component {
         super(element);
 
 
-     // this.nRoot.children[1].childNodes.forEach(el => {el.addEventListener('click', this.handlerClick);})
-        
-     this.nRoot.addEventListener('click', this.handlerClick);
+        // this.nRoot.children[1].childNodes.forEach(el => {el.addEventListener('click', this.handlerClick);})
+
+        this.nRoot.addEventListener('click', this.handlerClick);
     }
 
 
@@ -17,17 +17,17 @@ export default class Spoiler extends Component {
 
         const spoilers = document.querySelectorAll('.spoiler__item');
         const btn = (<HTMLElement>e.target);
-    
-    
+
+
         console.log(btn)
-    
-        
-        
+
+
+
         let content;
         spoilers.forEach(element => {
-            if(element === btn || element.children[0].children[0] === btn  ) {
+            if (element === btn || element.children[0].children[0] === btn || element.children[0] === btn) {
 
-                
+
                 content = element.children[1];
                 this.spollerBody(element, content);
             }
@@ -37,19 +37,19 @@ export default class Spoiler extends Component {
     }
     spollerBody(spoilersItem: any, content: any) {
 
-        
+
 
         if (spoilersItem.classList.contains('_active')) {
             spoilersItem.classList.remove('_active');
-           
-            content.style.maxHeight = '0'
+
+            content.style.maxHeight = '0px'
 
 
 
 
         } else {
             spoilersItem.classList.add('_active')
-            
+
             content.style.maxHeight = `${content.scrollHeight}px`
 
 

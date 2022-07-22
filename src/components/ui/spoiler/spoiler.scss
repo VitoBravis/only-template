@@ -1,3 +1,5 @@
+@import './variabls.scss';
+
 .spoiler {
     $root: &;
     font-family: 'Roboto', sans-serif;
@@ -6,9 +8,15 @@
 
     .spoiler__title {
         margin: 2rem 0;
-        font-size: 4.5rem;
+        font-size: 6.4rem;
         font-weight: 400;
         letter-spacing: -0.02em;
+
+
+        text-align: center;
+
+
+        color: $primary-color-title;
 
     }
 
@@ -23,19 +31,20 @@
 
             position: relative;
 
-            border-bottom: 1px solid goldenrod;
+            border-bottom: 1px solid #E6E6E6;
 
             &:nth-child(1) {
-                border-top: 1px solid goldenrod;
+                border-top: 1px solid #E6E6E6;
             }
 
-            &:focus {
+            &._active {
                 .spoler__item-title {
 
-                    color: #02818A;
 
-
+                    color: $active-color-title;
                 }
+
+
             }
 
             &._active {
@@ -56,20 +65,20 @@
 
                 border: 0 none;
                 background: none;
-                padding: 1.5rem 0;
+                padding: 3rem 0;
 
 
                 &::after,
                 &::before {
                     content: '';
                     position: absolute;
-                    top: 1.5rem;
+                    top: 2rem;
                     right: 0;
 
                     display: block;
-                    width: 1rem;
-                    height: 0.1rem;
-                    background: #02818A;
+                    width: 2rem;
+                    height: 0.2rem;
+                    background: $active-color-title;
 
                     transition: transform .2s linear;
 
@@ -86,16 +95,15 @@
                 }
 
                 .spoler__item-title {
-                    font-size: 2rem;
+                    font-size: 3.6rem;
                     transition: color .3s linear;
+                    line-height: 4.3rem;
 
-                    &:hover,
-                    &:focus {
-                        color: #02818A;
+                    &:hover {
+                        color: $active-color-title;
 
                     }
                 }
-
 
             }
 
@@ -104,13 +112,24 @@
             }
 
             .spoiler__content {
-                font-size: 1.3rem;
-                width: 70%;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                line-height: 3rem;
+                opacity: 0.8;
+                width: 90%;
                 overflow: hidden;
                 max-height: 0;
                 cursor: auto;
 
                 transition: max-height .2s linear;
+
+                @media (max-width: 1440px) {
+                    & {
+                        font-size: 1.5rem;
+                        width: 70%;
+                    }
+                }
+
             }
         }
 
