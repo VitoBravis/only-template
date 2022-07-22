@@ -1,24 +1,9 @@
 .header {
     $root: &;
     margin: 100px auto 0;
-    width: vw(327, xs);
-    
-    @include media-breakpoint-up(md) {
-        width: vw(688, md);
-    }
-    
-    @include media-breakpoint-up(xl) {
-        width: vw(1066, xl);
-    }
-    
-    @include media-breakpoint-up(xxl) {
-        width: vw(1200, xxl);
-    }
-    
-    @include media-breakpoint-up(fhd) {
-        width: vw(1600);
-    }
-    
+
+    @include width(1600, 1200, 1066, 688, 327);
+    @include indent(100, 80, 70, 60, 50, margin-top);
 
     &__title {
         color: $close;

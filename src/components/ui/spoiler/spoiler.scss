@@ -1,26 +1,10 @@
 .spoiler {
     $root: &;
-    padding: 20px 0;
     border-top: 1px solid #e6e6e6;
     position: relative;
 
-    @include width(688, 327);
-
-    @include media-breakpoint-up(md) {
-        padding: 24px 0;
-    }
-
-    @include media-breakpoint-up(xl) {
-        padding: 20px 0;
-    }
-
-    @include media-breakpoint-up(xxl) {
-        padding: 24px 0;
-    }
-
-    @include media-breakpoint-up(fgh) {
-        padding: 30px 0;
-    }
+    @include indent(30, 24, 20, 24, 20, padding-top);
+    @include indent(30, 24, 20, 24, 20, padding-bottom);
 
     &:last-of-type {
         border-bottom: 1px solid #e6e6e6;
@@ -33,21 +17,54 @@
         transition: color .4s ease;
         cursor: pointer;
 
-
-        &_active {
-
-        }
-
         &:hover {
             color: $open;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            width: 2px;
+            height: 20px;
+            background-color: #02818a;
+            position: absolute;
+            transition: transform 1.3s ease;
+
+            @include indent(10, 7, 7, 7, 7, right);
+            @include indent(35, 33, 27, 31, 27, top);
+        }
+
+        &::before {
+            transform: rotate(90deg);
+        }
+
+        &_open {
+            color: $open;
+            
+            &::after {
+                transform: rotate(45deg);
+            }
+            
+            &::before {
+                transform: rotate(135deg);
+            }
         }
     }
 
     &__content {
+        height: 0;
+        overflow: hidden;
+        transition: height 1.3s ease;
 
     }
 
     &__text {
+        color: $text;
+        max-width: 942px;
+        opacity: .8;
+
+        @include indent(30, 20, 16, 16, 16, margin-top);
+        @include indent(10, 6, 4, 0, 0, margin-bottom);
 
     }
 }

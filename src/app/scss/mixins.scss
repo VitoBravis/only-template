@@ -40,25 +40,37 @@
     @include media-breakpoint-up(md) {
         width: vw($tablet-768, md)
     }
-}
-
-@mixin indent($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile, $property: margin-top) {
-    #{$property}: #{$mobile};
-    
-    @include media-breakpoint-up(md) {
-        #{$property}: #{$tablet-768}
-    } 
 
     @include media-breakpoint-up(xl) {
-        #{$property}: #{$desktop-1280}
+        width: vw($desktop-1280, xl)
     }
 
     @include media-breakpoint-up(xxl) {
-        #{$property}: #{$desktop-1440}
+        width: vw($desktop-1440, xxl)
     }
 
     @include media-breakpoint-up(fhd) {
-        #{$property}: #{$desktop-1920}
+        width: vw($desktop-1920, fhd)
+    }
+}
+
+@mixin indent($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile, $property) {
+    #{$property}: #{$mobile}px;
+    
+    @include media-breakpoint-up(md) {
+        #{$property}: #{$tablet-768}px
+    } 
+
+    @include media-breakpoint-up(xl) {
+        #{$property}: #{$desktop-1280}px
+    }
+
+    @include media-breakpoint-up(xxl) {
+        #{$property}: #{$desktop-1440}px
+    }
+
+    @include media-breakpoint-up(fhd) {
+        #{$property}: #{$desktop-1920}px
     }
 }
 
