@@ -1,3 +1,17 @@
 {
-    "title": "Hello World!"
+    "title": "Hello Worlds!",
+    "spoiler": {
+
+        "item1":{
+            "title":"Hello Worlds!",
+            "text":"Text title 1"
+
+        },
+
+        "item2":{
+            "title":"Hello Worlds2!",
+            "text":"Text title 2"
+
+        }
+    }
 }

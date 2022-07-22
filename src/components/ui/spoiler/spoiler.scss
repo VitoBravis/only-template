@@ -1,0 +1,119 @@
+.spoiler {
+    $root: &;
+    font-family: 'Roboto', sans-serif;
+    max-width: 100%;
+    width: 1920px;
+
+    .spoiler__title {
+        margin: 2rem 0;
+        font-size: 4.5rem;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+
+    }
+
+    .spoiler__collapse {
+        width: 1200px;
+        margin: 0 auto;
+
+
+        .spoiler__item {
+            cursor: pointer;
+
+            position: relative;
+
+            border-bottom: 1px solid goldenrod;
+
+            &:nth-child(1) {
+                border-top: 1px solid goldenrod;
+            }
+
+
+            &._active{
+             
+
+               .spoler__btn::before{
+                transform: rotate(140deg);
+               }
+               .spoler__btn::after{
+                transform: rotate(-140deg);
+               }
+               
+                
+            }
+
+            .spoler__btn {
+
+                border: 0 none;
+                background: none;
+                padding: 1.5rem 0;
+
+
+                &::after,
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 0;
+
+                    display: block;
+                    width: 1rem;
+                    height: 0.1rem;
+                    background: #02818A;
+
+                    transition: transform .2s linear;
+
+                }
+
+                &::before {
+                    transform: rotate(90deg);
+
+                }
+
+                &::after {
+                    transform: rotate(-180deg);
+
+                }
+
+               
+
+             
+
+                .spoler__item-title {
+                    font-size: 2rem;
+
+
+
+                    transition: color .3s linear;
+
+
+                    &:hover,
+                    &:focus {
+                        color: #02818A;
+
+                    }
+                }
+
+
+            }
+
+            &>:last-child {
+                margin-bottom: 1.5rem;
+            }
+
+
+
+            .spoiler__content {
+                font-size: 1.3rem;
+                width: 70%;
+                overflow: hidden;
+                max-height: 0;
+    
+                transition: max-height .3s linear ;
+            }
+        }
+
+    }
+
+
+}
