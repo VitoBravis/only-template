@@ -1,0 +1,12 @@
+mixin spoiler(props)
+    
+    ul.spoiler&attributes(attributes)
+        each spoiler in props.title 
+            li.spoiler__element
+                button.spoiler__head
+                    span.spoiler__head-title!=spoiler
+                    span.spoiler__head-icon 
+
+                .spoiler__collapse 
+                        block
+            hr

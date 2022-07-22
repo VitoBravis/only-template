@@ -1,0 +1,198 @@
+main {
+    height: 100vh;
+    color: #012b34;
+}
+hr {
+    border: 1px solid rgba(230, 230, 230, 1);
+    margin: 0px;
+}
+.spoiler {
+    $root: &;
+
+    &__collapse {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
+    }
+
+    &__element {
+        & button {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 30px 0;
+            color: #012b34;
+        }
+    }
+    &__head-title {
+        display: block;
+        width: 100%;
+    }
+    &__head-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 9px;
+            height: 21px;
+            width: 2px;
+            background-color: #02818a;
+        }
+        &:after {
+            transform: rotate(90deg);
+        }
+    }
+}
+@media (min-width: 375px) {
+    main {
+        padding: 0 24px;
+    }
+    h1 {
+        font-size: 30px;
+        line-height: 30px;
+        margin: 50px 0 40px 0;
+    }
+    .spoiler__element .spoiler__head {
+        padding: 20px 0;
+    }
+    .spoiler__head-title {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        width: 289px;
+    }
+    .spoiler__head-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .text-block {
+        padding: 0 0 40px 0;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        width: 327px;
+    }
+}
+@media (min-width: 768px) {
+    main {
+        padding: 0 40px;
+    }
+    h1 {
+        font-size: 42px;
+        line-height: 42px;
+        margin: 60px 0 50px 0;
+    }
+    .spoiler__element .spoiler__head {
+        padding: 24px 0;
+    }
+    .spoiler__head-title {
+        font-size: 27px;
+        line-height: 32px;
+        width: 644px;
+    }
+    .spoiler__head-icon {
+        width: 14px;
+        height: 14px;
+    }
+    .text-block {
+        padding: 0 0 40px 0;
+        font-size: 15px;
+        line-height: 22px;
+        width: 612px;
+    }
+}
+@media (min-width: 1280px) {
+    main {
+        padding: 0 107px;
+    }
+    h1 {
+        font-size: 42px;
+        line-height: 42px;
+        margin: 70px 0 56px 0;
+    }
+    .spoiler__element .spoiler__head {
+        padding: 20px 0;
+    }
+    .spoiler__head-title {
+        font-size: 24px;
+        line-height: 28px;
+        width: 920px;
+    }
+    .spoiler__head-icon {
+        width: 14px;
+        height: 14px;
+    }
+    .text-block {
+        padding: 0 0 40px 0;
+        font-size: 14px;
+        line-height: 21px;
+        width: 640px;
+    }
+}
+@media (min-width: 1440px) {
+    main {
+        padding: 0 120px;
+    }
+    h1 {
+        font-size: 48px;
+        line-height: 48px;
+        margin: 80px 0 60px 0;
+    }
+    .spoiler__element .spoiler__head {
+        padding: 24px 0;
+    }
+    .spoiler__head-title {
+        font-size: 27px;
+        line-height: 32px;
+        width: 986px;
+    }
+    .spoiler__head-icon {
+        width: 14px;
+        height: 14px;
+    }
+    .text-block {
+        padding: 0 0 40px 0;
+        font-size: 15px;
+        line-height: 23px;
+        width: 840px;
+    }
+}
+@media (min-width: 1920px) {
+    main {
+        padding: 0 160px;
+    }
+    h1 {
+        font-size: 64px;
+        line-height: 64px;
+        margin: 100px 0 80px 0;
+    }
+    .spoiler__element .spoiler__head {
+        padding: 30px 0;
+    }
+    .spoiler__head-title {
+        font-size: 36px;
+        line-height: 43px;
+        width: 1336px;
+    }
+    .spoiler__head-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .text-block {
+        padding: 0 0 40px 0;
+        font-size: 20px;
+        line-height: 30px;
+        width: 940px;
+    }
+}
