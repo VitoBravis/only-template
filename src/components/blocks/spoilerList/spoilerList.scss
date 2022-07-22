@@ -1,27 +1,25 @@
-.header {
+.spoilerList {
     $root: &;
-    margin: 100px auto 0;
+    margin: 40px auto 80px;
     width: vw(327, xs);
-    
+
     @include media-breakpoint-up(md) {
+        margin-top: 50px;
         width: vw(688, md);
     }
-    
+
     @include media-breakpoint-up(xl) {
+        margin-top: 56px;
         width: vw(1066, xl);
     }
-    
+
     @include media-breakpoint-up(xxl) {
+        margin-top: 60px;
         width: vw(1200, xxl);
     }
-    
-    @include media-breakpoint-up(fhd) {
-        width: vw(1600);
-    }
-    
 
-    &__title {
-        color: $close;
-        letter-spacing: -0.02em;
+    @include media-breakpoint-up(fgh) {
+        margin-top: 80px;
+        width: vw(1600);
     }
 }

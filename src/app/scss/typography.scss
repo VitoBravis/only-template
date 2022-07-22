@@ -2,11 +2,16 @@
 @mixin h1 {
     line-height: 1;
     font-weight: normal;
-    @include font(30, 60, 60, 80);
+    @include font(64, 48, 42, 42, 30);
 }
 
-@mixin body1 {
-    @include font(14, 14, 16, 16);
+@mixin title {
+    @include font(36, 27, 24, 27, 14);
+    line-height: 1.2;
+}
+
+@mixin text {
+    @include font(20, 15, 14, 15, 15);
     line-height: 1.5;
 }
 
@@ -16,9 +21,14 @@
     @include h1;
 }
 
+// заголовки спойлеров
 
-// Обычный текст
+.title {
+    @include title;
+}
 
-.body-1 {
-    @include body1;
+// текст спойлеров
+
+.text {
+    @include text;
 }

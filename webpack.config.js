@@ -232,6 +232,7 @@ module.exports = (env) => {
             contentBase: path.join(__dirname, 'dist'),
             compress: true,
             port: 3000,
+            open: true
         },
         devtool: dev && 'source-map',
         plugins: [

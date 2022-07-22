@@ -10,11 +10,15 @@
     }
 }
 
-@mixin font($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
+@mixin font($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
     font-size: #{$mobile}px;
 
     @include media-breakpoint-up(md) {
-        font-size: calc(#{$tablet-768}px + #{$desktop-1440 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
+        font-size: calc(#{$tablet-768}px + #{$desktop-1280 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xl) - map-get($breakpoints, md) });
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size: calc(#{$desktop-1280}px + #{$desktop-1440 - $desktop-1280} * (100vw - #{map-get($breakpoints, xl)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, xl) });
     }
 
     @include media-breakpoint-up(xxl) {
@@ -29,6 +33,36 @@
 @mixin upper-fhd-size($base-size, $property: width, $coeff: 1) {
     #{$property}: calc((#{$base-size / 1920 * 100 / 2}vw + #{$base-size / 1080 * 100 / 2}vh) * #{$coeff});
 }
+
+@mixin width($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+    width: vw($mobile, xs);
+
+    @include media-breakpoint-up(md) {
+        width: vw($tablet-768, md)
+    }
+}
+
+@mixin indent($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile, $property: margin-top) {
+    #{$property}: #{$mobile};
+    
+    @include media-breakpoint-up(md) {
+        #{$property}: #{$tablet-768}
+    } 
+
+    @include media-breakpoint-up(xl) {
+        #{$property}: #{$desktop-1280}
+    }
+
+    @include media-breakpoint-up(xxl) {
+        #{$property}: #{$desktop-1440}
+    }
+
+    @include media-breakpoint-up(fhd) {
+        #{$property}: #{$desktop-1920}
+    }
+}
+
+
 
 @mixin offset-sides($property: 'padding') {
     #{$property}-left: #{map-get($offset-sides, mobile)};
