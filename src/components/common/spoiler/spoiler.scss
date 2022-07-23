@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.spoiler {$root: &;}
+html, 
+body,
+.spoiler {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  .active-button {color: #02818A;}
+  .spoiler_action {transition: .3s;}
+  .rotate {
+    transform: rotate(45deg);
+  }
+  .action-spoiler {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+    color: #02818A;
+    user-select: none;
+    transition: .3s;
+  }
+  .spoiler-wrapper {
+    width: 100%;
+    height: auto;
+    .spoiler-item {
+      border-top: 1px solid #E6E6E6;
+      border-bottom: 1px solid #E6E6E6;
+      position: relative;
+    }
+    .content {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: .3s;
+    }
+  }
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .container {
+    width: 327px;
+    padding-top: 50px;
+    h1 {
+      font-size: 30px;
+    }
+    .spoiler_action {
+      font-size: 24px;
+      text-align: left;
+    }
+    .spoiler-item {
+      padding: 20px 0;
+    }
+    .content {
+      span {
+        display: block;
+        font-size: 15px;
+        max-width: 327px;
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .container {
+    width: 688px;
+    padding-top: 60px;
+    h1 {
+      font-size: 42px;
+    }
+    .spoiler_action {
+      font-size: 27px;
+      text-align: left;
+    }
+    .spoiler-item {
+      padding: 24px 0;
+    }
+    .content {
+      span {
+        display: block;
+        font-size: 15px;
+        max-width: 612px;
+      }
+    }
+  }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .container {
+    width: 1066px;
+    padding-top: 70px;
+    h1 {
+      font-size: 42px;
+    }
+    .spoiler_action {
+      font-size: 24px;
+      text-align: left;
+    }
+    .spoiler-item {
+      padding: 20px 0;
+    }
+    .content {
+      span {
+        display: block;
+        font-size: 13px;
+        max-width: 640px;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    width: 1212.28px;
+    padding-top: 80px;
+    h1 {
+      font-size: 48px;
+    }
+    .spoiler_action {
+      font-size: 27px;
+      text-align: left;
+    }
+    .spoiler-item {
+      padding: 24px 0;
+    }
+    .content {
+      span {
+        display: block;
+        font-size: 15px;
+        max-width: 840px;
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    width: 1618.52px;
+    padding-top: 100px;
+    h1 {
+      font-size: 64px;
+    }
+    .spoiler_action {
+      font-size: 36px;
+      text-align: left;
+    }
+    .spoiler-item {
+      padding: 30px 0;
+    }
+    .content {
+      span {
+        display: block;
+        font-size: 20px;
+        max-width: 942px;
+      }
+    }
+  }
+}
