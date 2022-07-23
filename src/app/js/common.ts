@@ -6,14 +6,13 @@ import common from '@/pages/index/index';
 import {getComponent, resize, setVhCssVariable} from '@/helpers/helpers';
 import Header from "@/components/common/header/header";
 import Footer from "@/components/common/footer/footer";
-
+import { spoiler } from '@/components/common/spoiler/spoiler';
 // SVG
 const requireAll = (r: __WebpackModuleApi.RequireContext) => r.keys().forEach(r);
 requireAll(require.context('../../assets/icons', true, /\.svg$/));
-
 setVhCssVariable();
 resize(setVhCssVariable);
-
+spoiler()
 export const header = new Header(getComponent('header'));
 export const footer = new Footer(getComponent('footer'));
 
