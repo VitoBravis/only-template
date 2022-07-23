@@ -1,0 +1,132 @@
+$item-title-fz: (
+    fhd: 36px,
+    xxl: 27px,
+    xl: 24px,
+    md: 27px,
+    xs: 30px,
+);
+
+$item-title-padding: (
+    fhd: 30px 0,
+    xxl: 24px 0 20px,
+    xl: 20px 0 16px,
+    md: 24px 0 16px,
+    xs: 20px 0 16px,
+);
+
+$item-content-fz: (
+    fhd: 20px,
+    xxl: 15px,
+    xl: 14px,
+    md: 15px,
+    xs: 15px,
+);
+
+$item-content-padding: (
+    fhd: 40px,
+    xxl: 30px,
+    xl: 24px,
+    md: 24px,
+    xs: 20px,
+);
+
+.spoiler__item {
+    $root: &;
+    border-bottom: 1px solid $color-gray;
+    cursor: pointer;
+
+    &:first-child {
+        border-top: 1px solid $color-gray;
+    }
+
+    &.open {
+        color: $color-active;
+
+        & .title__icon {
+            transform: rotate(45deg);
+
+            &::before {
+                background-color: $color-active;
+            }
+
+            &::after {
+                background-color: $color-active;
+            }
+        }
+
+        & .spoiler__item__content {
+            @include upper-fhd-size(40, 'padding-bottom');
+
+            @each $key, $value in $item-content-padding {
+                @include media('padding-bottom', $value, $key);
+            }
+        }
+    }
+
+    &__content {
+        height: 0;
+        @include font(20, 15, 15, 15);
+        line-height: 150%;
+        color: $color-main;
+        opacity: 0.8;
+        overflow: hidden;
+        transition: all 0.3s;
+        box-sizing: content-box;
+
+    }
+}
+
+.title {
+    @include flex-row;
+    justify-content: space-between;
+    color: $color-title;
+    padding: 30px 0;
+
+    @each $key, $value in $item-title-padding {
+        @include media(padding, $value, $key);
+    }
+
+    &:hover {
+        color: $color-active;
+
+        & .title__icon {
+            &::before,
+            &::after {
+                background-color: $color-active;
+            }
+        }
+    }
+
+    &__text {
+        flex-basis: 90%;
+        @include font(36, 27, 27, 30);
+    }
+
+    &__icon {
+        position: relative;
+        @include sizes(20px);
+        flex-basis: 40px;
+        transform: rotate(0);
+        transition: transform 0.3s;
+
+        &::before {
+            content: "";
+            @include sizes(20px, $height: 1px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: $color-main;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            content: "";
+            @include sizes(1px, $height: 20px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: $color-main;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

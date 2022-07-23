@@ -1,0 +1,47 @@
+@import "../../app/scss/common.scss";
+
+$main-gap: (
+    fhd: 80px,
+    xxl: 60px,
+    xl: 56px,
+    md: 50px,
+    xs: 40px,
+);
+
+$main-padding: (
+    fhd: 100px 160px,
+    xxl: 80px 120px,
+    xl: 70px 107px,
+    md: 60px 40px,
+    xs: 50px 24px,
+);
+
+body {
+    @include flex-column;
+    justify-content: flex-start;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 160px;
+
+    @include upper-fhd-size(80, 'gap');
+
+    @each $key, $value in $main-gap {
+        @include media(gap, $value, $key);
+    }
+
+    @each $key, $value in $main-padding {
+        @include media(padding, $value, $key);
+    }
+}
+
+.page__title {
+    color: $color-title;
+    @include font(60, 56, 48, 42);
+
+    @include media-breakpoint-up(md) {
+        font-size: 42px;
+    }
+}

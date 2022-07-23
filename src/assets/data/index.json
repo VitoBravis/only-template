@@ -1,3 +1,25 @@
 {
-    "title": "Hello World!"
+    "title": "Lorem ipsum",
+    "spoilers": [
+        {
+            "title": "Nullam tincidunt vestibulum porttitor",
+            "content": "Cras vel nibh ac nisi dignissim molestie et sit amet dui Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+        },
+        {
+            "title": "Class aptent taciti sociosqu ad litora",
+            "content": "Cras vel nibh ac nisi dignissim molestie et sit amet dui Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+        },
+        {
+            "title": "Nulla fringilla ligula elit, non laoreet ipsum rutrum eget",
+            "content":"Cras vel nibh ac nisi dignissim molestie et sit amet dui Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+        },
+        {
+            "title": "Mauris ut suscipit tellus",
+            "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam at repellendus labore sumenda odit ut voluptatem porro ipsa voluptates. Ullam recusandae quibusdam cumque optio iure temporibus fugit minima unde velit."
+        },
+        {
+            "title": "Nullam placerat porta libero, vel maximus augue euismod eget",
+            "content": "Cras vel nibh ac nisi dignissim molestie et sit amet dui Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+        }
+    ]
 }

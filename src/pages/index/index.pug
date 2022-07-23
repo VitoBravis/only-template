@@ -5,4 +5,7 @@ block title
 
 block content
     main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
-        h1.h-1!= dataJson.index.title
+        h1.h-1.page__title= dataJson.index.title
+        ul.spoilers
+            each spoiler, index in dataJson.index.spoilers
+                +spoiler(spoiler, index)
