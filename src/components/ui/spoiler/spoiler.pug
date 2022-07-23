@@ -1,0 +1,8 @@
+mixin spoiler(props)
+    li.spoiler&attributes(attributes)
+        button.spoiler__header
+            span.spoiler__title!= props.title
+            +svg('plus').spoiler__icon
+
+        .spoiler__body
+            .spoiler__content!= props.content

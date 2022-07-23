@@ -26,6 +26,10 @@ body {
     }
 }
 
+main {
+    padding: 50px 24px 24px;
+}
+
 h1, h2, h3, h4, h5, p, a {
     color: inherit;
     font-size: inherit;
@@ -37,7 +41,7 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ol, ul, li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -103,4 +107,28 @@ button {
 
 [data-modal] {
     cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding: 60px 40px 40px;
+    }
+}
+
+@media (min-width: 1280px) {
+    main {
+        padding: 107px 70px 70px;
+    }
+}
+
+@media (min-width: 1440px) {
+    main {
+        padding: 120px 80px 80px;
+    }
+}
+
+@media (min-width: 1920px) {
+    main {
+        padding: 160px 100px 100px;
+    }
 }

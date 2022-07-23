@@ -16,9 +16,46 @@
     @include h1;
 }
 
+.title {
+    font: normal 400 30px / 100% 'Roboto';
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+
+    max-width: 190px;
+}
+
 
 // Обычный текст
 
 .body-1 {
     @include body1;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 42px;
+        margin-bottom: 50px;
+
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .title {
+        margin-bottom: 56px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .title {
+        font-size: 48px;
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .title {
+        font-size: 64px;
+        margin-bottom: 80px;
+    }
 }

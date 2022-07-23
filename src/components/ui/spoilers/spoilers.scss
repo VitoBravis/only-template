@@ -1,0 +1,9 @@
+.spoilers {
+    $root: &;
+
+    .spoiler {
+        &:not(:last-child) {
+            border-bottom: 0;
+        }
+    }
+}
