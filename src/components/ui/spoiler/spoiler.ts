@@ -25,8 +25,7 @@ export default class Spoiler extends Component {
 
         let content;
         spoilers.forEach(element => {
-            if (element === btn || element.children[0].children[0] === btn || element.children[0] === btn) {
-
+            if (element === btn.closest('.spoiler__item' ) || element === btn.closest('.spoiler__btn') || element === btn.closest('.spoiler__item-title')) {
 
                 content = element.children[1];
                 this.spollerBody(element, content);

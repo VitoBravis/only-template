@@ -1,4 +1,4 @@
-@import './variabls.scss';
+@import './variabls_spoilers.scss';
 
 .spoiler {
     $root: &;
@@ -6,31 +6,76 @@
     max-width: 100%;
     width: 1920px;
 
-    .spoiler__title {
-        margin: 2rem 0;
-        font-size: 6.4rem;
-        font-weight: 400;
-        letter-spacing: -0.02em;
-
-
-        text-align: center;
-
-
-        color: $primary-color-title;
-
-    }
-
+    
     .spoiler__collapse {
-        width: 1200px;
+        width: 1500px;
         margin: 0 auto;
         padding: 0 2rem;
-
-
+        @media (max-width: 1440px) {
+            & {
+                width:1200px;
+            }
+        }
+        @media (max-width: 1280px) {
+            & {
+                width:1066px;
+            }
+        }
+        @media (max-width: 768px) {
+            & {
+                width:688px;
+            }
+        }
+        @media (max-width: 375px) {
+            & {
+                
+                
+                width:327px;
+            }
+        }
+        
+        .spoiler__title {
+           
+            margin: 2rem 0;
+            font-size: 6.4rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+    
+          
+    
+          
+    
+    
+            color: $primary-color-title;
+    
+    
+            @media (max-width: 1440px) {
+                & {
+                    font-size: 4.8rem;
+                    
+                }
+            }
+            @media (max-width: 1280px) {
+                & {
+                    font-size: 4.2rem;
+           
+                    
+                }
+            }
+            @media (max-width: 375px) {
+                & {
+                    font-size: 3rem;
+              
+                    
+                }
+            }
+    
+    
+        }
+        
         .spoiler__item {
             cursor: pointer;
-
             position: relative;
-
             border-bottom: 1px solid #E6E6E6;
 
             &:nth-child(1) {
@@ -38,17 +83,14 @@
             }
 
             &._active {
-                .spoler__item-title {
-
-
+                .spoiler__btn{
+                   
                     color: $active-color-title;
+                  
                 }
 
-
             }
-
             &._active {
-
 
                 .spoiler__btn::before {
                     transform: rotate(140deg);
@@ -66,7 +108,8 @@
                 border: 0 none;
                 background: none;
                 padding: 3rem 0;
-
+           
+                text-align: left;
 
                 &::after,
                 &::before {
@@ -79,7 +122,6 @@
                     width: 2rem;
                     height: 0.2rem;
                     background: $active-color-title;
-
                     transition: transform .2s linear;
 
                 }
@@ -98,10 +140,55 @@
                     font-size: 3.6rem;
                     transition: color .3s linear;
                     line-height: 4.3rem;
+                
+                    
 
-                    &:hover {
-                        color: $active-color-title;
+                  
 
+
+                    @media (max-width: 1440px) {
+                        & {
+                            font-size: 2.7rem;
+                           
+                        }
+                    }
+                    @media (max-width: 1280px) {
+                        & {
+                            font-size: 2.4rem;
+                   
+                            
+                        }
+                    }
+                    @media (max-width: 768px) {
+                        & {
+                            font-size: 2.7rem;
+                   
+                            
+                        }
+                    }
+                    @media (max-width: 375px) {
+                        & {
+                            font-size: 2.4rem;
+                            line-height: 2.9rem;
+                            
+                        }
+                    }
+
+                }
+
+                @media (max-width: 1440px) {
+                    & {
+                      padding:2.4rem 0 2rem 0;
+               
+                        
+                    }
+                }
+
+                @media (max-width: 1280px) {
+                    & {
+                      padding:2.4rem 0 1.6rem 0;
+               
+                        
                     }
                 }
 
@@ -119,6 +206,7 @@
                 width: 90%;
                 overflow: hidden;
                 max-height: 0;
+               
                 cursor: auto;
 
                 transition: max-height .2s linear;
@@ -126,8 +214,26 @@
                 @media (max-width: 1440px) {
                     & {
                         font-size: 1.5rem;
-                        width: 70%;
+                        width: 75%;
+                        line-height: 2.1rem;
                     }
+                }
+                @media (max-width: 1280px) {
+                    & {
+                        font-size: 1.4rem;
+               
+                        width: 63%;
+                    }
+                }
+                @media (max-width: 768px) {
+                    & {
+                        font-size: 1.5rem;
+                        line-height: 2.2rem;
+                        width: 100%;
+                    }
+                }
+                @media (max-width: 375px) {
+                    
                 }
 
             }
