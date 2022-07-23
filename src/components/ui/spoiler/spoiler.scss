@@ -1,0 +1,101 @@
+@import './media/media';
+
+.spoiler {
+    $root: &;
+}
+
+.block-info {
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    h2 {
+        color: $dark-teal;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+    }
+
+    .title-spoiler {
+        position: relative;
+
+        h3 {
+            width: max-content;
+            color: $dark-teal;
+            line-height: 120%;
+            text-align: left;
+            transition: color .15s;
+            -webkit-transition: color .15s;
+            -moz-transition: color .15s;
+            -ms-transition: color .15s;
+            -o-transition: color .15s;
+        }
+
+        h3:hover {
+            color: $sibur-dna;
+        }
+
+        h3.open {
+            color: $sibur-dna;
+        }
+    }
+
+    .spoiler {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s;
+        -webkit-transition: max-height 1s;
+        -moz-transition: max-height 1s;
+        -ms-transition: max-height 1s;
+        -o-transition: max-height 1s;
+
+        p {
+            line-height: 150%;
+        }
+    }
+}
+
+.closeModal {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    transition: all 1.5s;
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+}
+
+.closeModal::before,
+.closeModal::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #02818a;
+}
+
+.closeModal::before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
+.closeModal::after {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.closeModal:hover,
+.closeModal.active {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+}
