@@ -1,3 +1,29 @@
 {
-    "title": "Hello World!"
+    "spoiler": [
+        {
+            "id": 1,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, numquam. Lorem ipsum.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda consectetur dignissimos ex facilis, fugiat illum ipsum iure minus molestias, nemo numquam, officiis provident repellat reprehenderit sunt vitae. A architecto deserunt itaque iusto magni minus, optio possimus provident quibusdam quis saepe sed similique tempora vero."
+        },
+        {
+            "id": 2,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, numquam.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda consectetur dignissimos ex facilis, fugiat illum ipsum iure minus molestias, nemo numquam, officiis provident repellat reprehenderit sunt vitae. A architecto deserunt itaque iusto magni minus, optio possimus provident quibusdam quis saepe sed similique tempora vero."
+        },
+        {
+            "id": 3,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, numquam.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda consectetur dignissimos ex facilis, fugiat illum ipsum iure minus molestias, nemo numquam, officiis provident repellat reprehenderit sunt vitae. A architecto deserunt itaque iusto magni minus, optio possimus provident quibusdam quis saepe sed similique tempora vero."
+        },
+        {
+            "id": 4,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, numquam.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda consectetur dignissimos ex facilis, fugiat illum ipsum iure minus molestias, nemo numquam, officiis provident repellat reprehenderit sunt vitae. A architecto deserunt itaque iusto magni minus, optio possimus provident quibusdam quis saepe sed similique tempora vero."
+        },
+        {
+            "id": 5,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, numquam.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda consectetur dignissimos ex facilis, fugiat illum ipsum iure minus molestias, nemo numquam, officiis provident repellat reprehenderit sunt vitae. A architecto deserunt itaque iusto magni minus, optio possimus provident quibusdam quis saepe sed similique tempora vero."
+        }
+    ]
 }

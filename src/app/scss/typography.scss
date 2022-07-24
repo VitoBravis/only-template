@@ -1,19 +1,23 @@
 
-@mixin h1 {
-    line-height: 1;
-    font-weight: normal;
-    @include font(30, 60, 60, 80);
+@mixin h2 {
+    @include font(36, 27, 27, 24);
+    width: 85%;
+    display: flex;
+    span {
+        margin-right: 8px;
+    }
 }
 
 @mixin body1 {
-    @include font(14, 14, 16, 16);
-    line-height: 1.5;
+    @include font(20, 15, 15, 15);
+    color: $black;
+    width: 80%;
 }
 
 
 // Заголовки
-.h-1 {
-    @include h1;
+.h-2 {
+    @include h2;
 }
 
 

@@ -13,16 +13,24 @@
 @mixin font($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
     font-size: #{$mobile}px;
 
+    @include media-breakpoint-up(xs) {
+        font-size: calc(#{$tablet-768}px + #{$desktop-1440 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
+        line-height: calc(#{$tablet-768}px + 15% + #{$desktop-1440 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
+    }
+
     @include media-breakpoint-up(md) {
         font-size: calc(#{$tablet-768}px + #{$desktop-1440 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
+        line-height: calc(#{$tablet-768}px + 15% + #{$desktop-1440 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
     }
 
     @include media-breakpoint-up(xxl) {
         font-size: calc(#{$desktop-1440}px + #{$desktop-1920 - $desktop-1440} * (100vw - #{map-get($breakpoints, xxl)}px) / #{map-get($breakpoints, fhd) - map-get($breakpoints, xxl) });
+        line-height: calc(#{$desktop-1440}px + 15% + #{$desktop-1920 - $desktop-1440} * (100vw - #{map-get($breakpoints, xxl)}px) / #{map-get($breakpoints, fhd) - map-get($breakpoints, xxl) });
     }
 
     @include media-breakpoint-up(fhd) {
         @include upper-fhd-size($desktop-1920, font-size);
+        @include upper-fhd-size($desktop-1920, line-height);
     }
 }
 

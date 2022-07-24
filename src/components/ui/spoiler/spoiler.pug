@@ -1,0 +1,11 @@
+mixin spoiler(props)
+    .spoiler&attributes(attributes)
+        each spoiler in props
+            .spoiler__item
+                .spoiler__btn
+                    .h-2
+                        h2
+                            span= spoiler.id
+                            = spoiler.title
+                .spoiler__text
+                    .body-1= spoiler.description
