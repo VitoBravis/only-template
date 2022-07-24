@@ -1,17 +1,17 @@
-import { ITransitionData } from '@barba/core/dist/core/src/defs';
+import Spoilers from "@/components/blocks/spoilers/spoilers";
+import { getComponent } from "@/helpers/helpers";
+import { ITransitionData } from "@barba/core/dist/core/src/defs";
 
 export default {
-    namespace: 'common',
+    namespace: "common",
     async beforeEnter({ next }: ITransitionData) {
         try {
-            // Инициализация компонентов
+            new Spoilers(getComponent("spoilers"));
         } catch (e) {
             console.error(e);
         }
     },
-    beforeLeave() {
-
-    },
+    beforeLeave() {},
 
     afterLeave() {},
 };

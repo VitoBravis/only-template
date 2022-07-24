@@ -1,0 +1,190 @@
+@media (max-width: 1440px) {
+    [data-barba="container"] {
+        max-width: 1212px;
+        margin: 80px auto 240px auto;
+    }
+    .spoilers {
+        &__title {
+            font-size: 48px;
+        }
+        &__wrapper {
+            margin-top: 60px;
+        }
+        .spoiler {
+            padding-top: 24px;
+            &__head {
+                margin-bottom: 20px;
+                &.active {
+                    .spoiler__head-icon {
+                        transform: rotate(45deg) translateY(7px) translateX(5px);
+                    }
+                }
+                &-title {
+                    font-size: 27px;
+                }
+                &-icon {
+                    &::before {
+                        right: 9px;
+                        height: 20px;
+                    }
+                    &::after {
+                        width: 20px;
+                    }
+                }
+            }
+            &__collapse {
+                width: 840px;
+                * {
+                    font-size: 15px;
+                }
+                &.active {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    [data-barba="container"] {
+        max-width: 1066px;
+        margin: 70px auto 145px auto;
+    }
+
+    .spoilers {
+        &__title {
+            font-size: 42px;
+        }
+        &__wrapper {
+            margin-top: 56px;
+        }
+        .spoiler {
+            padding-top: 20px;
+            &__head {
+                margin-bottom: 20px;
+                &.active {
+                    .spoiler__head-icon {
+                        transform: rotate(45deg) translateY(6px) translateX(5px);
+                    }
+                }
+                &-title {
+                    font-size: 24px;
+                }
+                &-icon {
+                    &::before {
+                        right: 7px;
+                        height: 16px;
+                    }
+                    &::after {
+                        width: 16px;
+                    }
+                }
+            }
+            &__collapse {
+                width: 640px;
+                * {
+                    font-size: 14px;
+                }
+                &.active {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    [data-barba="container"] {
+        max-width: 688px;
+        margin: 60px auto 327px auto;
+    }
+
+    .spoilers {
+        &__title {
+            font-size: 42px;
+        }
+        &__wrapper {
+            margin-top: 50px;
+        }
+        .spoiler {
+            padding-top: 24px;
+            &__head {
+                margin-bottom: 24px;
+                &.active {
+                    .spoiler__head-icon {
+                        transform: rotate(45deg) translateY(6px) translateX(5px);
+                    }
+                }
+                &-title {
+                    margin-right: 30px;
+                    text-align: start;
+                    font-size: 27px;
+                }
+                &-icon {
+                    &::before {
+                        right: 9px;
+                        height: 20px;
+                    }
+                    &::after {
+                        width: 20px;
+                    }
+                }
+            }
+            &__collapse {
+                width: 90%;
+                * {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    [data-barba="container"] {
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 60px auto 327px auto;
+    }
+}
+
+@media (max-width: 375px) {
+    [data-barba="container"] {
+        max-width: 327px;
+        margin: 50px auto 12px auto;
+    }
+
+    .spoilers {
+        &__title {
+            font-size: 30px;
+        }
+        &__wrapper {
+            margin-top: 40px;
+        }
+        .spoiler {
+            padding-top: 20px;
+            &__head {
+                margin-bottom: 20px;
+                &.active {
+                    .spoiler__head-icon {
+                        transform: rotate(45deg) translateY(6px);
+                    }
+                }
+                &-title {
+                    margin-right: 22px;
+                    text-align: start;
+                    font-size: 24px;
+                }
+                &-icon {
+                    &::before {
+                        right: 7px;
+                        height: 16px;
+                    }
+                    &::after {
+                        width: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

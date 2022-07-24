@@ -1,6 +1,6 @@
-import Component, { ComponentProps } from '@/base/component';
+import Component, { ComponentProps } from "@/base/component";
 
-export default class Footer extends Component {
+export default class Spoiler extends Component {
     constructor(element: ComponentProps) {
         super(element);
     }

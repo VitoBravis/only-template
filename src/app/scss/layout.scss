@@ -6,8 +6,8 @@ html {
     text-rendering: optimizeLegibility;
     position: relative;
     //height: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 * {
@@ -26,7 +26,13 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -37,7 +43,8 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -78,6 +85,8 @@ button {
 
 [data-barba="container"] {
     position: relative;
+    max-width: 1618px;
+    margin: 100px auto 221px auto;
 }
 
 .object-fit {
@@ -88,7 +97,7 @@ button {
 
 .barba-leave-active,
 .barba-enter-active {
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .barba-leave,

@@ -1,0 +1,14 @@
+mixin spoilers(props)
+    .spoilers&attributes(attributes)
+        h1.spoilers__title!= dataJson.index.title
+        ul.spoilers__wrapper 
+            +spoiler({title: dataJson.index.spoilers[0].title})
+                p!= dataJson.index.spoilers[0].text
+            +spoiler({title: dataJson.index.spoilers[1].title})
+                p!= dataJson.index.spoilers[0].text
+            +spoiler({title: dataJson.index.spoilers[2].title})
+                p!= dataJson.index.spoilers[0].text
+            +spoiler({title: dataJson.index.spoilers[3].title})
+                p!= dataJson.index.spoilers[0].text
+            +spoiler({title: dataJson.index.spoilers[4].title})
+                p!= dataJson.index.spoilers[0].text
