@@ -1,0 +1,11 @@
+mixin spoiler(props)
+    ul.spoiler&attributes(attributes)
+        each spoiler in props
+            li.spoiler__item
+                button.h-3.spoiler__head
+                    span.spoiler__state
+                        +svg('close_icon').spoiler__state--close
+                        +svg('open_icon').spoiler__state--open.hide
+                    span.spoiler__title!= spoiler.title
+                .body-1.spoiler__collapse!= spoiler.spoiler
+                    block 

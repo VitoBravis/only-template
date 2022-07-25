@@ -1,0 +1,48 @@
+.mainContent {
+    $root: &;
+
+    &__wrapper {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        min-width: 375px;
+        width: 100vw;
+    }
+
+    &__content {
+        flex: 1 1 100%;
+        margin-top: 50px;
+        margin-top: 100px;
+        padding: 0 160px;
+
+        @include media-breakpoint-down (xxl) {
+            padding: 0 120px;
+            margin-top: 80px;
+        }
+        @include media-breakpoint-down (xl) {
+            padding: 0 107px;
+            margin-top: 70px;
+        }
+        @include media-breakpoint-down (md) {
+            padding: 0 40px;
+            margin-top: 60px;
+        }
+        @include media-breakpoint-down (xs) {
+            padding: 0 24px;
+            margin-top: 50px;
+        }
+    }
+
+    &__spoiler-wrapper {
+        margin-top: 80px;
+    }
+
+    &__title {
+        // font-size: 64px;
+        // line-height: 100%;
+        // letter-spacing: -0.02em;
+        // color: $title_color;
+        // font-weight: 700;
+        margin-bottom: 80px;
+    }
+}

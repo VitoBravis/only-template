@@ -2,11 +2,17 @@
 @mixin h1 {
     line-height: 1;
     font-weight: normal;
-    @include font(30, 60, 60, 80);
+    @include font(64, 48, 42, 30);
+}
+
+@mixin h3 {
+    line-height: 1;
+    font-weight: normal;
+    @include font(36, 27, 27, 24);
 }
 
 @mixin body1 {
-    @include font(14, 14, 16, 16);
+    @include font(20, 15, 15, 14);
     line-height: 1.5;
 }
 
@@ -14,6 +20,10 @@
 // Заголовки
 .h-1 {
     @include h1;
+}
+
+.h-3 {
+    @include h3;
 }
 
 

@@ -1,0 +1,8 @@
+mixin mainContent(props)
+    .mainContent&attributes(attributes)
+        .mainContent__wrapper
+            section.mainContent__content
+                .mainContent__spoiler-wrapper
+                    h1.h-1.mainContent__title Lorem ipsum dolor
+                    +spoiler(dataJson.index.spoilersData)
+
