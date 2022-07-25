@@ -1,10 +1,54 @@
 main {
     height: 100vh;
     color: #012b34;
+    padding: 0 160px;
+    @include media-breakpoint-down(xxl) {
+        // Стили для 1440 и меньше
+        padding: 0 120px;
+    }
+
+    @include media-breakpoint-down(xl) {
+        // Стили для 1280 и меньше
+        padding: 0 107px;
+    }
+
+    @include media-breakpoint-down(md) {
+        // Стили для 768 и меньше
+        padding: 0 40px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        // Стили для 375 и меньше
+        padding: 0 24px;
+    }
 }
-hr {
-    border: 1px solid rgba(230, 230, 230, 1);
-    margin: 0px;
+h1 {
+    @include text-h1;
+    margin: 100px 0 80px 0;
+
+    @include media-breakpoint-down(xxl) {
+        // Стили для 1440 и меньше
+        @include text-h1;
+        margin: 80px 0 60px 0;
+    }
+
+    @include media-breakpoint-down(xl) {
+        // Стили для 1280 и меньше
+        @include text-h1;
+        margin: 70px 0 56px 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        // Стили для 768 и меньше
+        @include text-h1;
+        margin: 60px 0 50px 0;
+    }
+
+    @include media-breakpoint-down(xs) {
+        // Стили для 375 и меньше
+        @include text-h1;
+        margin: 50px 0 40px 0;
+    }
 }
 .spoiler {
     $root: &;
@@ -14,8 +58,67 @@ hr {
         overflow: hidden;
         transition: height 0.5s ease-in-out;
     }
+    .text-block {
+        padding: 0 0 40px 0;
+        @include text-block;
+        width: 940px;
 
+        @include media-breakpoint-down(xxl) {
+            // Стили для 1440 и меньше
+            padding: 0 0 40px 0;
+            @include text-block;
+            width: 840px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            // Стили для 1280 и меньше
+            padding: 0 0 40px 0;
+            @include text-block;
+            width: 640px;
+        }
+
+        @include media-breakpoint-down(md) {
+            // Стили для 768 и меньше
+            padding: 0 0 40px 0;
+            @include text-block;
+            width: 612px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            // Стили для 375 и меньше
+            padding: 0 0 40px 0;
+            @include text-block;
+            width: 327px;
+        }
+    }
+    &__head {
+        padding: 30px 0;
+        & .active {
+            transform: rotate(45deg);
+            color: "#02818A";
+        }
+        @include media-breakpoint-down(xxl) {
+            // Стили для 1440 и меньше
+            padding: 24px 0;
+        }
+
+        @include media-breakpoint-down(xl) {
+            // Стили для 1280 и меньше
+            padding: 20px 0;
+        }
+
+        @include media-breakpoint-down(md) {
+            // Стили для 768 и меньше
+            padding: 24px 0;
+        }
+
+        @include media-breakpoint-down(xs) {
+            // Стили для 375 и меньше
+            padding: 20px 0;
+        }
+    }
     &__element {
+        border-top: 1px solid rgba(230, 230, 230, 1);
         & button {
             display: flex;
             justify-content: space-between;
@@ -23,10 +126,41 @@ hr {
             padding: 30px 0;
             color: #012b34;
         }
+        &:last-child {
+            border-bottom: 1px solid rgba(230, 230, 230, 1);
+        }
     }
     &__head-title {
+        text-align: left;
         display: block;
         width: 100%;
+        width: 1336px;
+        @include head-title-text;
+
+        @include media-breakpoint-down(xxl) {
+            // Стили для 1440 и меньше
+            @include head-title-text;
+            width: 986px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            // Стили для 1280 и меньше
+            @include head-title-text;
+            width: 920px;
+        }
+
+        @include media-breakpoint-down(md) {
+            // Стили для 768 и меньше
+            @include head-title-text;
+            width: 644px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            // Стили для 375 и меньше
+            @include head-title-text;
+            text-align: left;
+            width: 289px;
+        }
     }
     &__head-icon {
         display: block;
@@ -34,6 +168,29 @@ hr {
         height: 20px;
         position: relative;
         transition: all 0.3s ease-in-out;
+        @include media-breakpoint-down(xxl) {
+            // Стили для 1440 и меньше
+            width: 14px;
+            height: 14px;
+        }
+
+        @include media-breakpoint-down(xl) {
+            // Стили для 1280 и меньше
+            width: 14px;
+            height: 14px;
+        }
+
+        @include media-breakpoint-down(md) {
+            // Стили для 768 и меньше
+            width: 14px;
+            height: 14px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            // Стили для 375 и меньше
+            width: 16px;
+            height: 16px;
+        }
 
         &:before,
         &:after {
@@ -47,152 +204,5 @@ hr {
         &:after {
             transform: rotate(90deg);
         }
-    }
-}
-@media (min-width: 375px) {
-    main {
-        padding: 0 24px;
-    }
-    h1 {
-        font-size: 30px;
-        line-height: 30px;
-        margin: 50px 0 40px 0;
-    }
-    .spoiler__element .spoiler__head {
-        padding: 20px 0;
-    }
-    .spoiler__head-title {
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 29px;
-        letter-spacing: 0em;
-        text-align: left;
-        width: 289px;
-    }
-    .spoiler__head-icon {
-        width: 16px;
-        height: 16px;
-    }
-    .text-block {
-        padding: 0 0 40px 0;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 23px;
-        letter-spacing: 0em;
-        text-align: left;
-
-        width: 327px;
-    }
-}
-@media (min-width: 768px) {
-    main {
-        padding: 0 40px;
-    }
-    h1 {
-        font-size: 42px;
-        line-height: 42px;
-        margin: 60px 0 50px 0;
-    }
-    .spoiler__element .spoiler__head {
-        padding: 24px 0;
-    }
-    .spoiler__head-title {
-        font-size: 27px;
-        line-height: 32px;
-        width: 644px;
-    }
-    .spoiler__head-icon {
-        width: 14px;
-        height: 14px;
-    }
-    .text-block {
-        padding: 0 0 40px 0;
-        font-size: 15px;
-        line-height: 22px;
-        width: 612px;
-    }
-}
-@media (min-width: 1280px) {
-    main {
-        padding: 0 107px;
-    }
-    h1 {
-        font-size: 42px;
-        line-height: 42px;
-        margin: 70px 0 56px 0;
-    }
-    .spoiler__element .spoiler__head {
-        padding: 20px 0;
-    }
-    .spoiler__head-title {
-        font-size: 24px;
-        line-height: 28px;
-        width: 920px;
-    }
-    .spoiler__head-icon {
-        width: 14px;
-        height: 14px;
-    }
-    .text-block {
-        padding: 0 0 40px 0;
-        font-size: 14px;
-        line-height: 21px;
-        width: 640px;
-    }
-}
-@media (min-width: 1440px) {
-    main {
-        padding: 0 120px;
-    }
-    h1 {
-        font-size: 48px;
-        line-height: 48px;
-        margin: 80px 0 60px 0;
-    }
-    .spoiler__element .spoiler__head {
-        padding: 24px 0;
-    }
-    .spoiler__head-title {
-        font-size: 27px;
-        line-height: 32px;
-        width: 986px;
-    }
-    .spoiler__head-icon {
-        width: 14px;
-        height: 14px;
-    }
-    .text-block {
-        padding: 0 0 40px 0;
-        font-size: 15px;
-        line-height: 23px;
-        width: 840px;
-    }
-}
-@media (min-width: 1920px) {
-    main {
-        padding: 0 160px;
-    }
-    h1 {
-        font-size: 64px;
-        line-height: 64px;
-        margin: 100px 0 80px 0;
-    }
-    .spoiler__element .spoiler__head {
-        padding: 30px 0;
-    }
-    .spoiler__head-title {
-        font-size: 36px;
-        line-height: 43px;
-        width: 1336px;
-    }
-    .spoiler__head-icon {
-        width: 20px;
-        height: 20px;
-    }
-    .text-block {
-        padding: 0 0 40px 0;
-        font-size: 20px;
-        line-height: 30px;
-        width: 940px;
     }
 }
