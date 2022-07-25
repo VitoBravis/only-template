@@ -32,3 +32,4 @@ barba.init({
     views: [common],
     requestError: () => false
 });
+

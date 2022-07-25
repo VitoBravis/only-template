@@ -1,0 +1,233 @@
+.wrp {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    color: #012B34;
+    margin: 100px 160px 80px 160px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    margin-bottom: 80px;
+}
+
+.spoiler {
+    $root: &;
+
+    border-top: 1px solid #E6E6E6;
+    padding:  30px 0 40px 0;
+    position: relative;
+
+    &:last-child {
+        border-bottom: 1px solid #E6E6E6;
+    }
+    
+    &__head-title {
+        position: relative;
+        font-size: 36px;
+        line-height: 120%;
+        margin-right: 30px;
+        outline: none;
+        display: block;
+        text-align: left;
+    }
+
+    &__element__open &__head-title {
+        color: #02818A;
+        transition: all .5s;
+    }
+    
+    &__head-title:before {
+        content: attr(data-count);
+        font-size: 36px;
+        display: block;
+        float: left;
+        margin-right: 5px;
+    }
+
+    &__head-icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        border-top: 2px solid #02818A;
+        transform: rotate(0deg);
+        transform-origin: top center;
+        transition: transform .5s;
+    }
+    
+    &__head-icon:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 9px;
+        top: -11px;
+        width: 20px;
+        height: 20px;
+        border-right: 2px solid #02818A;
+    }
+
+    &__collapse {
+        height: 0;
+        transition: height 0.3s;
+        overflow: hidden;
+    }
+    
+    &__element__open &__head-icon {
+        transform: rotate(-45deg);
+        transform-origin: top center;
+        transition: transform .5s;
+    }
+    
+    .text-block {
+        font-size: 20px;
+        line-height: 150%;
+        opacity: 0.8;
+        max-width: 942px;
+        margin: 30px 30px 0 0;
+    }
+}
+
+    @media (max-width: 1440px) {
+        .wrp {
+            margin: 80px 120px 80px 120px;
+            padding: 0;
+        }
+    
+        .title {
+            font-size: 48px;
+            margin-bottom: 60px;
+        }
+
+        .spoiler {
+            padding:  24px 0 30px 0;
+
+            &__head-icon {
+                width: 14px;
+                height: 14px;
+                top: 40px;
+            }
+
+            &__head-icon:after {
+                right: 6px;
+                top: -8px;
+                width: 14px;
+                height: 14px;
+            }
+
+            &__head-title {
+                font-size: 27px;
+            }
+
+            &__head-title:before {
+                font-size: 27px;
+            }
+
+            .text-block {
+                font-size: 15px;
+                margin: 20px 30px 0 0;
+                max-width: 840px;
+            }
+        }
+    }
+    
+    @media (max-width: 1280px) {
+        .wrp {
+            margin: 70px 107px 70px 107px;
+            padding: 0;
+        }
+    
+        .title {
+            font-size: 42px;
+            margin-bottom: 56px;
+        }
+
+        .spoiler {
+            padding:  20px 0 24px 0;
+
+            &__head-icon {
+                width: 14px;
+                height: 14px;
+                top: 33px;
+            }
+
+            &__head-icon:after {
+                right: 6px;
+                top: -8px;
+                width: 14px;
+                height: 14px;
+            }
+
+            &__head-title {
+                font-size: 27px;
+            }
+
+            &__head-title:before {
+                font-size: 27px;
+            }
+
+            .text-block {
+                font-size: 15px;
+                margin: 14px 30px 0 0;
+                max-width: 640px;
+            }
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .wrp {
+            margin: 60px 40px 60px 40px;
+        }
+    
+        .title {
+            margin-bottom: 50px;
+        }
+        
+        .spoiler {
+            padding:  20px 0 24px 0;
+
+            &__head-title {
+                font-size: 27px;
+            }
+
+            &__head-title:before {
+                font-size: 27px;
+            }
+
+            .text-block {
+                margin: 16px 30px 0 0;
+                max-width: 612px;
+            }
+        }
+    }
+    
+    @media (max-width: 375px) {
+        .wrp {
+            margin: 50px 24px 50px 24px;
+        }
+    
+        .title {
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .spoiler {
+            padding: 20px 0 20px 0;
+
+            &__head-title {
+                font-size: 27px;
+            }
+
+            &__head-title:before {
+                font-size: 27px;
+            }
+
+            .text-block {
+                max-width: 327px;
+            }
+        }
+    }
