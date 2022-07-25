@@ -6,6 +6,5 @@ block title
 block content
     main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
         .wrapper
-            +spoiler(dataJson.index.spoiler01)
-            +spoiler(dataJson.index.spoiler02)
-            +spoiler(dataJson.index.spoiler03)
+           each spoilerItem in dataJson.index.spoilers
+                +spoiler(spoilerItem)
