@@ -1,0 +1,41 @@
+.item-btn {
+    $root: &;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 26px;
+    height: 24px;
+
+    &:before,
+    &:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 20px;
+        width: 2px;
+        background-color: #02818a;
+        transition: 0.3s;
+    }
+
+    &:before {
+        transform: rotate(90deg);
+    }
+
+    &:after {
+        transform: rotate(0deg);
+    }
+
+    &__active:before {
+        transform: rotate(135deg);
+    }
+
+    &__active:after {
+        transform: rotate(45deg);
+    }
+}

@@ -1,0 +1,8 @@
+mixin spoiler-item(title,text)
+    li.spoiler-item&attributes(attributes)
+        .item-container 
+            h3.item-title=title
+            +button
+        .item-wrapper 
+             p.item-text=text
+        

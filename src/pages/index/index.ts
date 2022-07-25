@@ -1,3 +1,5 @@
+import { getComponent } from './../../app/js/helpers/helpers';
+import Spoiler from '@/components/blocks/spoiler/spoiler';
 import { ITransitionData } from '@barba/core/dist/core/src/defs';
 
 export default {
@@ -5,6 +7,7 @@ export default {
     async beforeEnter({ next }: ITransitionData) {
         try {
             // Инициализация компонентов
+            new Spoiler(getComponent("spoiler"))
         } catch (e) {
             console.error(e);
         }

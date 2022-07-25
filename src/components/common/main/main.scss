@@ -1,0 +1,59 @@
+.main {
+    $root: &;
+    padding: 100px 160px 222px 142px;
+
+    &-title {
+        margin-bottom: 80px;
+        font-size: 64px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: #012b34;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767.2px) {
+
+    .main {
+        padding: 50px 24px 12px;
+
+        &-title{
+            max-width: 190px;
+            width: 100%;
+            margin-bottom: 40px;
+            font-size: 30px;  
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279.2px) {
+
+    .main {
+        padding: 60px 40px 327px;
+
+        &-title {
+            margin-bottom: 50px;
+            font-size: 42px;
+        }
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1439.2px) {
+
+    .main {
+        padding: 70px 107px 145px;
+         &-title {
+            margin-bottom: 56px;
+            font-size: 42px;
+        }
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1919.2px) {
+
+    .main {
+        padding: 80px 120px 240px 108px;
+        &-title {
+            font-size: 48px;
+        }
+    }
+}
