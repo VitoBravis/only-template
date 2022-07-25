@@ -1,0 +1,102 @@
+.spoiler {
+    $root: &;
+    border-top: 1px solid $border-color;
+    margin-top: 80px;
+    margin-bottom: 220px;
+    font-size: 20px;
+
+    &__item {
+        border-bottom: 1px solid $border-color;
+    }
+
+    .spoiler__btn {
+        text-align: start;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        margin: 30px 0;
+        font-size: 36px;
+        width: 100%;
+        color: $text-color-title;
+
+        & > svg {
+            width: 43px;
+            height: 43px;
+            transition: transform 0.5s;
+        }
+
+        &_activ {
+            color: $accent;
+
+            & > svg {
+                transform: rotate(45deg);
+            }
+        }
+
+        &:hover {
+            color: $accent;
+        }
+        &:active {
+            color: $active-accent;
+        }
+
+        @media (max-width: 1440px) {
+            margin: 24px 0;
+            font-size: 27px;
+        }
+        @media (max-width: 1280px) {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+        @media (max-width: 768px) {
+            margin: 24px 0;
+            font-size: 27px;
+        }
+        @media (max-width: 375px) {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+    }
+
+    &__information {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s;
+        font-size: 20px;
+        color: $text-color-information;
+
+        p {
+            margin: 10px 0;
+        }
+
+        & > :last-child {
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1440px) {
+            font-size: 15px;
+
+            & > :first-child {
+                margin-top: 0;
+            }
+            & > :last-child {
+                margin-bottom: 30px;
+            }
+        }
+        @media (max-width: 1280px) {
+            font-size: 14px;
+
+            & > :last-child {
+                margin-bottom: 24px;
+            }
+        }
+        @media (max-width: 768px) {
+            font-size: 15px;
+        }
+        @media (max-width: 375px) {
+            & > :last-child {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

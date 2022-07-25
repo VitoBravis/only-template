@@ -1,0 +1,45 @@
+.content {
+    $root: &;
+    max-width: 1681px;
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: content-box;
+
+    &__title {
+        margin-top: 100px;
+        font-size: 64px;
+        color: #012b34;
+    }
+
+    @media (max-width: 1440px) {
+        max-width: 1213px;
+
+        &__title {
+            margin-top: 80px;
+            font-size: 48px;
+        }
+    }
+    @media (max-width: 1280px) {
+        max-width: 1066px;
+
+        &__title {
+            margin-top: 70px;
+            font-size: 42px;
+        }
+    }
+    @media (max-width: 768px) {
+        max-width: 688px;
+
+        &__title {
+            margin-top: 60px;
+        }
+    }
+    @media (max-width: 375px) {
+        max-width: 327px;
+
+        &__title {
+            margin-top: 50px;
+            font-size: 30px;
+        }
+    }
+}
