@@ -46,6 +46,7 @@
 }
 
 @mixin safari {
+
     // Safari 11+
     @media not all and (min-resolution:.001dpcm) {
         @supports (-webkit-appearance: none) and (stroke-color: transparent) {
@@ -53,3 +54,63 @@
         }
     }
 }
+
+// мои миксины
+
+@mixin header($color: $mainColor) {
+    font-size: 3rem;
+    color: $color;
+    font-family: $mainFont;
+
+    @media($small) {
+        font-size: 4.2rem;
+    }
+
+    @media($large) {
+        font-size: 4.8rem;
+    }
+
+    @media($extraLarge) {
+        font-size: 6.4rem;
+    }
+}
+
+@mixin title($color: $mainColor) {
+    margin: 0;
+    font-size: 2.4rem;
+    color: $color;
+    font-family: $mainFont;
+
+    @media($small) {
+        font-size: 2.7rem;
+    }
+
+    @media($medium) {
+        font-size: 2.4rem;
+    }
+
+    @media($large) {
+        font-size: 2.7rem;
+    }
+
+    @media($extraLarge) {
+        font-size: 3.6rem;
+    }
+}
+
+@mixin p1 ($color: $secondaryColor) {
+    padding: 0;
+    font-size: 1.5rem;
+    color: $color;
+    font-family: $mainFont;
+
+    @media($medium) {
+        font-size: 1.4rem;
+    }
+
+    @media($large) {
+        font-size: 1.5rem;
+    }
+}
+
+// =========================================================

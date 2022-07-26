@@ -3,11 +3,17 @@ html {
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    // Добавил font-size что бы использовать Rem
+    font-size: 10px;
+
     text-rendering: optimizeLegibility;
     position: relative;
-    //height: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    // height: 100%;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 * {
@@ -16,7 +22,7 @@ html {
 
 body {
     position: relative;
-    //height: 100%;
+    // height: 100%;
     padding: 0;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
@@ -26,7 +32,18 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, p, a {
+// section {
+//     display: flex;
+//     height: 100%;
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -37,7 +54,8 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
