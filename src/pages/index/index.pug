@@ -5,4 +5,16 @@ block title
 
 block content
     main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
-        h1.h-1!= dataJson.index.title
+        h2.h-2 Lorem ipsum
+        hr
+        ul.spoiler__list
+            +spoiler({title: '1. Nullam tincidunt vestibulum porttitor'})
+                p.text-block sample text
+            +spoiler({title: '2. Class aptent taciti sociosqu ad litora'})
+                p.text-block sample text 2
+            +spoiler({title: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget'})
+                p.text-block sample text 3
+            +spoiler({title: '4. Mauris ut suscipit tellus'})
+                p.text-block sample text 4
+            +spoiler({title: '5. Nullam placerat porta libero, vel maximus augue euismod eget'})
+                p.text-block sample text 5

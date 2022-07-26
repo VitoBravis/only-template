@@ -1,4 +1,3 @@
-
 @mixin h1 {
     line-height: 1;
     font-weight: normal;
@@ -14,6 +13,39 @@
 // Заголовки
 .h-1 {
     @include h1;
+}
+
+.h-2 {
+    margin-top: 72px;
+    margin-bottom: 74px;
+    color: $darkteal;
+    font-weight: 500;
+    font-size: 64px;
+    letter-spacing: -1px;
+
+    @include media-breakpoint-down('xxl') {
+        margin-top: 66px;
+        margin-bottom: 52px;
+        font-size: 48px;
+    }
+
+    @include media-breakpoint-down('xl') {
+        margin-top: 56px;
+        margin-bottom: 48px;
+        font-size: 42px;
+    }
+
+    @include media-breakpoint-down('md') {
+        margin-top: 46px;
+        margin-bottom: 42px;
+        font-size: 42px;
+    }
+
+    @include media-breakpoint-down('xs') {
+        margin-top: 36px;
+        margin-bottom: 32px;
+        font-size: 30px;
+    }
 }
 
 

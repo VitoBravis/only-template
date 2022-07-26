@@ -6,8 +6,10 @@ html {
     text-rendering: optimizeLegibility;
     position: relative;
     //height: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 * {
@@ -21,12 +23,26 @@ body {
     margin: 0;
     -webkit-tap-highlight-color: transparent;
 
+    display: flex;
+    justify-content: center;
+
     &::-webkit-scrollbar {
         display: none;
     }
 }
 
-h1, h2, h3, h4, h5, p, a {
+hr {
+    border: 1px solid $lain;
+    border-bottom: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -37,7 +53,8 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -78,6 +95,29 @@ button {
 
 [data-barba="container"] {
     position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 20px;
+
+    @include media-breakpoint-down('xxl') {
+        max-width: 1200px;
+        margin: 0 120px;
+    }
+
+    @include media-breakpoint-down('xl') {
+        max-width: 1066px;
+        margin: 0 107px;
+    }
+
+    @include media-breakpoint-down('md') {
+        max-width: 688px;
+        margin: 0 40px;
+    }
+
+    @include media-breakpoint-down('xs') {
+        max-width: 327px;
+        margin: 0 24px;
+    }
 }
 
 .object-fit {
