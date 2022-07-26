@@ -1,16 +1,17 @@
-$font-roboto-name: 'Roboto';
+$font-roboto-name: "Roboto";
 $font-roboto: $font-roboto-name, Arial, sans-serif;
+$font-times: "Times New Roman";
 
 $fonts-roboto: (
-    'Roboto-Regular': normal,
-    'Roboto-Bold': bold
+    "Roboto-Regular": normal,
+    "Roboto-Bold": bold,
 );
 
 @each $font, $weight in $fonts-roboto {
     @font-face {
         font-family: $font-roboto-name;
-        src: url('../../assets/fonts/#{$font}.ttf') format('truetype'),
-            url('../../assets/fonts/#{$font}.woff') format('woff');
+        src: url("../../assets/fonts/#{$font}.ttf") format("truetype"),
+            url("../../assets/fonts/#{$font}.woff") format("woff");
         font-weight: $weight;
         font-style: normal;
         font-display: swap;
