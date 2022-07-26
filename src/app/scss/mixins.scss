@@ -10,6 +10,22 @@
     }
 }
 
+@mixin colors($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
+	color: #{$mobile};
+
+	@include media-breakpoint-up(md) {
+		color: #{$tablet-768};
+  }
+
+  @include media-breakpoint-up(xxl) {
+		color: #{$desktop-1440};
+	}
+
+	@include media-breakpoint-up(fhd) {
+		color: #{$desktop-1920};
+  }
+}
+
 @mixin font($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
     font-size: #{$mobile}px;
 

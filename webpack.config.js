@@ -229,15 +229,11 @@ module.exports = (env) => {
             }
         },
         target: ['web', 'es5'],
-		  watchOptions: {
-			aggregateTimeout: 600,
-		 },
         devServer: {
-            contentBase: path.join(__dirname, 'dist'),
+            // contentBase: path.join(__dirname, 'dist'),
             compress: true,
             port: 3000,
-				watchContentBase: true,
-    			hot: true
+				hot: true,
         },
         devtool: dev && 'source-map',
         plugins: [
@@ -256,6 +252,7 @@ module.exports = (env) => {
                     },
                 ],
             }),
+				
             // new BundleAnalyzerPlugin()
         ],
     };

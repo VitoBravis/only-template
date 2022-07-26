@@ -78,6 +78,13 @@ button {
 
 [data-barba="container"] {
     position: relative;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 h1 {
+		@include font(40,36,32,24);
+	 }
 }
 
 .object-fit {

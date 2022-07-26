@@ -1,18 +1,20 @@
 .spoiler {
     $root: &;
-	width: 800px;
+	width: 80%;
 	margin: 15px auto;
 	 border: 1px dashed $black;
 	 border-radius: 5px;
 	 padding: 10px 15px;
 	 &__head {
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 5px;
 		cursor: pointer;
 		&-title {
-			font-size: 24px;
+			@include font(24,20,18,16);
+			@include colors(#318CE7, #F4CA16, #50C878, #006262);
 			font-weight: 700;
 		}
 		&-icon {
@@ -80,11 +82,12 @@
 	 }
 	 &__content {
 		padding: 5px 0;
+		@include font(18,16,14,14);
 
 	}
 	&__ul {
 		&-head {
-			font-size: 18px;
+			@include font(18,16,14,14);
 			font-weight: 500;
 			margin: 15px 0 10px 0;
 		}
@@ -97,6 +100,7 @@
 	}
 	&__item {
 		color: $themeColor;
+		@include font(16,14,12,12);
 	}
 }
 

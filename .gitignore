@@ -7,6 +7,7 @@
 # Files
 .idea
 .DS_Store
+.webpack.config.js
 
 # dev environment
 /dev
