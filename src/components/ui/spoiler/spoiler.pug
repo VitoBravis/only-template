@@ -3,8 +3,6 @@ mixin spoiler(props)
         h2.spoiler__head
             span.spoiler__head-title #{props.title}
             button.spoiler__head-icon
-                +svg('plus-solid')(width='24px', height='24px')
-        //  Оставил обертку __collapse, т.к. без него анимация получалась дерганной из-за паддингов
-        //  и в целом, с ним удобнее рулить компонентом
+                +svg('plus-spoiler')(width='24px', height='24px')
         .spoiler__collapse
             p.spoiler__content #{props.content}

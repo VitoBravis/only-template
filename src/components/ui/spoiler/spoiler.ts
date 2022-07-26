@@ -7,7 +7,6 @@ export default class Spoiler extends Component {
     headElement: HTMLElement | any;
     contentElement: HTMLElement | any;
     collapseElement: HTMLElement | any;
-    button: HTMLElement | any;
 
     constructor(element: ComponentProps) {
         super(element);
@@ -16,7 +15,7 @@ export default class Spoiler extends Component {
         this.headElement = this.getElement('head');
         this.collapseElement = this.getElement('collapse');
 
-        resize(() => this.setCollapseHeight(`${this.contentElement.scrollHeight}px`));
+        resize(() => this.isOpen ? this.setCollapseHeight(`${this.contentElement.scrollHeight}px`) : null);
     }
 
     open() {
@@ -30,9 +29,6 @@ export default class Spoiler extends Component {
         this.isOpen = false;
     }
     setCollapseHeight(value: String) {
-        if (this.isOpen) this.collapseElement.style.height = value;
-    }
-    clickHandler() {
-        this.isOpen ? this.close() : this.open();
+        this.collapseElement.style.height = value;
     }
 }
