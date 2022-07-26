@@ -1,0 +1,113 @@
+.spoiler {
+}
+
+.spoiler--active {
+}
+
+.spoiler.spoiler--active .spoiler__title {
+    color: var(--tertiary);
+}
+
+.spoiler.spoiler--active .spoiler__button {
+    align-self: start;
+    transform: rotate(45deg);
+}
+
+.spoiler.spoiler--active .spoiler__text {
+    display: block;
+    animation: slide 0.2s ease-in;
+}
+
+.spoiler__inner {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.spoiler__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 120%;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.spoiler__text {
+    height: 0;
+    overflow: hidden;
+    max-width: 942px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--secondary);
+    opacity: 0.8;
+    transition: height 0.3s;
+
+}
+
+.spoiler__button {
+    margin-left: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.button {
+    display: flex;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1440px) {
+
+    .spoiler__inner {
+        gap: 20px;
+    }
+
+    .spoiler__title {
+        font-size: 27px;
+    }
+
+    .spoiler__text {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .spoiler__inner {
+        gap: 16px;
+    }
+
+    .spoiler__title {
+        font-size: 24px;
+    }
+
+    .spoiler__text {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .spoiler__title {
+        font-size: 27px;
+    }
+
+    .spoiler__text {
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    .spoiler__title {
+        max-width: 289px;
+        font-size: 24px;
+    }
+
+    .spoiler__text {
+        font-size: 15px;
+    }
+}

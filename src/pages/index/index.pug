@@ -4,5 +4,21 @@ block title
     | Главная
 
 block content
-    main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
-        h1.h-1!= dataJson.index.title
+    main.main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
+        .container
+            .main__wrapper
+                h1.main__heading!=dataJson.index.title
+                ul.main__list.list
+                    +spoiler({ title: '1. Nullam tincidunt vestibulum porttitor', className: 'list__item'})
+                        p Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+                        p Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+                        p Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+                    +spoiler({ title: '2. Class aptent taciti sociosqu ad litora', className: 'list__item' })
+                        p Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+                    +spoiler({ title: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', className: 'list__item' })
+                        p Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+                    +spoiler({ title: '4. Mauris ut suscipit tellus', className: 'list__item' })
+                        p Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+                    +spoiler({ title: '5. Nullam placerat porta libero, vel maximus augue euismod eget', className: 'list__item' })
+                        p Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+

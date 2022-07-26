@@ -1,0 +1,13 @@
+mixin spoiler(props)
+    li(class=props.className)&attributes(attributes)
+        .spoiler
+            .spoiler__inner
+                h5.spoiler__title=props.title
+                button.button.spoiler__button(type='button')
+                    svg(width='20' height='20' viewbox='0 0 30 29' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M15.0306 28.9426L15.0001 14.8311L29.1118 14.8616' stroke='#02818A' stroke-width='2')
+                        path(d='M14.9696 0.71936L15.0001 14.8309L0.888412 14.8004' stroke='#02818A' stroke-width='2')
+            .spoiler__text
+                block
+
+

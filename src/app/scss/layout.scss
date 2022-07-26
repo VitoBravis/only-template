@@ -1,3 +1,10 @@
+:root {
+    --primary: #012b34;
+    --secondary: #000402;
+    --tertiary: #02818a;
+    --divider: #e6e6e6;
+}
+
 html {
     font-family: $font-roboto;
     font-weight: normal;
@@ -103,4 +110,135 @@ button {
 
 [data-modal] {
     cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 1620px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.main {
+}
+
+.main__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding-top: 100px;
+}
+
+.main__heading {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+}
+
+.main__list {
+}
+
+.list {
+    padding-bottom: 20px;
+}
+
+.list__item {
+    position: relative;
+    padding: 30px 0;
+}
+
+.list__item:last-child::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--divider);
+}
+
+.list__item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: var(--divider);
+}
+
+
+/* media */
+
+@media screen and (max-width: 1440px) {
+    .container {
+        max-width: 1232px;
+    }
+
+    .main__heading {
+        font-size: 48px;
+    }
+
+    .main__wrapper {
+        padding-top: 80px;
+        gap: 60px;
+    }
+
+    .list__item {
+        padding: 24px 0;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+    .container {
+        max-width: 1086px;
+    }
+
+    .main__heading {
+        font-size: 42px;
+    }
+
+    .main__wrapper {
+        padding-top: 70px;
+        gap: 56px;
+    }
+    .list__item {
+        padding: 20px 0;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 708px;
+    }
+
+    .main__heading {
+        font-size: 42px;
+    }
+
+    .list__item {
+        padding: 24px 0;
+    }
+
+    .main__wrapper {
+        padding-top: 60px;
+        gap: 50px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    .spoiler__title {
+        max-width: 289px;
+        font-size: 24px;
+    }
+
+    .spoiler__text {
+        font-size: 15px;
+    }
 }
