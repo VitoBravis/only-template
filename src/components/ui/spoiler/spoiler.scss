@@ -1,0 +1,139 @@
+.spoiler {
+    $root: &;
+    
+    &__line{
+        border: 1px solid #E6E6E6;
+        margin: 0;
+    }
+    
+    &__head{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    &__head-title{
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: $main-text;
+        text-align: left;
+    }
+
+    &__element.is-open &__head-title{
+        color: $primary;
+    }
+
+    &__collapse{
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.2s;
+    }
+
+    &__content-text{
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        color: $secondary-text;
+        opacity: 0.8;
+    }
+
+    &__head-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        
+    }
+    &__head-icon:before,
+    &__head-icon:after {
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 2px;
+        background-color: $primary;
+        transition: all 0.3s;
+    }
+    
+    &__head-icon:before {
+        transform: rotate(180deg);
+    }
+    &__head-icon:after {
+        transform: rotate(-270deg);
+    }
+    
+    &__element.is-open &__head-icon:before {
+        transform: rotate(45deg);
+    }
+    &__element.is-open &__head-icon:after {
+        transform: rotate(-45deg);
+    }
+
+    @media (max-width:1920px) {
+        &__head-title{
+            font-size: 36px;
+            margin: 30px 0;
+        }
+        &__content-text{
+            font-size: 20px;
+            margin: 0 0 40px 0;
+        }
+    }
+    
+    @media (max-width:1440px) {
+        &__head-title{
+            font-size: 27px;
+            margin: 24px 0 20px 0;
+        }
+        &__content-text{
+            font-size: 15px;
+            margin: 0 0 30px 0;
+        }
+    
+        &__head-icon {
+            width: 15px;
+            height: 15px;
+        }
+        &__head-icon:before,
+        &__head-icon:after {
+            height: 15px;
+        }
+    }
+    
+    @media (max-width:1280px) {
+        &__head-title{
+            font-size: 27px;
+            margin: 20px 0 16px 0;
+        }
+        &__content-text{
+            font-size: 14px;
+            margin: 0 0 24px 0;
+        }
+    }
+    
+    @media (max-width:768px) {
+        &__head-title{
+            font-size: 27px;
+            margin: 24px 0 16px 0;
+        }
+        &__content-text{
+            font-size: 15px;
+            margin: 0 0 24px 0;
+        }
+    }
+    
+    @media (max-width:375px) {
+        &__head-title{
+            font-size: 24px;
+            margin: 20px 0 16px 0;
+        }
+        &__content-text{
+            font-size: 15px;
+            margin: 0 0 20px 0;
+        }
+    }
+}

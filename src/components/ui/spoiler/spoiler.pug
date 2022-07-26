@@ -1,0 +1,13 @@
+mixin spoiler(props)
+    ul.spoiler&attributes(attributes)
+        each spoiler in props
+            hr.spoiler__line
+            li.spoiler__element
+                button.spoiler__head
+                    span.spoiler__head-title!= spoiler.title
+                    span.spoiler__head-icon
+
+                .spoiler__collapse
+                    each field in spoiler.fields
+                        p.spoiler__content-text!= field.text
+        hr.spoiler__line    
