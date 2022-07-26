@@ -12,11 +12,7 @@ export default class Spoiler extends Component {
         if (!spoilerElement) return
         const spoilerBtn = spoilerElement.children[0] as HTMLElement
         const spoilerCollapse = spoilerElement.children[1] as HTMLElement
-        if (spoilerBtn.classList.contains('active')) {
-            spoilerBtn.classList.remove('active')
-        } else {
-            spoilerBtn.classList.add('active')
-        }
+        spoilerBtn.classList.toggle('active')
         if (spoilerCollapse.style.height) {
             spoilerCollapse.style.height = '';
         } else {
