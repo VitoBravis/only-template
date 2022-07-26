@@ -1,4 +1,6 @@
-@import './variabls_spoilers.scss';
+@import './../../../app/scss/variables.scss';
+@import './../../../app/scss/typography.scss';
+
 
 .spoiler {
     $root: &;
@@ -6,73 +8,54 @@
     max-width: 100%;
     width: 1920px;
 
-    
+
     .spoiler__collapse {
         width: 1500px;
         margin: 0 auto;
         padding: 0 2rem;
-        @media (max-width: 1440px) {
+
+        @include media-breakpoint-down (xxl) {
             & {
-                width:1200px;
+                width: 1200px;
             }
         }
-        @media (max-width: 1280px) {
+
+        @include media-breakpoint-down(xl) {
             & {
-                width:1066px;
+                width: 1066px;
             }
         }
-        @media (max-width: 768px) {
+
+        @include media-breakpoint-down(md) {
             & {
-                width:688px;
+                width: 688px;
             }
         }
-        @media (max-width: 375px) {
+
+        @include media-breakpoint-down(xs) {
             & {
-                
-                
-                width:327px;
+
+
+                width: 327px;
             }
         }
-        
+
         .spoiler__title {
-           
+
             margin: 2rem 0;
-            font-size: 6.4rem;
+            @include title-1;
             font-weight: 400;
             letter-spacing: -0.02em;
-    
-          
-    
-          
-    
-    
+
+
             color: $primary-color-title;
-    
-    
-            @media (max-width: 1440px) {
-                & {
-                    font-size: 4.8rem;
-                    
-                }
-            }
-            @media (max-width: 1280px) {
-                & {
-                    font-size: 4.2rem;
-           
-                    
-                }
-            }
-            @media (max-width: 375px) {
-                & {
-                    font-size: 3rem;
-              
-                    
-                }
-            }
-    
-    
+
+
+
+
+
         }
-        
+
         .spoiler__item {
             cursor: pointer;
             position: relative;
@@ -83,13 +66,14 @@
             }
 
             &._active {
-                .spoiler__btn{
-                   
+                .spoiler__btn {
+
                     color: $active-color-title;
-                  
+
                 }
 
             }
+
             &._active {
 
                 .spoiler__btn::before {
@@ -108,7 +92,7 @@
                 border: 0 none;
                 background: none;
                 padding: 3rem 0;
-           
+
                 text-align: left;
 
                 &::after,
@@ -137,58 +121,25 @@
                 }
 
                 .spoler__item-title {
-                    font-size: 3.6rem;
+                    @include title-2;
                     transition: color .3s linear;
                     line-height: 4.3rem;
-                
-                    
-
-                  
-
-
-                    @media (max-width: 1440px) {
-                        & {
-                            font-size: 2.7rem;
-                           
-                        }
-                    }
-                    @media (max-width: 1280px) {
-                        & {
-                            font-size: 2.4rem;
-                   
-                            
-                        }
-                    }
-                    @media (max-width: 768px) {
-                        & {
-                            font-size: 2.7rem;
-                   
-                            
-                        }
-                    }
-                    @media (max-width: 375px) {
-                        & {
-                            font-size: 2.4rem;
-                            line-height: 2.9rem;
-                            
-                        }
-                    }
 
                 }
 
-                @media (max-width: 1440px) {
+                @include media-breakpoint-down(xxl) {
                     & {
-                      padding:2.4rem 0 2rem 0;
-               
-                        
+                        padding: 2.4rem 0 2rem 0;
+
+
                     }
                 }
 
-                @media (max-width: 1280px) {
+                @include media-breakpoint-down(xl) {
                     & {
-                      padding:2.4rem 0 1.6rem 0;
-               
-                        
+                        padding: 2.4rem 0 1.6rem 0;
+
+
                     }
                 }
 
@@ -199,42 +150,39 @@
             }
 
             .spoiler__content {
-                font-size: 2rem;
+                @include content-1;
                 margin-bottom: 2rem;
                 line-height: 3rem;
                 opacity: 0.8;
                 width: 90%;
                 overflow: hidden;
                 max-height: 0;
-               
+
                 cursor: auto;
 
                 transition: max-height .2s linear;
 
-                @media (max-width: 1440px) {
+                @include media-breakpoint-down(xxl) {
                     & {
-                        font-size: 1.5rem;
+
                         width: 75%;
                         line-height: 2.1rem;
                     }
                 }
-                @media (max-width: 1280px) {
+
+                @include media-breakpoint-down(xl) {
                     & {
-                        font-size: 1.4rem;
-               
                         width: 63%;
                     }
                 }
-                @media (max-width: 768px) {
+
+                @include media-breakpoint-down(md) {
                     & {
-                        font-size: 1.5rem;
                         line-height: 2.2rem;
                         width: 100%;
                     }
                 }
-                @media (max-width: 375px) {
-                    
-                }
+
 
             }
         }
