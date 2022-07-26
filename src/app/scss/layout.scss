@@ -77,13 +77,20 @@ button {
 }
 
 [data-barba="container"] {
+	margin: 0 auto;
     position: relative;
 	 display: flex;
 	 flex-direction: column;
 	 justify-content: center;
 	 align-items: center;
+	 @include WidthP(83.33333%, 83.33333%, 83.28125%, 89.58333%, 87.2%);
+	 @include Margin-top(100,80,70,60,50);
+	 @include Margin-bottom(221,240,145,327,12);
 	 h1 {
-		@include font(40,36,32,24);
+		align-self: flex-start;
+		width: 100%;
+		@include Font(64,48,42,42,30);
+		@include Margin-bottom(80,60,56,50,40);
 	 }
 }
 

@@ -10,21 +10,9 @@
     }
 }
 
-@mixin colors($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
-	color: #{$mobile};
 
-	@include media-breakpoint-up(md) {
-		color: #{$tablet-768};
-  }
 
-  @include media-breakpoint-up(xxl) {
-		color: #{$desktop-1440};
-	}
 
-	@include media-breakpoint-up(fhd) {
-		color: #{$desktop-1920};
-  }
-}
 
 @mixin font($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
     font-size: #{$mobile}px;
@@ -41,6 +29,8 @@
         @include upper-fhd-size($desktop-1920, font-size);
     }
 }
+
+
 
 @mixin upper-fhd-size($base-size, $property: width, $coeff: 1) {
     #{$property}: calc((#{$base-size / 1920 * 100 / 2}vw + #{$base-size / 1080 * 100 / 2}vh) * #{$coeff});
@@ -68,4 +58,161 @@
             @content;
         }
     }
+}
+
+
+
+// ############ WidthP
+
+@mixin WidthP($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+	width: #{$mobile};
+
+	@include media-breakpoint-up(md) {
+		width: #{$tablet-768};
+  }
+
+  @include media-breakpoint-up(xl) {
+	width: #{$desktop-1280};
+	}
+
+  @include media-breakpoint-up(xxl) {
+	width: #{$desktop-1440};
+	}
+
+	@include media-breakpoint-up(fhd) {
+		width: #{$desktop-1920};
+  }
+}
+
+// ################### Font
+
+@mixin Font($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+	font-size: #{$mobile}px;
+
+	@include media-breakpoint-up(md) {
+		 font-size: calc(#{$tablet-768}px + #{$desktop-1440 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
+	}
+
+	@include media-breakpoint-up(xl) {
+	  font-size: calc(#{$desktop-1280}px + #{$desktop-1440 - $desktop-1280} * (100vw - #{map-get($breakpoints, xl)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, xl) });
+	  }
+
+	@include media-breakpoint-up(xxl) {
+		 font-size: calc(#{$desktop-1440}px + #{$desktop-1920 - $desktop-1440} * (100vw - #{map-get($breakpoints, xxl)}px) / #{map-get($breakpoints, fhd) - map-get($breakpoints, xxl) });
+	}
+
+	@include media-breakpoint-up(fhd) {
+		 @include upper-fhd-size($desktop-1920, font-size);
+	}
+}
+
+
+// ##############  Margin-top
+
+@mixin Margin-top($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+	margin-top: #{$mobile}px;
+
+	@include media-breakpoint-up(md) {
+		margin-top:  #{$tablet-768}px;
+  }
+
+  @include media-breakpoint-up(xl) {
+	margin-top: #{$desktop-1280}px;
+	}
+
+  @include media-breakpoint-up(xxl) {
+	margin-top: #{$desktop-1440}px;
+	}
+
+	@include media-breakpoint-up(fhd) {
+		margin-top: #{$desktop-1920}px;
+  }
+}
+
+// ############ Margin-bottom
+
+@mixin Margin-bottom($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+	margin-bottom: #{$mobile}px;
+
+	@include media-breakpoint-up(md) {
+		margin-bottom:  #{$tablet-768}px;
+  }
+
+  @include media-breakpoint-up(xl) {
+	margin-bottom: #{$desktop-1280}px;
+	}
+
+  @include media-breakpoint-up(xxl) {
+	margin-bottom: #{$desktop-1440}px;
+	}
+
+	@include media-breakpoint-up(fhd) {
+		margin-bottom: #{$desktop-1920}px;
+  }
+}
+
+// ############## WidthPx
+
+@mixin WidthPx($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+	width: #{$mobile}px;
+
+	@include media-breakpoint-up(md) {
+		width: #{$tablet-768}px;
+  }
+
+  @include media-breakpoint-up(xl) {
+	width: #{$desktop-1280}px;
+	}
+
+  @include media-breakpoint-up(xxl) {
+	width: #{$desktop-1440}px;
+	}
+
+	@include media-breakpoint-up(fhd) {
+		width: #{$desktop-1920}px;
+  }
+}
+
+// ##################  HeghtPx
+
+@mixin HeightPx($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+	height: #{$mobile}px;
+
+	@include media-breakpoint-up(md) {
+		height: #{$tablet-768}px;
+  }
+
+  @include media-breakpoint-up(xl) {
+	height: #{$desktop-1280}px;
+	}
+
+  @include media-breakpoint-up(xxl) {
+	height: #{$desktop-1440}px;
+	}
+
+	@include media-breakpoint-up(fhd) {
+		height: #{$desktop-1920}px;
+  }
+}
+
+// ############ Top
+
+@mixin Top($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile) {
+	top: #{$mobile}px;
+
+	@include media-breakpoint-up(md) {
+		top: #{$tablet-768}px;
+  }
+
+  @include media-breakpoint-up(xl) {
+	top: #{$desktop-1280}px;
+	}
+
+  @include media-breakpoint-up(xxl) {
+	top: #{$desktop-1440}px;
+	}
+
+	@include media-breakpoint-up(fhd) {
+		top: #{$desktop-1920}px;
+  }
 }

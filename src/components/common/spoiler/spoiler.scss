@@ -1,68 +1,69 @@
 .spoiler {
     $root: &;
-	width: 80%;
-	margin: 15px auto;
-	 border: 1px dashed $black;
+	 border-top: 1px solid #E6E6E6;
 	 border-radius: 5px;
-	 padding: 10px 15px;
+	 &:last-child {
+		border-bottom: 1px solid #E6E6E6;
+	 }
+	
 	 &__head {
-
+		@include Margin-top(30,24,20,24,20);
+		
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
-		padding: 5px;
+		align-items: flex-start;
 		cursor: pointer;
 		&-title {
-			@include font(24,20,18,16);
-			@include colors(#318CE7, #F4CA16, #50C878, #006262);
-			font-weight: 700;
+			@include Font(36,27,24,27,24);
+			line-height: 120%;
+			@include WidthP(65%,70%,60%,87%,94%);
 		}
 		&-icon {
 			position: relative;
 			&::before {
 				content: '';
 				position: absolute;
-				width: 25px;
-				height: 3px;
-				top: 0;
+				@include WidthPx(28,20,16,20,16);
+				@include HeightPx(1,1,1,1,1);
+				@include Top(21,15,12,15,12);
 				right: 0;
-				background-color: $black;
+				background-color: #02818A;
 				transform: rotate(90deg);
 				transition: transform .6s ease;
 			}
 			&::after {
 				content: '';
 				position: absolute;
-				width: 25px;
-				height: 3px;
-				top: 0;
+				@include WidthPx(28,20,16,20,16);
+				@include HeightPx(1,1,1,1,1);
+				@include Top(21,15,12,15,12);
 				right: 0;
-				background-color: $black;
+				background-color: #02818A;
 				transform: rotate(0deg);
 				transition: transform .6s ease;
 			}
 		}
 
-		.active &-icon {
+		&-icon.active  {
 			&::before {
 				content: '';
 				position: absolute;
-				width: 25px;
-				height: 3px;
-				top: 0;
+				@include WidthPx(28,20,16,20,16);
+				@include HeightPx(1,1,1,1,1);
+				@include Top(21,15,12,15,12);
 				right: 0;
-				background-color: $black;
+				background-color: #02818A;
 				transform: rotate(135deg);
 				transition: transform .6s ease;
 			}
 			&::after {
 				content: '';
 				position: absolute;
-				width: 25px;
-				height: 3px;
-				top: 0;
+				@include WidthPx(28,20,16,20,16);
+				@include HeightPx(1,1,1,1,1);
+				@include Top(21,15,12,15,12);
 				right: 0;
-				background-color: $black;
+				background-color: #02818A;
 				transform: rotate(45deg);
 				transition: transform .6s ease;
 			}
@@ -72,35 +73,23 @@
 	 }
 
 	 &__collapse {
-		margin-top: 15px;
+		
+		@include Margin-bottom(40,30,24,24,20);
 		height: 0;
 		overflow: hidden;
-
-
-	
-		transition: height .6s ease;
+		transition: all .6s ease;
+	 }
+	 &__collapse.active {
+		@include Margin-top(30,20,16,16,16);
 	 }
 	 &__content {
-		padding: 5px 0;
-		@include font(18,16,14,14);
-
-	}
-	&__ul {
-		&-head {
-			@include font(18,16,14,14);
-			font-weight: 500;
-			margin: 15px 0 10px 0;
-		}
+		line-height: 150%;
+		@include Font(20,15,14,15,15);
+		@include WidthP(65%,70%,60%,87%,94%);
 	}
 }
 
-.list {
-	&__item:not(:last-child) {
-		margin-bottom: 10px;
-	}
-	&__item {
-		color: $themeColor;
-		@include font(16,14,12,12);
-	}
-}
+
+
+
 
