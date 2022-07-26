@@ -5,4 +5,29 @@ block title
 
 block content
     main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
-        h1.h-1!= dataJson.index.title
+        .container
+            h1.title!= dataJson.index.title
+            .content
+                +spoiler({ title: '1. Nullam tincidunt vestibulum porttitor' })
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                +spoiler({ title: '2. Class aptent taciti sociosqu ad litora' })
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                +spoiler({ title: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget' })
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at consectetur distinctio dolor ipsum nulla
+                +spoiler({ title: '4. Mauris ut suscipit tellus' })
+                    p isci aliquam assumenda beatae, delectus deleniti dignissimos dolore eaque earum, excepturi
+                    p isci aliquam assumenda beatae, delectus deleniti dignissimos dolore eaque earum, excepturi
+                    p isci aliquam assumenda beatae, delectus deleniti dignissimos dolore eaque earum, excepturi
+                +spoiler({ title: '5. Nullam placerat porta libero, vel maximus augue euismod eget' })
+                    p isci aliquam assumenda beatae, delectus deleniti dignissimos dolore eaque earum, excepturi
+

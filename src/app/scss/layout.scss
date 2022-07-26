@@ -6,8 +6,8 @@ html {
     text-rendering: optimizeLegibility;
     position: relative;
     //height: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 * {
@@ -103,4 +103,74 @@ button {
 
 [data-modal] {
     cursor: pointer;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 1620px;
+    margin: 0 auto;
+    padding: 100px 160px;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #012B34;
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .container {
+        padding: 80px 120px;
+    }
+
+    .title {
+        font-size: 48px;
+        padding-bottom: 60px;
+    }
+    .title:after {
+        content: ' dolor';
+    }
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .container {
+        padding: 70px 107px;
+    }
+
+    .title {
+        font-size: 42px;
+        padding-bottom: 56px;
+
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 60px 40px;
+    }
+
+    .title {
+        font-size: 42px;
+        padding-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container {
+        padding: 50px 24px;
+    }
+
+    .title {
+        font-size: 30px;
+        padding-bottom: 40px;
+    }
 }
