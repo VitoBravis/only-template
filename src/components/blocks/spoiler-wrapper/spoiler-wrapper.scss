@@ -1,0 +1,31 @@
+$wrapper-padding: (
+    fhd: 100px 160px,
+    xxl: 80px 120px,
+    xl: 70px 107px,
+    md: 60px 40px,
+    xs: 50px 24px,
+);
+$heading-padding-bottom: (
+    fhd: 80px,
+    xxl: 60px,
+    xl: 56px,
+    md: 50px,
+    xs: 40px,
+);
+
+.spoiler-wrapper {
+    $root: &;
+
+    font-family: 'Roboto', serif;
+
+    @each $breakpoint, $value in $wrapper-padding {
+        @include media-value-down($breakpoint, $value, padding);
+    }
+    &__heading {
+        @include font(64, 48, 42, 30);
+        @each $breakpoint, $value in $heading-padding-bottom {
+            @include media-value-down($breakpoint, $value, padding-bottom)
+        };
+        @include media-value-down(xs, 60%, max-width);
+    }
+}

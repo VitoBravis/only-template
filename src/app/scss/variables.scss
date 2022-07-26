@@ -17,3 +17,11 @@ $breakpoints: (
     xxxl: 1600,
     fhd: 1920,
 );
+
+$transitionTime: (
+    xfast: .1s,
+    fast: .15s,
+    normal: .25s,
+    slow: .3s,
+    xslow: .5s
+);

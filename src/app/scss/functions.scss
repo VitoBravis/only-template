@@ -39,3 +39,7 @@
 @function rem($size, $root-font-size: 16) {
     @return  unit($size, $root-font-size) * 1rem;
 }
+
+@function transition-time($name) {
+    @return #{map-get($transitionTime, $name)}
+}

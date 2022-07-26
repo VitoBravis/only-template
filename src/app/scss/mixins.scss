@@ -4,11 +4,23 @@
     }
 }
 
+@mixin media-value-up($breakpoint,$value,$property) {
+    @include media-breakpoint-up($breakpoint){
+        #{$property}: $value;
+    }
+};
+
 @mixin media-breakpoint-down($name) {
-    @media (max-width: #{map-get($breakpoints, $name) - 1}px) {
+    @media (max-width: #{map-get($breakpoints, $name)}px) {
         @content;
     }
 }
+
+@mixin media-value-down($breakpoint,$value,$property) {
+    @include media-breakpoint-down($breakpoint){
+        #{$property}: $value;
+    }
+};
 
 @mixin font($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
     font-size: #{$mobile}px;
@@ -53,3 +65,4 @@
         }
     }
 }
+

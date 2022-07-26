@@ -1,0 +1,25 @@
+{
+    "heading": "Lorem ipsum dolor",
+    "spoilerData": [
+        {
+            "title": "1. Nullam tincidunt vestibulum porttitor",
+            "content": "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis.\n                      Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo\n                    viverra suscipit."
+        },
+        {
+            "title": "2. Class aptent taciti sociosqu ad litora",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum incidunt odio placeat possimus.\n                     Accusantium culpa debitis dolorem illo itaque laudantium magnam pariatur, quidem sunt."
+        },
+        {
+            "title": "3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet aspernatur corporis deserunt,\n                     facere fugiat harum iste libero natus, nisi, non odit quod recusandae sequi similique voluptatem\n                     voluptatum. Accusamus alias, architecto at consectetur corporis culpa debitis dolor doloribus eius\n                     eos est explicabo fugit hic id ipsam laudantium minus nemo, officiis perspiciatis possimus quasi\n                     quos recusandae sequi temporibus veniam. Cupiditate dolorum eius excepturi explicabo maiores,\n                     omnis placeat quam quos saepe sequi. Ad aliquam amet architecto at ea eligendi enim inventore magni\n                     molestias, numquam, repellendus soluta veritatis vitae? Accusantium consequuntur cupiditate dolor\n                     error magni nihil numquam quam ratione vero. Ab ad amet atque cum, distinctio eius eligendi et,\n                     fugit harum laborum libero magnam magni maxime nemo possimus provident sint tempora unde voluptatem."
+        },
+        {
+            "title": "4. Mauris ut suscipit tellus",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at deleniti deserunt, explicabo facere\n                     illo, in ipsam iste itaque modi porro possimus quae quas qui ratione saepe, sapiente soluta veniam."
+        },
+        {
+            "title": "5. Nullam placerat porta libero, vel maximus augue euismod eget",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium autem beatae consectetur\n                     corporis culpa deserunt error in iusto, quae repudiandae similique sit ullam, voluptatem."
+        }
+    ]
+}

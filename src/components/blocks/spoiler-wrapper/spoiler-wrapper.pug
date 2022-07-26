@@ -1,0 +1,5 @@
+mixin spoiler-wrapper(props)
+    ul.spoiler-wrapper&attributes(attributes)
+        h1.spoiler-wrapper__heading #{props.data.heading}
+        each spoiler in props.data.spoilerData
+            +spoiler(spoiler)

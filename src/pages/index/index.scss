@@ -1,0 +1,17 @@
+//$head_font_size: (
+//    fhd: 64px,
+//    xxl: 48px,
+//    xl: 42px,
+//    md: 42px,
+//    xs: 30px
+//);
+//
+//@each $breakpoint, $value in $head_font_size {
+//    @include media($breakpoint, $value, 'font-size')
+//}
+
+.spoilers {
+    display: flex;
+    flex-direction: column;
+    background: black;
+}

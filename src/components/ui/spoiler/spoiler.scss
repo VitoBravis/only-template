@@ -1,0 +1,111 @@
+$spoiler-padding: (
+    fhd: 30px 0,
+    xxl: 24px 0,
+    xl: 20px 0,
+    md: 24px 0,
+    xs: 20px 0,
+);
+$head-font-size: (
+    fhd: 36px,
+    xxl: 27px,
+    xl: 24px,
+    md: 27px,
+    xs: 24px
+);
+$head-line-height: (
+    fhd: 43px,
+    xxl: 32.5px,
+    xl: 29px,
+    md: 32.5px,
+    xs: 29px,
+);
+$content-font-size: (
+    fhd: 20px,
+    xxl: 15px,
+    xl: 14px,
+    md: 15px,
+    xs: 15px
+);
+$content-padding: (
+    fhd: 30px 0 10px,
+    xxl: 24px 0 6px,
+    xl: 20px 0 4px,
+    md: 20px 0 4px,
+    xs: 16px 0 0,
+);
+$content-line-height: (
+    fhd: 30px,
+    xxl: 22.5px,
+    xl: 21px,
+    md: 22.5px,
+    xs: 22.5px,
+);
+
+.spoiler {
+    $root: &;
+
+    border-bottom: 1px solid $borderColor;
+    &:first-of-type {
+        border-top: 1px solid $borderColor;
+    }
+    &.open {
+        & .spoiler__head-title {
+            color: $accentColor;
+        }
+        & .spoiler__head-icon {
+            transform: rotate(-45deg);
+        }
+    }
+
+    @each $breakpoint, $value in $spoiler-padding {
+        @include media-value-down($breakpoint, $value, 'padding')
+    };
+    &__head {
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color transition-time(normal) ease-in-out;
+        @include font(36, 27, 27, 24);
+        @each $breakpoint, $value in $head-line-height {
+            @include media-value-down($breakpoint, $value, 'line-height')
+        }
+        &-title {
+            transition: inherit;
+            @include media-breakpoint-down(md) {
+                max-width: 60%;
+            }
+            @include media-breakpoint-down(xs) {
+                max-width: 90%;
+            }
+        }
+        &-icon {
+            width: 20px;
+            height: 20px;
+            font-weight: lighter;
+            color: $accentColor;
+            transition: transform transition-time('normal') ease-in-out;
+            fill: $accentColor;
+        }
+    }
+    &__content {
+        max-width: 58%;
+        @include font(20 ,15, 15, 15);
+        @each $breakpoint, $value in $content-line-height {
+            @include media-value-down($breakpoint, $value, 'line-height')
+        }
+        @each $breakpoint, $value in $content-padding {
+            @include media-value-down($breakpoint, $value, 'padding')
+        }
+        @include media-breakpoint-down('md') {
+            max-width: 90%;
+        }
+    }
+    &__collapse {
+        height: 0;
+        overflow: hidden;
+        transition: height transition-time('normal') ease-in-out;
+    }
+
+}
