@@ -1,0 +1,94 @@
+.spoiler {
+    border-top: 1px solid #E6E6E6;
+
+    &:last-child {
+        border-bottom: 1px solid #E6E6E6;
+    }
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.spoiler-title {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 120%;
+    color: #012B34;
+    margin: 30px 0;
+}
+
+.open-button {
+    border: 0;
+    background: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:active {
+        transform: rotate(0);
+    }
+}
+
+.spoiler-content {
+    font-size: 20px;
+    line-height: 150%;
+    max-height: 0;
+    max-width: 65%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    &.active {
+        margin-bottom: 40px;
+    }
+
+    & > p {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+
+    .spoiler-content.active {
+        margin-bottom: 30px;
+    }
+
+    .spoiler-title {
+        font-size: 27px;
+    }
+
+    .spoiler-content {
+        font-size: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .spoiler-title {
+        font-size: 24px;
+    }
+
+    .spoiler-content {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .spoiler-title {
+        font-size: 27px;
+    }
+
+    .spoiler-content {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .spoiler-title {
+        font-size: 24px;
+    }
+}
+
