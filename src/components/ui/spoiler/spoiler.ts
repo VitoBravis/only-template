@@ -1,22 +1,23 @@
 import Component, { ComponentProps } from "@/base/component";
 
 export default class Spoiler extends Component {
+    spoilerLabels: HTMLElement[] | undefined;
     constructor(element: ComponentProps) {
         super(element);
-
-        const itemLabel = this.getElements("item-label") as HTMLElement[];
-        itemLabel.forEach((item) =>
-            item.addEventListener("click", this.labelClick)
+        this.spoilerLabels = this.getElements("item-label");
+        this.spoilerLabels.forEach((item) =>
+            item.addEventListener("click", this.handleClick)
         );
+        console.log(this.nRoot);
     }
 
-    labelClick(e: MouseEvent) {
+    handleClick = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
         target.classList.toggle("spoiler__item-label--active");
-        if (target.nextElementSibling) {
-            target.nextElementSibling.classList.toggle(
-                "spoiler__item-content--hidden"
-            );
-        }
-    }
+        target.nextElementSibling!.classList.toggle(
+            "spoiler__item-content--hidden"
+        );
+    };
+
+    destroy = () => {};
 }
