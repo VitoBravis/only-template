@@ -7,7 +7,7 @@ export default {
     async beforeEnter({ next }: ITransitionData) {
         try {
             // Инициализация компонентов
-            const spoilersWrappers = getComponents('spoilers');
+            const spoilersWrappers = getComponents('spoilers', next.container);
 
             for (const spoilersWrapper of spoilersWrappers) {
                 new Spoilers(spoilersWrapper);
