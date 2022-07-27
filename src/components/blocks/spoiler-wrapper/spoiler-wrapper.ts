@@ -5,7 +5,7 @@ import { getComponents } from "@/helpers/helpers";
 export default class SpoilerWrapper extends Component {
     spoilerElements: Array<ComponentProps>;
     spoilers: Array<Spoiler>;
-    opened: Spoiler | undefined;
+    opened: Spoiler | null = null;
 
     constructor(element: ComponentProps) {
         super(element);
@@ -17,21 +17,29 @@ export default class SpoilerWrapper extends Component {
 
     clickHandler = (e: Event) => {
         this.spoilers.some((spoiler: Spoiler) => {
-            if (spoiler.headElement.contains(e.target)) {
+            if (spoiler.headElement?.contains(e.target as Node)) {
                 !spoiler.isOpen ? this.openSpoiler(spoiler) : this.closeSpoiler(spoiler);
                 return true;
             }
         })
     }
 
+    /**
+     * @description Ручка, открывающая спойлер из списка дочерних спойлеров данного контейнера
+     * @param spoiler - Объект спойлера
+     */
     openSpoiler(spoiler: Spoiler) {
         if (this.opened) this.closeSpoiler(this.opened);
         spoiler.open();
         this.opened = spoiler;
     }
-
+    /**
+     * @description Ручка, закрывающая спойлер из списка дочерних спойлеров данного контейнера
+     * @param spoiler - Объект спойлера
+     */
     closeSpoiler(spoiler: Spoiler) {
         spoiler.close();
+        this.opened = null;
     }
 
     destroy = () => {

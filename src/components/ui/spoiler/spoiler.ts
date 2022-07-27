@@ -3,10 +3,9 @@ import { resize } from "@/helpers/helpers";
 
 export default class Spoiler extends Component {
     isOpen = false;
-    // TODO: починить типизацию
-    headElement: HTMLElement | any;
-    contentElement: HTMLElement | any;
-    collapseElement: HTMLElement | any;
+    headElement: HTMLElement | undefined;
+    contentElement: HTMLElement | undefined;
+    collapseElement?: HTMLElement | undefined;
 
     constructor(element: ComponentProps) {
         super(element);
@@ -15,20 +14,34 @@ export default class Spoiler extends Component {
         this.headElement = this.getElement('head');
         this.collapseElement = this.getElement('collapse');
 
-        resize(() => this.isOpen ? this.setCollapseHeight(`${this.contentElement.scrollHeight}px`) : null);
+        resize(() => this.isOpen ? this.setCollapseHeight(this.getScrollHeight()) : null);
     }
 
-    open() {
+    open(): void {
         this.isOpen = true;
         this.nRoot.classList.add('open');
-        this.setCollapseHeight(`${this.contentElement.scrollHeight}px`);
+        this.setCollapseHeight(`${this.contentElement?.scrollHeight}px`);
     }
-    close() {
+    close(): void {
         this.nRoot.classList.remove('open');
         this.setCollapseHeight('0');
         this.isOpen = false;
     }
-    setCollapseHeight(value: String) {
-        this.collapseElement.style.height = value;
+
+    /**
+     * @description Ручка для удобного получения высоты блока __content
+     * @return Значение высоты в px
+     */
+    getScrollHeight(): string {
+        return `${this.contentElement?.scrollHeight}px`;
+    }
+
+    /**
+     * @description Ручка для удобной установки высоты блока __collapse
+     * @param value - Значение высоты блока
+     * @return
+     */
+    setCollapseHeight(value: string): any  {
+        this.collapseElement ? this.collapseElement.style.height = value : null;
     }
 }
