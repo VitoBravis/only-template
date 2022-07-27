@@ -20,6 +20,11 @@
     @include font(36, 27, 27, 24);
 }
 
+@mixin spoilerItemContent {
+    line-height: 150%;
+    @include font(20, 20, 15, 15);
+}
+
 // Заголовки
 .h-1 {
     @include h1;

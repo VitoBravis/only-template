@@ -27,24 +27,24 @@
     /*-----------------------------------------------СТИЛИ СПОЙЛЕРА-----------------------------------------------------*/
 
     &__group {
-        padding: 100px 0px 50px 0px;
+        padding: 100px 0px 50px;
         display: flex;
         flex-direction: column;
 
         @include media-breakpoint-down(xxl) {
-            padding: 80px 0px 40px 0px;
+            padding: 80px 0px 40px;
         }
 
         @include media-breakpoint-down(xl) {
-            padding: 70px 0px 35px 0px;
+            padding: 70px 0px 35px;
         }
 
         @include media-breakpoint-down(md) {
-            padding: 60px 0px 30px 0px;
+            padding: 60px 0px 30px;
         }
 
         @include media-breakpoint-down(xs) {
-            padding: 50px 0px 25px 0px;
+            padding: 50px 0px 25px;
         }
 
         &-title {
@@ -119,8 +119,7 @@
         }
         &-content {
             margin-top: 30px;
-            font-size: 20px;
-            line-height: 150%;
+            @include spoilerItemContent;
             color: $mainColor;
             opacity: 0.8;
             transition: all 0.4s linear 0s;
@@ -128,12 +127,10 @@
 
             @include media-breakpoint-down(xxl) {
                 margin-top: 24px;
-                font-size: 15px;
             }
 
             @include media-breakpoint-down(md) {
                 margin-top: 20px;
-                font-size: 15px;
             }
 
             &--hidden {

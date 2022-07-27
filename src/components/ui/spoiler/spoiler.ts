@@ -14,13 +14,19 @@ export default class Spoiler extends Component {
         const target = e.target as HTMLElement;
         const sibling = target.nextElementSibling as HTMLElement;
         target.classList.toggle("spoiler__item-label--active");
-        if (!sibling.classList.contains("spoiler__item-content--hidden")) {
-            sibling.style.height = `0`;
-            sibling.classList.add("spoiler__item-content--hidden");
-        } else {
-            sibling.style.height = `${sibling.scrollHeight}px`;
-            sibling.classList.remove("spoiler__item-content--hidden");
-        }
+        sibling.classList.contains("spoiler__item-content--hidden")
+            ? this.open(sibling)
+            : this.close(sibling);
+    };
+
+    close = (elem: HTMLElement) => {
+        elem.style.height = `0`;
+        elem.classList.add("spoiler__item-content--hidden");
+    };
+
+    open = (elem: HTMLElement) => {
+        elem.style.height = `${elem.scrollHeight}px`;
+        elem.classList.remove("spoiler__item-content--hidden");
     };
 
     destroy = () => {};
