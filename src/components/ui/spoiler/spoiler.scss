@@ -1,93 +1,93 @@
-.row {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    .body {
-        max-width: 1620px;
-        margin: 40px;
+.title {
+    @include font(64, 48, 42, 30);
+    margin-bottom: 60px;
+    letter-spacing: -1.5px;
 
-        .title {
-            @include font(64, 48, 42, 30);
-            //line-height: 64px;
-            margin-bottom: 60px;
-            letter-spacing: -1.5px;
+}
 
+.spoiler {
+    &__item {
+        padding: 15px 0;
+        border-top: 1px solid $grey;
+        position: relative;
+
+
+        &:last-child {
+            border-bottom: 2px solid $grey;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+
+        h2 {
+            width: 85%;
+
+            span {
+                margin-right: 8px;
+            }
         }
 
+    }
+
+    &__btn::after,
+    &__btn::before {
+        content: '';
+        width: 28px;
+        height: 2px;
+        background-color: $blue;
+        position: absolute;
+        top: 45px;
+        right: 25px;
+        transition: transform .3s ease 0s;
+    }
+
+    @include media-breakpoint-down(xs) {
         .spoiler {
-            &__item {
-                padding: 15px 0;
-                border-top: 1px solid $grey;
-                position: relative;
-
-
-                &:last-child {
-                    border-bottom: 2px solid $grey;
-                }
+            &__btn:after, &__btn:before {
+                width: 16px;
             }
 
-            &__btn {
-                cursor: pointer;
-            }
-
-            &__btn::after,
-            &__btn::before {
-                content: '';
-                width: 28px;
-                height: 2px;
-                background-color: $blue;
-                position: absolute;
-                top: 45px;
-                right: 25px;
-                transition: transform .3s ease 0s;
-            }
-            @include media-breakpoint-down(xs) {
-                .spoiler {
-                    &__btn:after, &__btn:before {
-                        width: 16px;
-                    }
-
-                }
-            }
-            @include media-breakpoint-down(xxl) {
-                .spoiler {
-                    &__btn:after, &__btn:before {
-                        width: 20px;
-                    }
-
-                }
-            }
-
-            &__btn {
-                color: $dark;
-                padding: 10px 0;
-                transition: 0.6s;
-            }
-
-            &__btn.is-active {
-                color: $blue;
-                margin-bottom: 20px;
-            }
-
-            &__btn::before {
-                transform: rotate(-90deg);
-            }
-
-            .is-active::before, {
-                transform: rotate(-46deg);
-            }
-
-            .is-active::after {
-                transform: rotate(46deg);
-            }
-
-            &__text {
-                height: 0;
-                overflow: hidden;
-                transition: height 0.6s;
-            }
         }
+    }
+    @include media-breakpoint-down(xxl) {
+        .spoiler {
+            &__btn:after, &__btn:before {
+                width: 20px;
+            }
+
+        }
+    }
+
+    &__btn {
+        color: $dark;
+        padding: 10px 0;
+        transition: 0.6s;
+    }
+
+    &__btn.is-active {
+        color: $blue;
+        margin-bottom: 20px;
+    }
+
+    &__btn::before {
+        transform: rotate(-90deg);
+    }
+
+    .is-active::before, {
+        transform: rotate(-46deg);
+    }
+
+    .is-active::after {
+        transform: rotate(46deg);
+    }
+
+    &__text {
+        height: 0;
+        width: 80%;
+
+        overflow: hidden;
+        transition: height 0.6s;
     }
 }

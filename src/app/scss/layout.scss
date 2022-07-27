@@ -6,8 +6,8 @@ html {
     text-rendering: optimizeLegibility;
     position: relative;
     //height: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 * {
@@ -104,3 +104,4 @@ button {
 [data-modal] {
     cursor: pointer;
 }
+

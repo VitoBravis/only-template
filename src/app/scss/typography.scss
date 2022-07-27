@@ -1,17 +1,12 @@
 
 @mixin h2 {
     @include font(36, 27, 27, 24);
-    width: 85%;
-    display: flex;
-    span {
-        margin-right: 8px;
-    }
+
 }
 
 @mixin body1 {
     @include font(20, 15, 15, 15);
     color: $black;
-    width: 80%;
 }
 
 

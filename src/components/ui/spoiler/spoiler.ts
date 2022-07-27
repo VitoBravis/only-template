@@ -8,13 +8,11 @@ export default class Spoiler extends Component {
 
     clickHandler = (e: Event) => {
         const spoilerElement = (<HTMLElement>e.target).closest('.spoiler__btn')
-        if(!spoilerElement) return
+        if (!spoilerElement) return
 
         const textBlock = spoilerElement.nextElementSibling as HTMLElement
 
-        if(!textBlock.classList.contains('is-active')) {
-            spoilerElement.classList.toggle('is-active')
-            textBlock.style.height ? textBlock.style.height = '0' : textBlock.style.height = `${textBlock.scrollHeight}px`
-        }
+        spoilerElement.classList.toggle('is-active')
+        textBlock.style.height = textBlock.style.height ? '0' : `${textBlock.scrollHeight}px`
     }
 }
