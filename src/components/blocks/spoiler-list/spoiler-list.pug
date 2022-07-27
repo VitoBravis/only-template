@@ -1,0 +1,4 @@
+mixin spoiler-list(props)
+    ul.spoiler-list&attributes(attributes)
+        each spoiler in dataJson.index
+                +spoiler(spoiler)
