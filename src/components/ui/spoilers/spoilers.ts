@@ -4,11 +4,13 @@ import { getComponents } from "@/helpers/helpers";
 
 export default class Spoilers extends Component {
     private readonly spoilers: WeakMap<Element, Spoiler>;
+    private readonly openSpoilers: Set<Spoiler>;
 
     constructor(element: ComponentProps) {
         super(element);
 
         this.spoilers = new WeakMap();
+        this.openSpoilers = new Set();
 
         const rawSpoilers = getComponents('spoiler', this.nRoot);
 
@@ -22,6 +24,7 @@ export default class Spoilers extends Component {
         }
 
         this.nRoot.addEventListener('click', this.onClick);
+        window.addEventListener('resize', this.onResize);
     }
 
     private onClick = (e: MouseEvent): void => {
@@ -32,13 +35,27 @@ export default class Spoilers extends Component {
                 const spoiler = this.spoilers.get(header);
 
                 if (spoiler !== undefined) {
-                    spoiler.toggle();
+                    const isOpen = spoiler.toggle();
+
+                    if (isOpen) {
+                        this.openSpoilers.add(spoiler);
+                    } else {
+                        this.openSpoilers.delete(spoiler);
+                    }
                 }
             }
         }
     };
 
+    private onResize = (): void => {
+        // "Переоткрываем" каждый открытый спойлер, чтобы обновить высоту тела
+        for (const spoiler of this.openSpoilers) {
+            spoiler.open();
+        }
+    };
+
     destroy = () => {
         this.nRoot.removeEventListener('click', this.onClick);
+        window.removeEventListener('resize', this.onResize);
     }
 }

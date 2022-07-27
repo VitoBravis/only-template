@@ -17,12 +17,17 @@ export default class Spoiler extends Component {
         return this.header;
     }
 
-    public toggle(): void {
-        if (this.nRoot.classList.contains('is-closed')) {
+    /** @return Открыт ли теперь спойлер */
+    public toggle(): boolean {
+        const isClosed = this.nRoot.classList.contains('is-closed')
+
+        if (isClosed) {
             this.open();
         } else {
             this.close();
         }
+
+        return isClosed;
     }
 
     public open(): void {
