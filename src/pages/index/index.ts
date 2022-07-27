@@ -7,7 +7,7 @@ export default {
     async beforeEnter({ next }: ITransitionData) {
         try {
             // Инициализация компонентов
-            new Spoiler(getComponent("spoiler"))
+            new Spoiler(getComponent("spoiler",next.container))
         } catch (e) {
             console.error(e);
         }

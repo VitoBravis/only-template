@@ -1,4 +1,4 @@
-.item-btn {
+.spoiler-item__btn {
     $root: &;
     position: relative;
     width: 20px;
@@ -19,7 +19,7 @@
         content: ' ';
         height: 20px;
         width: 2px;
-        background-color: #02818a;
+        background-color: $accent-color;
         transition: 0.3s;
     }
 

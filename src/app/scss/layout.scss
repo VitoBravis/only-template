@@ -78,6 +78,54 @@ button {
 
 [data-barba="container"] {
     position: relative;
+    padding: 100px 160px 222px 122px;
+
+    @include media-breakpoint-up(xxl) {
+        padding: 80px 120px 240px 108px;
+        }
+    
+        @include media-breakpoint-up(xl) {
+            padding: 70px 107px 145px;
+        }
+    
+        @include media-breakpoint-up(md) {
+            padding: 60px 40px 327px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 50px 24px 12px;
+        }
+}
+
+.main-title {
+    margin-bottom: 80px;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #012b34;
+    
+    @include media-breakpoint-up(xxl) {
+        margin-bottom: 60px;
+        font-size: 48px;
+    }
+    
+    @include media-breakpoint-up(xl) {
+        margin-bottom: 56px;
+        font-size: 42px;
+    }
+    
+    @include media-breakpoint-up(md) {
+        margin-bottom: 50px;
+        font-size: 42px;
+    }
+
+    @include media-breakpoint-down(md) {
+        max-width: 190px;
+        width: 100%;
+        margin-bottom: 40px;
+        font-size: 30px;
+    }
+    
 }
 
 .object-fit {
