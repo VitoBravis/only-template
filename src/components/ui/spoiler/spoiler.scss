@@ -8,13 +8,23 @@
     border-bottom: $border;
     padding: 20px 0;
 
+    @include media-breakpoint-up(md) {
+        padding: 24px 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: 20px 0;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        padding: 24px 0;
+    }
+
+    @include media-breakpoint-up(fhd) {
+        padding: 30px 0;
+    }
+
     &__header {
-        color: $sibur-dna;
-        font: normal 400 24px / 120% 'Roboto';
-        text-align: start;
-
-        transition: color 100ms;
-
         width: 100%;
 
         display: flex;
@@ -23,6 +33,13 @@
     }
 
     &__title {
+        @include h3;
+
+        color: $sibur-dna;
+        text-align: start;
+
+        transition: color 100ms;
+
         flex-grow: 1;
 
         &::before {
@@ -38,11 +55,33 @@
 
         width: $size;
         height: $size;
+
+        @include media-breakpoint-up(md) {
+            $size: 20px;
+
+            width: $size;
+            height: $size;
+        }
+
+        @include media-breakpoint-up(xl) {
+            $size: 16px;
+
+            width: $size;
+            height: $size;
+        }
+
+        @include media-breakpoint-up(fhd) {
+            $size: 20px;
+
+            width: $size;
+            height: $size;
+        }
     }
 
     &__body {
+        @include body1;
+
         color: $black;
-        font: normal 400 15px / 150% 'Roboto';
         opacity: 0.8;
         overflow: hidden;
         white-space: pre-line;
@@ -52,10 +91,22 @@
 
     &__content {
         padding: 16px 0 0;
+
+        @include media-breakpoint-up(xl) {
+            padding: 16px 0 4px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            padding: 20px 0 6px;
+        }
+
+        @include media-breakpoint-up(fhd) {
+            padding: 30px 0 10px;
+        }
     }
 
     &.is-closed {
-        #{$root}__header {
+        #{$root}__title {
             color: $dark-teal;
         }
 
@@ -65,95 +116,6 @@
 
         #{$root}__body {
             max-height: 0 !important;
-        }
-    }
-}
-
-@media (min-width: 768px) {
-    .spoiler {
-        $root: &;
-
-        padding: 24px 0;
-
-        &__header {
-            font-size: 27px;
-        }
-
-        &__icon {
-            $size: 20px;
-
-            width: $size;
-            height: $size;
-        }
-    }
-}
-
-@media (min-width: 1280px) {
-    .spoiler {
-        $root: &;
-
-        padding: 20px 0;
-
-        &__header {
-            font-size: 27px;
-        }
-
-        &__icon {
-            $size: 16px;
-
-            width: $size;
-            height: $size;
-        }
-
-        &__body {
-            font-size: 14px;
-        }
-
-        &__content {
-            padding: 16px 0 4px;
-        }
-    }
-}
-
-@media (min-width: 1440px) {
-    .spoiler {
-        $root: &;
-
-        padding: 24px 0;
-
-        &__body {
-            font-size: 15px;
-        }
-
-        &__content {
-            padding: 20px 0 6px;
-        }
-    }
-}
-
-@media (min-width: 1920px) {
-    .spoiler {
-        $root: &;
-
-        padding: 30px 0;
-
-        &__header {
-            font-size: 36px;
-        }
-
-        &__icon {
-            $size: 20px;
-
-            width: $size;
-            height: $size;
-        }
-
-        &__body {
-            font-size: 15px;
-        }
-
-        &__content {
-            padding: 30px 0 10px;
         }
     }
 }
