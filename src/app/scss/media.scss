@@ -1,4 +1,4 @@
-@media (max-width: 1440px) {
+@include media-breakpoint-down(xxl) {
     [data-barba="container"] {
         max-width: 1212px;
         margin: 80px auto 240px auto;
@@ -45,7 +45,7 @@
     }
 }
 
-@media (max-width: 1280px) {
+@include media-breakpoint-down(xl) {
     [data-barba="container"] {
         max-width: 1066px;
         margin: 70px auto 145px auto;
@@ -93,7 +93,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@include media-breakpoint-down(md) {
     [data-barba="container"] {
         max-width: 688px;
         margin: 60px auto 327px auto;
@@ -140,7 +140,7 @@
     }
 }
 
-@media (max-width: 640px) {
+@include media-breakpoint-down(sm) {
     [data-barba="container"] {
         max-width: 100%;
         padding: 0 20px;
@@ -148,7 +148,7 @@
     }
 }
 
-@media (max-width: 375px) {
+@include media-breakpoint-down(xs) {
     [data-barba="container"] {
         max-width: 327px;
         margin: 50px auto 12px auto;

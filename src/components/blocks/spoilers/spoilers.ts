@@ -21,15 +21,13 @@ export default class Spoilers extends Component {
         if (!collapse.style.height) {
             head.classList.add("active");
             collapse.classList.add("active");
-            collapse.style.cssText = `
-                    height: ${collapse.scrollHeight}px;
-                `;
+            collapse.style.height = `${collapse.scrollHeight}px`;
             return;
         }
 
         head.classList.remove("active");
         collapse.classList.remove("active");
-        collapse.style = "";
+        collapse.style.height = null;
     }
 
     destroy = () => {
