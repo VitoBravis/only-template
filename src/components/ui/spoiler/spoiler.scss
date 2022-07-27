@@ -3,19 +3,18 @@
     border-top: 1px solid $border-color;
     margin-top: 80px;
     margin-bottom: 220px;
-    font-size: 20px;
 
     &__item {
         border-bottom: 1px solid $border-color;
     }
 
     .spoiler__btn {
+        @include spoiler-font;
         text-align: start;
         display: grid;
         grid-template-columns: 1fr auto;
         align-items: center;
         margin: 30px 0;
-        font-size: 36px;
         width: 100%;
         color: $text-color-title;
 
@@ -40,29 +39,25 @@
             color: $active-accent;
         }
 
-        @media (max-width: 1440px) {
+        @include media-breakpoint-down(xxl) {
             margin: 24px 0;
-            font-size: 27px;
         }
-        @media (max-width: 1280px) {
+        @include media-breakpoint-down(xl) {
             margin: 20px 0;
-            font-size: 24px;
         }
-        @media (max-width: 768px) {
+        @include media-breakpoint-down(md) {
             margin: 24px 0;
-            font-size: 27px;
         }
-        @media (max-width: 375px) {
+        @include media-breakpoint-down(xs) {
             margin: 20px 0;
-            font-size: 24px;
         }
     }
 
     &__information {
+        @include information-font;
         overflow: hidden;
         max-height: 0;
         transition: max-height 0.5s;
-        font-size: 20px;
         color: $text-color-information;
 
         p {
@@ -73,9 +68,7 @@
             margin-bottom: 40px;
         }
 
-        @media (max-width: 1440px) {
-            font-size: 15px;
-
+        @include media-breakpoint-down(xxl) {
             & > :first-child {
                 margin-top: 0;
             }
@@ -83,17 +76,14 @@
                 margin-bottom: 30px;
             }
         }
-        @media (max-width: 1280px) {
-            font-size: 14px;
-
+        @include media-breakpoint-down(xl) {
             & > :last-child {
                 margin-bottom: 24px;
             }
         }
-        @media (max-width: 768px) {
-            font-size: 15px;
+        @include media-breakpoint-down(md) {
         }
-        @media (max-width: 375px) {
+        @include media-breakpoint-down(xs) {
             & > :last-child {
                 margin-bottom: 20px;
             }

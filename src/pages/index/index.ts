@@ -6,7 +6,7 @@ export default {
     namespace: "common",
     async beforeEnter({ next }: ITransitionData) {
         try {
-            const spoilers = getComponents("spoiler");
+            const spoilers = getComponents("spoiler", next.container);
 
             if (spoilers.length) {
                 for (const spoiler of spoilers) {

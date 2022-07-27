@@ -21,8 +21,6 @@ export default class Spoiler extends Component {
             information.style.maxHeight = `${information.scrollHeight}px`;
         }
 
-        headBtn.classList.contains("spoiler__btn_activ")
-            ? headBtn.classList.remove("spoiler__btn_activ")
-            : headBtn.classList.add("spoiler__btn_activ");
+        headBtn.classList.toggle("spoiler__btn_activ");
     };
 }

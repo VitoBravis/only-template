@@ -1,8 +1,7 @@
-
 @mixin h1 {
     line-height: 1;
     font-weight: normal;
-    @include font(30, 60, 60, 80);
+    @include font(64, 48, 42, 30);
 }
 
 @mixin body1 {
@@ -10,12 +9,20 @@
     line-height: 1.5;
 }
 
+@mixin spoiler-font {
+    @include font(36, 27, 24, 24);
+    line-height: 1;
+}
+
+@mixin information-font {
+    @include font(20, 15, 14, 15);
+    line-height: 1;
+}
 
 // Заголовки
 .h-1 {
     @include h1;
 }
-
 
 // Обычный текст
 
