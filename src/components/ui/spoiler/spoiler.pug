@@ -1,6 +1,4 @@
-mixin spoiler(spoiler, index)
-    li.spoiler__item.item&attributes(attributes)
-        header.item__title.title
-            h2.title__text= (index + 1) + '. ' + spoiler.title
-            span.title__icon
-        p.spoiler__item__content= spoiler.content
+mixin spoiler(props)
+    ul.spoiler&attributes(attributes)
+        each spoiler, index in props
+            +spoiler-item({ spoiler, index })

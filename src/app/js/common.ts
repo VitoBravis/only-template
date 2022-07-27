@@ -1,6 +1,5 @@
 import 'core-js/stable';
 import '../scss/common.scss';
-import '@/pages/index/index.scss';
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
 import common from '@/pages/index/index';

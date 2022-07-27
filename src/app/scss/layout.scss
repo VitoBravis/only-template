@@ -26,6 +26,24 @@ body {
     }
 
     min-height: 100vh;
+    @include flex-column;
+    justify-content: flex-start;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 160px;
+
+    @include upper-fhd-size(80, 'gap');
+
+    @each $key, $value in $main-gap {
+        @include media(gap, $value, $key);
+    }
+
+    @each $key, $value in $main-padding {
+        @include media(padding, $value, $key);
+    }
 }
 
 h1, h2, h3, h4, h5, p, a {

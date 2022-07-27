@@ -1,5 +1,5 @@
 import Spoiler from '@/components/ui/spoiler/spoiler';
-import { getComponents } from '@/helpers/helpers';
+import { getComponent, getComponents } from '@/helpers/helpers';
 import { ITransitionData } from '@barba/core/dist/core/src/defs';
 
 export default {
@@ -7,8 +7,9 @@ export default {
     async beforeEnter({ next }: ITransitionData) {
         try {
             // Инициализация компонентов
-            const spoilers = getComponents('spoiler__item');
-            spoilers.forEach((spoiler) => new Spoiler(spoiler));
+            if (getComponent('spoiler', next.container).component) {
+                new Spoiler(getComponent('spoiler', next.container));
+            }
         } catch (e) {
             console.error(e);
         }

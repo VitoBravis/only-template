@@ -1,0 +1,7 @@
+mixin spoiler-item(props)
+    li.spoiler-item.item&attributes({ 'data-id': `${props.index}` })
+        p.spoiler-item__title.title
+            span.title__text= `${props.index + 1}. ${props.spoiler.title}`
+            span.title__icon
+        p.spoiler-item__content= props.spoiler.content
+

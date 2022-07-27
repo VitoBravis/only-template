@@ -17,3 +17,19 @@ $breakpoints: (
     xxxl: 1600,
     fhd: 1920,
 );
+
+$main-gap: (
+    fhd: 80px,
+    xxl: 60px,
+    xl: 56px,
+    md: 50px,
+    xs: 40px,
+);
+
+$main-padding: (
+    fhd: 100px 160px,
+    xxl: 80px 120px,
+    xl: 70px 107px,
+    md: 60px 40px,
+    xs: 50px 24px,
+);

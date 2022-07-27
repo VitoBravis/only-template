@@ -2,7 +2,8 @@
 @mixin h1 {
     line-height: 1;
     font-weight: normal;
-    @include font(30, 60, 60, 80);
+    @include font(64, 48, 42, 30);
+    color: $color-title;
 }
 
 @mixin body1 {
