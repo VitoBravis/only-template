@@ -8,15 +8,19 @@ export default class Spoiler extends Component {
         this.spoilerLabels.forEach((item) =>
             item.addEventListener("click", this.handleClick)
         );
-        console.log(this.nRoot);
     }
 
     handleClick = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
+        const sibling = target.nextElementSibling as HTMLElement;
         target.classList.toggle("spoiler__item-label--active");
-        target.nextElementSibling!.classList.toggle(
-            "spoiler__item-content--hidden"
-        );
+        if (!sibling.classList.contains("spoiler__item-content--hidden")) {
+            sibling.style.height = `0`;
+            sibling.classList.add("spoiler__item-content--hidden");
+        } else {
+            sibling.style.height = `${sibling.scrollHeight}px`;
+            sibling.classList.remove("spoiler__item-content--hidden");
+        }
     };
 
     destroy = () => {};
