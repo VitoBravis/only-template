@@ -1,0 +1,37 @@
+.h-1 {
+    margin: 78px 0;
+    font-size: 64px;
+
+    @include media-breakpoint-down('xxl') {
+        margin-top: 66px;
+        margin-bottom: 52px;
+        font-size: 48px;
+    }
+
+    @include media-breakpoint-down('xl') {
+        margin-top: 56px;
+        margin-bottom: 48px;
+        font-size: 42px;
+    }
+
+    @include media-breakpoint-down('md') {
+        margin-top: 46px;
+        margin-bottom: 42px;
+        font-size: 42px;
+    }
+
+    @include media-breakpoint-down('xs') {
+        margin-top: 36px;
+        margin-bottom: 32px;
+        font-size: 30px;
+    }
+}
+
+.spoiler__list {
+    &::before {
+        content: '';
+        display: block;
+        height: 1px;
+        background: $lain;
+    }
+}

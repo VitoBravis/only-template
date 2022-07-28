@@ -3,6 +3,14 @@
 
     margin: 28px 0;
 
+    &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background: $lain;
+        margin-top: 28px;
+    }
+
     &__head {
         display: flex;
         justify-content: space-between;
@@ -46,7 +54,7 @@
                 color: $siburdna;
 
                 &-icon {
-                    @include transform-rotate(45deg);
+                    transform: rotate(45deg);
                 }
             }
 
@@ -61,6 +69,10 @@
 
     @include media-breakpoint-down('xxl') {
         margin: 22px 0;
+
+        &::after {
+            margin-top: 22px;
+        }
 
         &__head {
 
@@ -94,6 +106,10 @@
     @include media-breakpoint-down('xl') {
         margin: 18px 0;
 
+        &::after {
+            margin-top: 18px;
+        }
+
         &__head {
 
             &-title {
@@ -121,6 +137,10 @@
 
     @include media-breakpoint-down('md') {
         margin: 22px 0;
+
+        &::after {
+            margin-top: 22px;
+        }
 
         &__head {
 
@@ -153,6 +173,10 @@
 
     @include media-breakpoint-down('xs') {
         margin: 18px 0;
+
+        &::after {
+            margin-top: 18px;
+        }
 
         &__head {
 
