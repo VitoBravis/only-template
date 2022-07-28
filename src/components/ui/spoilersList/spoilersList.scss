@@ -69,26 +69,27 @@
         transform: rotate(45deg);
     }
 
-    &__icon::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 70%;
-        height: 2px;
-        background-color: $activeColor;
-        transform: translate(-50%, -50%)
-    }
+    &__icon {
 
-    &__icon::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 2px;
-        height: 70%;
-        background-color: $activeColor;
-        transform: translate(-50%, -50%)
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $activeColor;
+            transform: translate(-50%, -50%)
+        }
+
+        &:before {
+            width: 70%;
+            height: 2px;
+        }
+
+        &:after {
+            width: 2px;
+            height: 70%;
+        }
     }
 
     &__text {
