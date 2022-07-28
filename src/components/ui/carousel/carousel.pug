@@ -1,0 +1,10 @@
+mixin carousel(props)
+    .carousel&attributes(attributes)
+        +button.btn.btn_md.btn_circle.btn_circle_md.btn_white.carousel__btn.carousel__btn_prev
+            +svg('arrow')(width='1em' height='1em')
+        .swiper.carousel__inner
+            .swiper-wrapper
+                each slide in props
+                    +carousel-item(slide)
+        +button.btn.btn_circle.btn_circle_md.btn_white.carousel__btn.carousel__btn_next
+            +svg('arrow')(width='1em' height='1em')

@@ -1,0 +1,5 @@
+mixin counter(props)
+    .counter&attributes(attributes)
+        +button.counter__btn.btn.btn_circle.btn_circle_sm.btn_primary(data-action='decrement') &minus;
+        span.counter__value 0
+        +button.counter__btn.btn.btn_circle.btn_circle_sm.btn_primary(data-action='increment') &plus;

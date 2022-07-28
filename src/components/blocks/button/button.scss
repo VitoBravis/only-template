@@ -1,10 +1,21 @@
 .btn {
     font-size: 1rem;
+
+    svg {
+        width: 1em;
+        height: 1em;
+    }
 }
 
 .btn_primary {
     color: $white;
     background-color: $primary;
+}
+
+.btn_white {
+    color: $primary;
+    background-color: $white;
+    box-shadow: 0 0 em(15) 0 rgba(56, 119, 238, 0.1);
 }
 
 .btn_rounded {
@@ -13,7 +24,18 @@
 }
 
 .btn_circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.btn_circle_md {
+    width: em(60);
+    height: em(60);
+}
+
+.btn_circle_sm {
     width: em(40);
     height: em(40);
-    border-radius: 50%;
 }

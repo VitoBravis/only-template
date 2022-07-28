@@ -1,0 +1,19 @@
+.counter {
+    display: inline-grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    column-gap: rem(50);
+}
+
+.counter__value {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: em(56, 20);
+    height: em(56, 20);
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: rem(20);
+    color: $gray-dark;
+}

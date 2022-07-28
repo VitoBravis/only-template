@@ -5,6 +5,10 @@ block title
 
 block content
     div(data-barba="container" data-barba-namespace="common" data-page-namespace="counter").content-wrapper
-        +counter-section
+        //- +counter-section
+
+        +main-counter
+
+        +carousel(dataJson.index.slides)
 
         +footer
