@@ -1,0 +1,19 @@
+$grid-columns: 24;
+$col-width: 100vw / $grid-columns;
+
+$offset-sides: (
+    desktop: $col-width,
+    tablet: vw(40, md),
+    mobile: vw(24, xs)
+);
+
+$breakpoints: (
+    xs: 375,
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280,
+    xxl: 1440,
+    xxxl: 1600,
+    fhd: 1920,
+);

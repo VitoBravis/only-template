@@ -1,0 +1,12 @@
+.header {
+    $root: &;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+        fill: black;
+        width: 40px;
+        height: 18px;
+    }
+}

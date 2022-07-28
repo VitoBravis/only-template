@@ -1,0 +1,15 @@
+.container {
+
+    @include media-breakpoint-down(xxl) {
+        padding: 70px 107px 145px 107px;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 60px 40px 327px 40px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        padding: 50px 24px 20px 24px;
+    }
+
+}

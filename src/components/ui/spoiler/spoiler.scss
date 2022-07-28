@@ -1,0 +1,20 @@
+.spoiler {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 56px;
+
+    &__element {
+        @include element-1;
+    }
+
+    &__head {
+        @include text-1;
+    }
+
+    &__collapse {
+        transition: max-height 1s;
+        max-height: 0;
+        overflow: hidden;
+    }
+}

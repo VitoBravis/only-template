@@ -1,0 +1,17 @@
+{
+    "jsc": {
+        "parser": {
+            "syntax": "typescript",
+            "dynamicImport": true,
+            "privateMethod": true
+        },
+        "target": "es2015"
+    },
+    "module": {
+        "type": "umd"
+    },
+    "minify": true,
+    "env": {
+        "targets": "last 2 versions, not dead"
+    }
+}

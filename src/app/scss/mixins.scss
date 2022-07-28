@@ -1,0 +1,55 @@
+@mixin media-breakpoint-up($name) {
+    @media (min-width: #{map-get($breakpoints, $name)}px) {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name) {
+    @media (max-width: #{map-get($breakpoints, $name) - 1}px) {
+        @content;
+    }
+}
+
+@mixin font($desktop-1920, $desktop-1440, $tablet-768, $mobile) {
+    font-size: #{$mobile}px;
+
+    @include media-breakpoint-up(md) {
+        font-size: calc(#{$tablet-768}px + #{$desktop-1440 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
+    }
+
+    @include media-breakpoint-up(xxl) {
+        font-size: calc(#{$desktop-1440}px + #{$desktop-1920 - $desktop-1440} * (100vw - #{map-get($breakpoints, xxl)}px) / #{map-get($breakpoints, fhd) - map-get($breakpoints, xxl) });
+    }
+
+    @include media-breakpoint-up(fhd) {
+        @include upper-fhd-size($desktop-1920, font-size);
+    }
+}
+
+@mixin upper-fhd-size($base-size, $property: width, $coeff: 1) {
+    #{$property}: calc((#{$base-size / 1920 * 100 / 2}vw + #{$base-size / 1080 * 100 / 2}vh) * #{$coeff});
+}
+
+@mixin offset-sides($property: 'padding') {
+    #{$property}-left: #{map-get($offset-sides, mobile)};
+    #{$property}-right: #{map-get($offset-sides, mobile)};
+
+    @include media-breakpoint-up(md) {
+        #{$property}-left: #{map-get($offset-sides, tablet)};
+        #{$property}-right: #{map-get($offset-sides, tablet)};
+    }
+
+    @include media-breakpoint-up(lg) {
+        #{$property}-left: #{map-get($offset-sides, desktop)};
+        #{$property}-right: #{map-get($offset-sides, desktop)};
+    }
+}
+
+@mixin safari {
+    // Safari 11+
+    @media not all and (min-resolution:.001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            @content;
+        }
+    }
+}

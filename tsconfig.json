@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Recommended",
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "umd",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "typeRoots": [
+            "./src/app/types/*",
+            "./node_modules/@types",
+            "./src/app/js/base"
+        ],
+        "moduleResolution": "node",
+        "baseUrl": "src",
+        "paths": {
+            "@/helpers/*": ["app/js/helpers/*"],
+            "@/base/*": ["app/js/base/*"],
+            "@/variables/*": ["app/js/variables/*"],
+            "@/types/*": ["app/js/types/*"],
+            "@/components/*": ["components/*"],
+            "@/pages/*": ["pages/*"]
+        }
+    }
+}

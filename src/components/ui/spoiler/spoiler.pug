@@ -1,0 +1,9 @@
+mixin spoiler(props)
+    ul.spoiler&attributes(attributes)
+        each spoiler in props
+            li.spoiler__element
+                button.spoiler__head
+                    span.spoiler__head-title!= spoiler.title
+                    +svg('add')(width=30,height=30)
+                .spoiler__collapse
+                    .spoiler__content!= spoiler.text

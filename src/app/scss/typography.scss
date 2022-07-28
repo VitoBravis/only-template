@@ -1,0 +1,62 @@
+@mixin h1 {
+    line-height: 1;
+    font-weight: normal;
+    @include font(30, 60, 60, 80);
+}
+
+@mixin body1 {
+    @include font(14, 14, 16, 16);
+    line-height: 1.5;
+}
+
+@mixin text-1 {
+    @include font(16, 32, 16, 16);
+    color:$black;
+    font-weight: 400;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    svg {
+        transition: transform 1s;
+    }
+
+    &:hover,
+    &:focus {
+        color: $blue;
+    }
+
+    &_active {
+        svg {
+            position: relative;
+            bottom: 10px;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+@mixin element-1{
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    cursor: pointer;
+}
+
+
+// Заголовки
+.h-1 {
+    @include h1;
+}
+
+
+// Обычный текст
+
+.body-1 {
+    @include body1;
+}
+
+
