@@ -1,45 +1,6 @@
 mixin spoiler-wrapper(props)
     .spoiler-wrapper&attributes(attributes)
-        h2.spoiler__title= 'Lorem ipsum dolor'
-        +spoiler([
-            {
-                title: "1. Nullam tincidunt vestibulum porttitor",
-                fields:[
-                    {text: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."}
-                ]
-            },
-            {
-                title: "2. Class aptent taciti sociosqu ad litora",
-                fields:[
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."}
-                ]
-            },
-            {
-                title: "3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget",
-                fields:[
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."}
-                ]
-            },
-            {
-                title: "4. Mauris ut suscipit tellus",
-                fields:[
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."}
-                ]
-            },
-            {
-                title: "5. Nullam placerat porta libero, vel maximus augue euismod eget",
-                fields:[
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."},
-                    {text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."}
-                ]
-            }
-            ])
+        h2.title!= props.title
+        ul
+            each data in props.spoilers
+                +spoiler(data)

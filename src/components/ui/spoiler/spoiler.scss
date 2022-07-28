@@ -1,11 +1,6 @@
 .spoiler {
     $root: &;
     
-    &__line{
-        border: 1px solid #E6E6E6;
-        margin: 0;
-    }
-    
     &__head{
         display: flex;
         align-items: center;
@@ -20,9 +15,35 @@
         line-height: 120%;
         color: $main-text;
         text-align: left;
+        margin: 30px 0;
+        
+        @include spoilerHeadTitle;
+
+        @include media-breakpoint-down(xxl){
+            margin: 24px 0 20px 0;
+        }
+
+        @include media-breakpoint-down(xl){
+            margin: 20px 0 16px 0;
+        }
+
+        @include media-breakpoint-down(md){
+            margin: 24px 0 16px 0;
+        }
+
+        @include media-breakpoint-down(xs){
+            margin: 20px 0 16px 0;
+        }
     }
 
-    &__element.is-open &__head-title{
+    &{
+        border-top: 1px solid #E6E6E6;
+    }
+    &:last-of-type{
+        border-bottom: 1px solid #E6E6E6;
+    }
+
+    &.is-open &__head-title{
         color: $primary;
     }
 
@@ -39,6 +60,25 @@
         line-height: 150%;
         color: $secondary-text;
         opacity: 0.8;
+        margin: 0 0 40px 0;
+
+        @include spoilerContentText;
+
+        @include media-breakpoint-down(xxl){
+            margin: 0 0 30px 0;
+        }
+
+        @include media-breakpoint-down(xl){
+            margin: 0 0 24px 0;
+        }
+
+        @include media-breakpoint-down(md){
+            margin: 0 0 24px 0;
+        }
+
+        @include media-breakpoint-down(xs){
+            margin: 0 0 20px 0;
+        }
     }
 
     &__head-icon{
@@ -48,6 +88,10 @@
         width: 20px;
         height: 20px;
         
+        @include media-breakpoint-down(xxl){
+            width: 15px;
+            height: 15px;
+        }
     }
     &__head-icon:before,
     &__head-icon:after {
@@ -57,6 +101,10 @@
         width: 2px;
         background-color: $primary;
         transition: all 0.3s;
+
+        @include media-breakpoint-down(xxl){
+            height: 15px;
+        }
     }
     
     &__head-icon:before {
@@ -66,74 +114,10 @@
         transform: rotate(-270deg);
     }
     
-    &__element.is-open &__head-icon:before {
+    &.is-open &__head-icon:before {
         transform: rotate(45deg);
     }
-    &__element.is-open &__head-icon:after {
+    &.is-open &__head-icon:after {
         transform: rotate(-45deg);
-    }
-
-    @media (max-width:1920px) {
-        &__head-title{
-            font-size: 36px;
-            margin: 30px 0;
-        }
-        &__content-text{
-            font-size: 20px;
-            margin: 0 0 40px 0;
-        }
-    }
-    
-    @media (max-width:1440px) {
-        &__head-title{
-            font-size: 27px;
-            margin: 24px 0 20px 0;
-        }
-        &__content-text{
-            font-size: 15px;
-            margin: 0 0 30px 0;
-        }
-    
-        &__head-icon {
-            width: 15px;
-            height: 15px;
-        }
-        &__head-icon:before,
-        &__head-icon:after {
-            height: 15px;
-        }
-    }
-    
-    @media (max-width:1280px) {
-        &__head-title{
-            font-size: 27px;
-            margin: 20px 0 16px 0;
-        }
-        &__content-text{
-            font-size: 14px;
-            margin: 0 0 24px 0;
-        }
-    }
-    
-    @media (max-width:768px) {
-        &__head-title{
-            font-size: 27px;
-            margin: 24px 0 16px 0;
-        }
-        &__content-text{
-            font-size: 15px;
-            margin: 0 0 24px 0;
-        }
-    }
-    
-    @media (max-width:375px) {
-        &__head-title{
-            font-size: 24px;
-            margin: 20px 0 16px 0;
-        }
-        &__content-text{
-            font-size: 15px;
-            margin: 0 0 20px 0;
-        }
     }
 }

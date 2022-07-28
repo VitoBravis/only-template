@@ -1,61 +1,41 @@
 .spoiler-wrapper{
     $root: &;
+    margin: 100px 160px;
 
-    h2{
+    @include media-breakpoint-down(xxl){
+        margin: 80px 120px;
+    }
+    @include media-breakpoint-down(xl){
+        margin: 70px 107px;
+    }
+    @include media-breakpoint-down(md){
+        margin: 60px 40px;
+    }
+    @include media-breakpoint-down(xs){
+        margin: 50px 24px;
+    }
+
+    .title{
         font-style: normal;
         font-weight: 400;
         line-height: 100%;
         letter-spacing: -0.02em;
         color: $main-text;
-    }
-    
-    @media  (max-width:1920px) {
-        h2 {
-            font-size: 64px;
-            margin: 0 0 80px 0;
-        }
-        &{
-            margin: 100px 160px;
-        }
-    }
-    
-    @media  (max-width:1440px) {
-        h2 {
-            font-size: 48px;
+        margin: 0 0 80px 0;
+
+        @include spoilerWrapperTitle;
+        
+        @include media-breakpoint-down(xxl){
             margin: 0 0 60px 0;
         }
-        &{
-            margin: 80px 120px;
-        }
-    }
-    
-    @media (max-width:1280px) {
-        h2 {
-            font-size: 42px;
+        @include media-breakpoint-down(xl){
             margin: 0 0 56px 0;
         }
-        &{
-            margin: 70px 107px;
-        }
-    }
-    
-    @media (max-width:768px) {
-        h2 {
-            font-size: 42px;
+        @include media-breakpoint-down(md){
             margin: 0 0 50px 0;
         }
-        &{
-            margin: 60px 40px;
-        }
-    }
-    
-    @media (max-width:375px) {
-        h2 {
-            font-size: 30px;
+        @include media-breakpoint-down(xs){
             margin: 0 0 40px 0;
         }
-        &{
-            margin: 50px 24px;
-        }
-    }
+    }    
 }

@@ -10,6 +10,17 @@
     line-height: 1.5;
 }
 
+@mixin spoilerHeadTitle{
+    @include font(36,27,27,24);
+}
+
+@mixin spoilerContentText{
+    @include font(20,15,15,15);
+}
+
+@mixin spoilerWrapperTitle{
+    @include font(64,48,42,30);
+}
 
 // Заголовки
 .h-1 {
