@@ -1,24 +1,46 @@
-
-@mixin h1 {
+@mixin h2-spoiler {
+    letter-spacing: -0.02em;
     line-height: 1;
     font-weight: normal;
-    @include font(30, 60, 60, 80);
+    @include font(64, 48, 42, 30);
 }
 
-@mixin body1 {
-    @include font(14, 14, 16, 16);
+@mixin h3-spoiler {
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-weight: normal;
+    @include font(36, 27, 24, 24);
+}
+
+@mixin spoiler-text {
+    @include font(16, 16, 14, 14);
     line-height: 1.5;
 }
 
 
+
 // Заголовки
-.h-1 {
-    @include h1;
+
+div.spoiler {
+    h2 {
+        @include h2-spoiler
+    }
+
+    div.spoiler__title {
+        h3 {
+            @include h3-spoiler
+        }
+    }
 }
+
 
 
 // Обычный текст
 
-.body-1 {
-    @include body1;
+div.spoiler__text {
+    p {
+        @include spoiler-text;
+    }
 }
+
+

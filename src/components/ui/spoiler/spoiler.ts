@@ -8,7 +8,7 @@ export default class Spoiler extends Component {
     }
 
     clickHandler = (e: Event) => {
-        const spoilerContent = (<HTMLElement>e.target).closest('.title-spoiler')
+        const spoilerContent = (<HTMLElement>e.target).closest('.spoiler__title')
 
         if(spoilerContent){
 
