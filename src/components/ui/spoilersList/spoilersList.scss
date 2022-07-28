@@ -148,7 +148,6 @@
 
     &__title {
         @include header();
-        // color: $mainColor;
     }
 
     @media($small) {
