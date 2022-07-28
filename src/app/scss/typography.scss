@@ -4,18 +4,6 @@
     @include font(30, 60, 60, 80, 80);
 }
 
-@mixin body1 {
-    @include font(14, 14, 16, 16, 16);
-    line-height: 1.5;
-}
-
-
-// Заголовки
-
-.h-1 {
-    @include h1;
-}
-
 @mixin header($color: $mainColor) {
     @include font(64, 48, 42, 42, 30);
     color: $color;
@@ -29,10 +17,9 @@
     @include font(36, 27, 24, 27, 24);
 }
 
-// Обычный текст
-
-.body-1 {
-    @include body1;
+@mixin body1 {
+    @include font(14, 14, 16, 16, 16);
+    line-height: 1.5;
 }
 
 @mixin p1 ($color: $secondaryColor) {
@@ -40,4 +27,19 @@
     color: $color;
     font-family: $font-roboto;
     @include font(15, 15, 14, 15, 15);
+}
+
+
+// Заголовки
+
+.h-1 {
+    @include h1;
+}
+
+
+
+// Обычный текст
+
+.body-1 {
+    @include body1;
 }
