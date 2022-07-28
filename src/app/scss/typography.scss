@@ -1,13 +1,22 @@
 
 @mixin h1 {
-    line-height: 1;
-    font-weight: normal;
-    @include font(30, 60, 60, 80);
+    line-height: 100%;
+    @include font(64, 48, 42, 42);
 }
 
 @mixin body1 {
     @include font(14, 14, 16, 16);
     line-height: 1.5;
+}
+
+@mixin spoiler-title-1 {
+    @include font(36, 27, 24, 22);
+    line-height: 120%;
+}
+
+@mixin spoiler-text-1 {
+    @include font(20, 15, 14, 15);
+    line-height: 150%;
 }
 
 
@@ -22,3 +31,5 @@
 .body-1 {
     @include body1;
 }
+
+

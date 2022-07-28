@@ -1,10 +1,3 @@
-:root {
-    --primary: #012b34;
-    --secondary: #000402;
-    --tertiary: #02818a;
-    --divider: #e6e6e6;
-}
-
 html {
     font-family: $font-roboto;
     font-weight: normal;
@@ -13,8 +6,8 @@ html {
     text-rendering: optimizeLegibility;
     position: relative;
     //height: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 * {
@@ -112,6 +105,15 @@ button {
     cursor: pointer;
 }
 
+
+.button {
+    display: flex;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
 .container {
     width: 100%;
     max-width: 1620px;
@@ -120,125 +122,148 @@ button {
 }
 
 .main {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding-top: 100px;
+    }
+
+    &__heading {
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        color: $primary;
+
+        @include h1;
+    }
+
+    &__list {
+    }
 }
 
-.main__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-    padding-top: 100px;
-}
-
-.main__heading {
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 100%;
-    letter-spacing: -0.02em;
-    color: var(--primary);
-}
-
-.main__list {
-}
 
 .list {
     padding-bottom: 20px;
-}
 
-.list__item {
-    position: relative;
-    padding: 30px 0;
-}
+    &__item {
+        position: relative;
+        padding: 30px 0;
 
-.list__item:last-child::after {
-    content: "";
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    background: var(--divider);
-}
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: $divider;
+        }
 
-.list__item::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 1px;
-    background: var(--divider);
+        &:last-child::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            background: $divider;
+        }
+    }
 }
 
 
 /* media */
+.container {
+    $root: &;
+    // Стили для 1920
 
-@media screen and (max-width: 1440px) {
-    .container {
+    @include media-breakpoint-down(xxl) {
+        // Стили для 1440 и меньше
         max-width: 1232px;
     }
 
-    .main__heading {
-        font-size: 48px;
-    }
-
-    .main__wrapper {
-        padding-top: 80px;
-        gap: 60px;
-    }
-
-    .list__item {
-        padding: 24px 0;
-    }
-
-}
-
-@media screen and (max-width: 1280px) {
-    .container {
+    @include media-breakpoint-down(xl) {
+        // Стили для 1280 и меньше
         max-width: 1086px;
     }
 
-    .main__heading {
-        font-size: 42px;
-    }
-
-    .main__wrapper {
-        padding-top: 70px;
-        gap: 56px;
-    }
-    .list__item {
-        padding: 20px 0;
-    }
-
-}
-
-@media screen and (max-width: 768px) {
-    .container {
+    @include media-breakpoint-down(md) {
+        // Стили для 768 и меньше
         max-width: 708px;
     }
 
-    .main__heading {
-        font-size: 42px;
-    }
-
-    .list__item {
-        padding: 24px 0;
-    }
-
-    .main__wrapper {
-        padding-top: 60px;
-        gap: 50px;
+    @include media-breakpoint-down(xs) {
+        // Стили для 375 и меньше
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 640px) {
-    .spoiler__title {
-        max-width: 289px;
-        font-size: 24px;
+.main {
+    $root: &;
+    // Стили для 1920
+
+    @include media-breakpoint-down(xxl) {
+        // Стили для 1440 и меньше
+
+        #{$root}__wrapper {
+            padding-top: 80px;
+            gap: 60px;
+        }
     }
 
-    .spoiler__text {
-        font-size: 15px;
+    @include media-breakpoint-down(xl) {
+
+
+        #{$root}__wrapper {
+            padding-top: 70px;
+            gap: 56px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+
+
+        #{$root}__wrapper {
+            padding-top: 60px;
+            gap: 50px;
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        // Стили для 375 и меньше
     }
 }
+
+.list {
+    // Стили для 1920
+    $root: &;
+
+    @include media-breakpoint-down(xxl) {
+        // Стили для 1440 и меньше
+        #{$root}__item {
+            padding: 24px 0;
+        }
+    }
+
+    @include media-breakpoint-down(xl) {
+        // Стили для 1280 и меньше
+        #{$root}__item {
+            padding: 20px 0;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        // Стили для 768 и меньше
+        #{$root}__item {
+            padding: 24px 0;
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        // Стили для 375 и меньше
+    }
+}
+

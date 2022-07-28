@@ -3,10 +3,7 @@ import Component, {ComponentProps} from '@/base/component';
 export default class Spoiler extends Component {
     constructor(element: ComponentProps) {
         super(element);
-        const spoilers = document.querySelectorAll('.spoiler')
-        spoilers.forEach(spoiler => {
-            spoiler.addEventListener('click', this.handleClick)
-        })
+        this.nRoot.addEventListener('click', this.handleClick)
     }
 
     handleClick = (e: Event) => {
@@ -15,8 +12,9 @@ export default class Spoiler extends Component {
 
         if (text) {
             const height = text?.scrollHeight;
-            el.classList.add('spoiler--active')
+
             if (!text.style.height) {
+                el.classList.add('spoiler--active')
                 text.style.height = `${height}px`;
             } else {
                 el.classList.remove('spoiler--active')
