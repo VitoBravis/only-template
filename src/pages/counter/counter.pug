@@ -1,0 +1,18 @@
+extends ../../app/pug/layout
+
+block title
+    | Counter
+
+block content
+    div(data-barba="container" data-barba-namespace="common" data-page-namespace="counter").content-wrapper
+        +container.container_static
+            +button.btn_primary.btn_rounded
+                | Открыть
+
+            +button.btn_primary.btn_circle
+                | +
+
+            +button.btn_primary.btn_circle
+                | -
+
+        +footer

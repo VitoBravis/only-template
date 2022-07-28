@@ -1,0 +1,19 @@
+.btn {
+    font-size: 1rem;
+}
+
+.btn_primary {
+    color: $white;
+    background-color: $primary;
+}
+
+.btn_rounded {
+    padding: em(20) em(40);
+    border-radius: 2em;
+}
+
+.btn_circle {
+    width: em(40);
+    height: em(40);
+    border-radius: 50%;
+}
