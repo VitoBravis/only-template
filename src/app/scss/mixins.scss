@@ -25,6 +25,26 @@
         @include upper-fhd-size($desktop-1920, font-size);
     }
 }
+//mixin на 5 разрешений
+@mixin fontScreenResolution5($desktop-1920, $desktop-1440, $desktop-1280, $tablet-768, $mobile){
+    font-size: #{$mobile}px;
+
+    @include media-breakpoint-up(md) {
+        font-size: calc(#{$tablet-768}px + #{$desktop-1280 - $tablet-768} * (100vw - #{map-get($breakpoints, md)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, md) });
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size: calc(#{$desktop-1280}px + #{$desktop-1440 - $desktop-1280} * (100vw - #{map-get($breakpoints, xl)}px) / #{map-get($breakpoints, xxl) - map-get($breakpoints, xl) });
+    }
+
+    @include media-breakpoint-up(xxl) {
+        font-size: calc(#{$desktop-1440}px + #{$desktop-1920 - $desktop-1440} * (100vw - #{map-get($breakpoints, xxl)}px) / #{map-get($breakpoints, fhd) - map-get($breakpoints, xxl) });
+    }
+
+    @include media-breakpoint-up(fhd) {
+        @include upper-fhd-size($desktop-1920, font-size);
+    }
+}
 
 @mixin upper-fhd-size($base-size, $property: width, $coeff: 1) {
     #{$property}: calc((#{$base-size / 1920 * 100 / 2}vw + #{$base-size / 1080 * 100 / 2}vh) * #{$coeff});

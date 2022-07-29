@@ -107,7 +107,6 @@ button {
 
 body {
     font-family: "Roboto", sans-serif;
-
 }
 
 .container {
@@ -115,62 +114,50 @@ body {
     max-width: 1620px;
     margin: 0 auto;
     padding: 100px 160px;
-}
 
-.title {
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: -0.02em;
-    color: #012B34;
-    padding-bottom: 80px;
-}
-
-@media only screen and (max-width: 1440px) {
-    .container {
+    @include media-breakpoint-down(xxl) {
         padding: 80px 120px;
     }
 
-    .title {
-        font-size: 48px;
-        padding-bottom: 60px;
-    }
-    .title:after {
-        content: ' dolor';
-    }
-
-}
-
-@media only screen and (max-width: 1280px) {
-    .container {
+    @include media-breakpoint-down(xl) {
         padding: 70px 107px;
     }
 
-    .title {
-        font-size: 42px;
-        padding-bottom: 56px;
-
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .container {
+    @include media-breakpoint-down(md) {
         padding: 60px 40px;
     }
 
-    .title {
-        font-size: 42px;
-        padding-bottom: 50px;
+    @include media-breakpoint-down(xs) {
+        padding: 50px 24px;
     }
 }
 
-@media only screen and (max-width: 375px) {
-    .container {
-        padding: 50px 24px;
+.title {
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: $title_color;
+    padding-bottom: 80px;
+
+    @include title-font-size;
+
+    @include media-breakpoint-down(xxl) {
+        padding-bottom: 60px;
+
+        &:after {
+            content: ' dolor';
+        }
     }
 
-    .title {
-        font-size: 30px;
+    @include media-breakpoint-down(xl) {
+        padding-bottom: 56px;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: 50px;
+    }
+
+    @include media-breakpoint-down(xs) {
         padding-bottom: 40px;
     }
 }

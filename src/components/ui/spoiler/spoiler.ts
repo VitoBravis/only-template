@@ -1,28 +1,27 @@
 import Component, {ComponentProps} from '@/base/component';
 
-type HandlersMap = Record<number, (event: Event) => void | undefined>
 
 export default class Spoiler extends Component {
-    buttons
-    handlersMap: HandlersMap = {} as HandlersMap
+
+    button: HTMLElement | undefined
+    title: HTMLElement | undefined
 
     constructor(element: ComponentProps) {
         super(element);
 
-        this.buttons = document.querySelectorAll('.open-button')
-        const titles = document.querySelectorAll('h3')
+        this.button = this.getElement('button')
+        this.title = this.getElement('title') as HTMLElement
 
-        this.buttons.forEach((button, index) => {
-            this.handlersMap[index] = this.makeHandleClick(titles[index])
-            button.addEventListener('click', this.handlersMap[index])
-        })
+        this.button?.addEventListener('click', this.makeHandleClick(this.title))
+
     }
 
-    makeHandleClick = (title: HTMLElement) => (e: Event) => {
+    makeHandleClick = (title: HTMLElement | undefined) => (e: Event) => {
         const el = e.currentTarget as HTMLElement
         el.classList.toggle('active')
 
-        let spoilerContent = el?.parentElement?.nextElementSibling as HTMLElement
+        const spoilerContent = el?.parentElement?.nextElementSibling as HTMLElement
+
         if (!spoilerContent) {
             return
         }
@@ -30,13 +29,14 @@ export default class Spoiler extends Component {
         if (spoilerContent.style.maxHeight) {
             spoilerContent.style.maxHeight = ''
             el.style.transform = 'rotate(0)'
-            title.style.color = '#012B34'
+            title && (title.style.color = '#012B34')
         } else {
             spoilerContent.style.maxHeight = spoilerContent.scrollHeight + 'px'
             el.style.transform = 'rotate(45deg)'
             el.style.transition = '0.2s'
-            title.style.color = '#02818A'
+            title && (title.style.color = '#02818A')
         }
+
         if (el.classList.contains('active')) {
             spoilerContent.classList.add('active')
         } else {
@@ -46,8 +46,6 @@ export default class Spoiler extends Component {
     }
 
     destroy = () => {
-        this.buttons.forEach((button, index) => {
-            this.handlersMap[index] && button.removeEventListener('click', this.handlersMap[index])
-        })
+        this.button?.removeEventListener('click', this.makeHandleClick(this.title))
     }
 }

@@ -10,6 +10,15 @@
     line-height: 1.5;
 }
 
+@mixin spoiler-title-font-size{
+    @include fontScreenResolution5(36,27,24,27,24)
+}
+@mixin spoiler-content-font-size {
+    @include fontScreenResolution5(20,15,14,15,15)
+}
+@mixin title-font-size{
+    @include fontScreenResolution5(64,48,42,42,30)
+}
 
 // Заголовки
 .h-1 {
