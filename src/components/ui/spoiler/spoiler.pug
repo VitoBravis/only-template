@@ -6,6 +6,7 @@ mixin spoiler(props)
                 button.spoiler__head
                     span.spoiler__head-title!= dataSpoiler.title
                     span.spoiler__head-icon
+                        +svg('plus')
 
                 .spoiler__collapse
                     .spoiler__content

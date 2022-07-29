@@ -4,7 +4,7 @@ $col-width: 100vw / $grid-columns;
 $offset-sides: (
     desktop: $col-width,
     tablet: vw(40, md),
-    mobile: vw(24, xs)
+    mobile: vw(24, xs),
 );
 
 $breakpoints: (
@@ -17,3 +17,7 @@ $breakpoints: (
     xxxl: 1600,
     fhd: 1920,
 );
+
+$title: #012b34;
+$spoiler-title: #02818a;
+$text: #000402;
