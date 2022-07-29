@@ -29,12 +29,12 @@ try {
     //     if (err) throw new Error(err.message);
     //     progressLog('Удаление импортов JS');
 
-    const viewsScss = fs.readFileSync(viewsPathScss, { encoding: 'utf-8' });
+    // const viewsScss = fs.readFileSync(viewsPathScss, { encoding: 'utf-8' });
 
-    if (viewsScss.indexOf(importViewScss) !== -1) {
-        fs.writeFileSync(viewsPathScss, viewsScss.replace(importViewScss, ''));
-        progressLog('Удаление импортов SCSS');
-    }
+    // if (viewsScss.indexOf(importViewScss) !== -1) {
+    //     fs.writeFileSync(viewsPathScss, viewsScss.replace(importViewScss, ''));
+    //     progressLog('Удаление импортов SCSS');
+    // }
 
     rimraf(folderPath, (err) => {
         if (err) throw new Error(err.message);
