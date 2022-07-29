@@ -1,0 +1,6 @@
+mixin modal(props)
+    .modal&attributes(attributes)
+        .modal__controls
+            +button.modal__close-btn.btn.btn_rounded.btn_primary Закрыть
+        .modal__content
+            block

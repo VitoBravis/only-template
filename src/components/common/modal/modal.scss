@@ -1,0 +1,25 @@
+.modal {
+    visibility: hidden;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: rem(32);
+    background-color: #F4F5F9;
+    opacity: 0;
+    transition: opacity $duration, visibility 0s $duration;
+}
+
+.modal__controls {
+    text-align: center;
+    margin: 0 auto em(77);
+}
+
+.modal_visible {
+    visibility: visible;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity $duration, visibility 0s 0s;
+}

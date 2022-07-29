@@ -22,7 +22,7 @@ export default class Counter extends Component {
 
         if (action === 'increment') this.increment();
         if (action === 'decrement') this.decrement()
-    }
+    };
 
     increment = () => {
         this.display.textContent = `${++this.value}`;

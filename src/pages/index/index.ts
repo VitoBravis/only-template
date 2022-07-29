@@ -6,6 +6,7 @@ import onChange from 'on-change';
 import Spoiler from '@/components/ui/spoiler/spoiler';
 import MainCounter from '@/components/ui/main-counter/main-counter';
 import CarouselItem from '@/components/blocks/carousel-item/carousel-item';
+import Modal from '@/components/common/modal/modal';
 
 const counterState = {
     value: 0,
@@ -55,6 +56,8 @@ export default {
                     new CarouselItem(carouselItem);
                 }
             }
+
+            new Modal(getComponent('modal'));
         } catch (e) {
             console.error(e);
         }
