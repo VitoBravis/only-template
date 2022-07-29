@@ -7,7 +7,7 @@ export default {
     async beforeEnter({ next }: ITransitionData) {
         try {
             // Инициализация компонентов
-            const spoilerList: HTMLElement = document.querySelector('.spoiler__list')!;
+            const spoilerList: HTMLElement = next.container.querySelector('.spoiler__list')!;
             getComponents('spoiler__head', spoilerList).forEach((component) => {
                 new Spoiler(component)
             })

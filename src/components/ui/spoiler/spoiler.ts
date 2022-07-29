@@ -7,8 +7,14 @@ export default class Spoiler extends Component {
     }
 
     handleClick = (e: Event) => {
-        const spoilerCollapse: HTMLElement = (<HTMLElement>e.target).closest('.spoiler')!;
-        spoilerCollapse.classList.toggle('active');
+        const spoiler: HTMLElement = (<HTMLElement>e.target).closest('.spoiler')!,
+            spoilerCollapse: HTMLElement = spoiler.querySelector('.spoiler__collapse')!;
+
+        spoiler.classList.toggle('active');
+
+        spoilerCollapse.style.maxHeight = spoiler.classList.contains('active')
+            ? `${spoilerCollapse.scrollHeight}px`
+            : `0px`;
     }
 
     destroy = () => {
