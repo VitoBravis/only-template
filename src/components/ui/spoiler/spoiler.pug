@@ -1,0 +1,8 @@
+mixin spoiler(props)
+    li.spoiler&attributes(attributes)
+        button.spoiler__control
+            span.spoiler__title!=props.spoilerTitle
+            span.spoiler__icon
+        .spoiler__content
+            each text in props.paragraph
+                p.spoiler__text=text

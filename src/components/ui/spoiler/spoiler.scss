@@ -1,0 +1,116 @@
+.spoiler {
+    $root: &;
+    position: relative;
+    border-top: 1px solid #E6E6E6;
+
+    &__control {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 13px 0;
+        border: none;
+        background-color: transparent;
+
+        @include media-breakpoint-up(xs) {
+            padding: vw(15, xs) 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: vw(13, md) 0;
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding: vw(15, xl) 0;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            padding: vw(20, xxl) 0;
+        }
+    }
+
+    &__title:hover {
+        color: $activeColor;
+    }
+
+    &__title {
+        text-align: start;
+        @include title();
+        transition: all 0.3s ease-out;
+        padding-right: 5px;
+    }
+
+    .open &__title {
+        color: $activeColor;
+    }
+
+    &__icon {
+        position: relative;
+        display: inline-block;
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        transition: transform 0.3s ease-out;
+    }
+
+    .open &__icon {
+        transform: rotate(45deg);
+    }
+
+    &__icon {
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $activeColor;
+            transform: translate(-50%, -50%)
+        }
+
+        &:before {
+            width: 70%;
+            height: 2px;
+        }
+
+        &:after {
+            width: 2px;
+            height: 70%;
+        }
+    }
+
+    &__text {
+        @include p1();
+        padding-bottom: 15px;
+
+        @include media-breakpoint-up(xs) {
+            max-width: vw(640, xs);
+        }
+
+        @include media-breakpoint-up(xl) {
+            max-width: vw(840, xl);
+            padding-bottom: vw(20, xl);
+        }
+
+        @include media-breakpoint-up(xxl) {
+            max-width: vw(942, xxl);
+            padding-bottom: vw(25, xxl);
+        }
+    }
+
+    &__content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        will-change: max-height;
+        transition: all 0.3s ease-out;
+        box-sizing: content-box;
+    }
+
+    .open &__content {
+        opacity: 1;
+    }
+}

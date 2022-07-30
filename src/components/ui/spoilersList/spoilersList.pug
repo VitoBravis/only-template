@@ -1,10 +1,4 @@
 mixin spoilersList(props)
     ul.spoilers__list&attributes(attributes)
         each spoiler in props
-            li.spoiler
-                button.spoiler__control
-                    span.spoiler__title!=spoiler.spoilerTitle
-                    span.spoiler__icon
-                .spoiler__content
-                    each text in spoiler.paragraph
-                        p.spoiler__text=text
+            +spoiler(spoiler)
