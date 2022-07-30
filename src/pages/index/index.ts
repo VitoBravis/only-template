@@ -1,3 +1,4 @@
+import Modal from '@/components/blocks/modal/modal';
 import Counter from '@/components/ui/counter/counter';
 import MyButton from '@/components/ui/myButton/myButton';
 import { getComponent } from '@/helpers/helpers';
@@ -8,7 +9,8 @@ export default {
     async beforeEnter({ next }: ITransitionData) {
         try {
             // Инициализация компонентов
-            new Counter(getComponent('counter'))
+            // new Counter(getComponent('counter'))
+            new Modal(getComponent('modal'))
         } catch (e) {
             console.error(e);
         }

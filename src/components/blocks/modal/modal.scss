@@ -1,0 +1,52 @@
+.modal {
+    $root: &;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    // // z-index: 10;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    &__content {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .swiper {
+            width: 1400px;
+            height: auto;
+
+            &-slide {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 52px;
+            }
+        }
+
+        .swiper_image {
+            width: 1400px;
+            height: 720px;
+        }
+    }
+
+    &__button {
+        margin: 0 0 77px 0;
+        width: 147px;
+        height: 63px;
+        background: #3877EE;
+        border-radius: 30px;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
+}
