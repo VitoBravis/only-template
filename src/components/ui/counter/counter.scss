@@ -1,0 +1,40 @@
+.counter {
+    $root: &;
+
+
+  
+    .container {
+    
+        transform: translateY(-40px);
+        align-items: center;
+    
+        .counter__count {
+            padding: 15px 20px;
+           
+            color: #42567A;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 30px;
+    
+            border-radius: 50%;
+            background: #F4F5F9;
+            border: 2px solid #303E58;
+            margin: 0 25px;
+            text-align: center;
+            
+        }
+        
+    
+        .counter__btn {
+            padding: 15px 20px;
+    
+            background: #3877EE;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 15px;
+           
+    
+        
+        }
+    }
+}

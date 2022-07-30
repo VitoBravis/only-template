@@ -1,0 +1,14 @@
+extends ../../app/pug/layout
+
+
+
+block content
+    div(data-barba="container" data-barba-namespace="common" data-page-namespace="mainPage").content-wrapper
+        .container 
+            .text(style='font-size: 50px')
+                |text
+            .title
+                |Значение активного счетчика
+            +myButton('Открыть')
+            +myModal()
+            
