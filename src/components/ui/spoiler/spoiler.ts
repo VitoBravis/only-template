@@ -18,7 +18,7 @@ export default class Spoiler extends Component {
 
     open = () => {
         // Метод для открытия спойлера
-        this.nRoot.classList.toggle("open");
+        this.controlElement.classList.toggle("open");
         this.collapseElement.style.maxHeight =
             this.collapseElement.scrollHeight + "px";
         this.isOpen = true;
@@ -27,7 +27,7 @@ export default class Spoiler extends Component {
     close = () => {
         // Метод для закрытия спойлера
         this.collapseElement.style.maxHeight = null;
-        this.nRoot.classList.remove("open");
+        this.controlElement.classList.remove("open");
         this.isOpen = false;
     };
 }
