@@ -9,7 +9,7 @@ export default class Spoiler extends Component {
         super(element);
 
         this.controlElement = this.nRoot;
-        this.isOpen = true;
+        this.isOpen = false;
         this.collapseElement = this.nRoot.querySelector(".spoiler__content");
         /*
          * Инициализация других полей класса (this.collapseElement, isOpen и др.)
