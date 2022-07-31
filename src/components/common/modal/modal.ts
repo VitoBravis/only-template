@@ -24,6 +24,7 @@ export default class Modal extends Component {
     open = () => {
         document.body.style.overflow = 'hidden';
 
+        this.modal.style.zIndex = '9999';
         this.modal.classList.add('modal_visible');
     };
 
