@@ -1,21 +1,24 @@
-import Component, { ComponentProps } from '@/base/component';
-import Counter from '@/components/ui/counter/counter';
-import { getComponents } from '@/helpers/helpers';
-import Swiper from 'swiper';
-import { Navigation } from 'swiper';
-import { runInThisContext } from 'vm';
+import Component, { ComponentProps } from "@/base/component";
+import Swiper from "swiper";
+import { Navigation } from "swiper";
 
 export default class Modal extends Component {
     swiper: any;
     closeBtn: HTMLElement;
     value: number;
-    counters: any;
+    textElement: HTMLElement | any;
+    initialCounters: any;
 
-    constructor(element: ComponentProps) {
+    constructor(
+        element: ComponentProps,
+        textElement?: HTMLElement,
+        initialCounters?: any
+    ) {
         super(element);
-        this.counters = [];
-        this.closeBtn = this.getElement('button')!;
-        this.value = this.swiper.realIndex;
+
+        this.closeBtn = this.getElement("button")!;
+        this.textElement = textElement;
+        this.initialCounters = initialCounters;
         this.swiper = new Swiper(".swiper", {
             modules: [Navigation],
             loop: true,
@@ -25,29 +28,26 @@ export default class Modal extends Component {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            // on: {
-            //     init: () => {
-            //         getComponents('counter').forEach((component) => this.counters.push(new Counter(component)));
-            //     },
-            // }
         })!;
-        this.closeBtn.addEventListener('click', this.onClose);
+        this.value = 0;
 
-        this.swiper.on('slideChange',  () => {
-            console.log(this.swiper.realIndex);
+        this.closeBtn.addEventListener("click", this.onClose);
 
+        this.swiper.on("slideChange", () => {
             this.value = this.swiper.realIndex;
         });
     }
 
     onClose = (e: MouseEvent) => {
-      e.preventDefault();
+        e.preventDefault();
 
-      this.nRoot.classList.remove('active');
-    }
-
-    getCounterValue = () => {
-        return this.value;
-    }
-    
+        if (this.textElement && this.initialCounters) {
+            this.initialCounters.forEach((counter: any, i: number) => {
+                if (i === this.value) {
+                    this.textElement.textContent = counter.count;
+                }
+            });
+        }
+        this.nRoot.classList.remove("active");
+    };
 }

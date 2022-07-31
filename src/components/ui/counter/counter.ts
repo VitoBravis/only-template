@@ -1,5 +1,6 @@
 import Component, { ComponentProps } from '@/base/component';
 
+
 export default class Counter extends Component {
     incBtn: HTMLElement;
     decBtn: HTMLElement;
@@ -30,4 +31,5 @@ export default class Counter extends Component {
         this.count -= 1;
         this.textContainer.textContent = `${this.count}`;
     };
+
 }
