@@ -82,6 +82,9 @@ button {
 [data-barba="container"] {
     position: relative;
     flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .object-fit {
@@ -114,5 +117,44 @@ button {
     margin: 0 auto;
     width: 100%;
     min-width: 100%;
-    height: auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    .title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        color: #42567A;
+    }
+
+    .counter-value {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 128px;
+        line-height: 150px;
+        text-align: center;
+        color: #42567A;
+    }
+
+    .open-modal {
+        margin: 0 0 77px 0;
+        width: 147px;
+        height: 63px;
+        background: #3877EE;
+        border-radius: 30px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
 }
