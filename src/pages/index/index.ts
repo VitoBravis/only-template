@@ -9,13 +9,8 @@ export default {
     namespace: 'common',
     async beforeEnter({ next }: ITransitionData) {
         try {
-            const initialCounters = [] as Array<Object>;
             const valueContainer = document.querySelector('.counter-value') as HTMLElement;
-            if (getComponent('counter', next.container).component) {
-                getComponents('counter', next.container).forEach((component) => initialCounters.push(new Counter(component)));
-            }
-            const modal = new Modal(getComponent('modal'), valueContainer, initialCounters);
-
+            const modal = new Modal(getComponent('modal'), valueContainer);
             const opnBtn = document.querySelector('.open-modal');
             opnBtn?.addEventListener('click', (e: Event) => {
                 e.preventDefault();

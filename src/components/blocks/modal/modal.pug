@@ -1,9 +1,9 @@
 mixin modal(props)
-    .modal&attributes(attributes).active
+    .modal&attributes(attributes)
         .modal__content
             button.modal__button!= 'Закрыть'
             .swiper
-                .swiper-wrapper 
+                .swiper-wrapper
                     .swiper-slide
                         +img({src: '../../assets/images/swiper_image.jpg', alt: 'картинка'}).swiper_image
                         +counter
