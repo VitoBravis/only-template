@@ -1,3 +1,13 @@
-.carousel-item {
-    $root: &;
+.carousel__img-wrapper {
+    font-size: 0;
+    text-align: center;
+}
+
+.carousel__img {
+    max-width: 100%;
+}
+
+.carousel__slide-counter {
+    margin-top: rem(50);
+    text-align: center;
 }
