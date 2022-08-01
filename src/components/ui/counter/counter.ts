@@ -22,12 +22,14 @@ export default class Counter extends Component {
 
     increment = (e: MouseEvent) => {
         e.preventDefault();
+        e.stopPropagation();
         this.count += 1;
         this.textContainer.textContent = `${this.count}`;
     };
 
     decriment = (e: MouseEvent) => {
         e.preventDefault();
+        e.stopPropagation();
         this.count -= 1;
         this.textContainer.textContent = `${this.count}`;
     };

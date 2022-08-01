@@ -11,17 +11,16 @@ export default class Modal extends Component {
     textElement: HTMLElement | any;
     initialCounters: Counter[];
 
-    constructor(
-        element: ComponentProps,
-        textElement?: HTMLElement
-    ) {
+    constructor(element: ComponentProps) {
         super(element);
         this.closeBtn = this.getElement("button")!;
-        this.textElement = textElement;
+        this.textElement = this.findRenderElement();
         this.initialCounters = [];
         this.value = 0;
 
-        getComponents('counter', this.nRoot).forEach((component) => this.initialCounters.push(new Counter(component)));
+        getComponents("counter", this.nRoot).forEach((component) =>
+            this.initialCounters.push(new Counter(component))
+        );
 
         this.swiper = new Swiper(".swiper", {
             modules: [Navigation],
@@ -34,7 +33,6 @@ export default class Modal extends Component {
             },
         })!;
 
-
         this.closeBtn.addEventListener("click", this.onClose);
 
         this.swiper.on("slideChange", () => {
@@ -44,10 +42,12 @@ export default class Modal extends Component {
 
     onClose = (e: MouseEvent) => {
         e.preventDefault();
-
         this.setCounterValue();
         this.nRoot.classList.remove("active");
+    };
 
+    onOpen = () => {
+        this.nRoot.classList.add("active");
     };
 
     setCounterValue = () => {
@@ -58,7 +58,11 @@ export default class Modal extends Component {
                 }
             });
         } else {
-            this.textElement.textContent = 'Нет счётчиков'
+            this.textElement.textContent = "Нет счётчиков";
         }
-    }
+    };
+
+    findRenderElement = () => {
+        return document.querySelector(".counter-value") as HTMLElement;
+    };
 }
