@@ -1,0 +1,40 @@
+.counter {
+    $root: &;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min-content;
+
+    &__value {
+        position: relative;
+        border-radius: 50vh;
+        border: 2px solid $counterColor;
+        color: $counterColor;
+        margin: 0 52px;
+        min-height: 56px;
+        min-width: 56px;
+        text-align: center;
+
+        &__text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            font-family: 'CeraPro', serif;
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 700;
+        }
+    }
+
+    &__btn-text {
+        position: absolute;
+        font-size: 30px;
+        line-height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -1,0 +1,11 @@
+mixin swiper-block(props)
+    .swiper-block&attributes(attributes)
+        .swiper.swiper-block__container
+            .swiper-wrapper
+                each image in props
+                    .swiper-slide
+                        +img({src: image.src, alt: `image${image.alt}`})
+        .swiper-pagination
+        .swiper-button-prev.swiper-ctrl
+        .swiper-button-next.swiper-ctrl
+        .swiper-scrollbar

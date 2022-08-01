@@ -1,0 +1,8 @@
+mixin counter(props)
+    div.counter&attributes(attributes)
+       +button-round.counter__btn-decrease
+            span.counter__btn-text –
+       p.counter__value
+           span.counter__value__text
+       +button-round.counter__btn-increase
+            span.counter__btn-text +

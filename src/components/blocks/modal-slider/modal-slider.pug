@@ -1,0 +1,6 @@
+mixin modal-slider(props)
+    dialog.modal-slider&attributes(attributes)
+        +button-round.modal-slider__button-close Закрыть
+        .modal-slider__slider
+            +swiper-block(dataJson.images.slider)
+        block

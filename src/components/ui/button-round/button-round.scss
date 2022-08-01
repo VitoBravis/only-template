@@ -1,0 +1,27 @@
+.button-round {
+    $root: &;
+
+    position: relative;
+    background: $buttonColor;
+    border-radius: 50vh;
+    padding: 0 16px;
+    text-align: center;
+    min-height: 40px;
+    min-width: 40px;
+    width: min-content;
+    color: #FFFFFF;
+    transition: filter .2s ease-in-out;
+
+    &:hover {
+        filter: sepia(.2);
+    }
+
+    &__text {
+        position: absolute;
+        font-size: 30px;
+        line-height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

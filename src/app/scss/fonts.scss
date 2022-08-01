@@ -1,16 +1,33 @@
 $font-roboto-name: 'Roboto';
 $font-roboto: $font-roboto-name, Arial, sans-serif;
+$font-cerapro-name: 'CeraPro';
+$font-cerapro: $font-cerapro-name, Arial, sans-serif;
 
 $fonts-roboto: (
     'Roboto-Regular': normal,
     'Roboto-Bold': bold
 );
+$fonts-cerapro: (
+    'CeraPro-Bold': bold
+);
+
 
 @each $font, $weight in $fonts-roboto {
     @font-face {
         font-family: $font-roboto-name;
         src: url('../../assets/fonts/#{$font}.ttf') format('truetype'),
             url('../../assets/fonts/#{$font}.woff') format('woff');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@each $font, $weight in $fonts-cerapro {
+    @font-face {
+        font-family: $font-cerapro-name;
+        src: url('../../assets/fonts/#{$font}.ttf') format('truetype'),
+        url('../../assets/fonts/#{$font}.woff') format('woff');
         font-weight: $weight;
         font-style: normal;
         font-display: swap;

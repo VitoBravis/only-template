@@ -1,0 +1,52 @@
+//@import "../../../../node_modules/swiper/swiper";
+
+.swiper {
+    $root: &;
+
+    height: 100%;
+    width: 1280px;
+
+
+    &-block {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-slide {
+        display: flex;
+        justify-content: center;
+
+        & img {
+            max-height: 100%;
+        }
+    }
+
+    &-ctrl {
+        width: 60px;
+        height: 60px;
+        border-radius: 50vh;
+        box-shadow: 0 0 20px -15px black;
+        transition: color, background-color .2s ease-in-out;
+
+        &:after {
+            font-size: 20px;
+        }
+
+        &:hover {
+            background: $buttonColor;
+            color: #FFFFFF;
+        }
+    }
+    &-button {
+        &-prev {
+            left: 50px;
+        }
+        &-next {
+            right: 50px;
+        }
+
+    }
+}
+
