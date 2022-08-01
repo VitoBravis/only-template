@@ -104,3 +104,53 @@ button {
 [data-modal] {
     cursor: pointer;
 }
+
+.wrp {
+    font-weight: 400;
+    color: #012B34;
+    margin: 100px 160px 80px 160px;
+    padding: 0;
+    box-sizing: border-box;
+
+    @include media-breakpoint-down(xxl) {
+        margin: 80px 120px 80px 120px;
+        padding: 0;
+    }
+    
+     @include media-breakpoint-down(xl) {
+        margin: 70px 107px 70px 107px;
+        padding: 0;
+    }
+    
+    @include media-breakpoint-down(md) {
+        margin: 60px 40px 60px 40px;
+    }
+    
+     @include media-breakpoint-down(xs) {
+        margin: 50px 24px 50px 24px;
+    }
+}
+
+.title {
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    margin-bottom: 80px;
+    @include title;
+
+    @include media-breakpoint-down(xxl) {
+        margin-bottom: 60px;
+    }
+    
+     @include media-breakpoint-down(xl) {
+        margin-bottom: 56px;
+    }
+    
+    @include media-breakpoint-down(md) {
+        margin-bottom: 50px;
+    }
+    
+     @include media-breakpoint-down(xs) {
+        margin-bottom: 40px;
+    }
+}

@@ -1,3 +1,24 @@
 {
-    "title": "Lorem ipsum dolor"
-}
+    "spoilers": [
+      {
+        "title": "Nullam tincidunt vestibulum porttitor",
+        "text": "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+      },
+      {
+        "title": "Class aptent taciti sociosqu ad litora",
+        "text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, velit tenetur voluptas est maiores quae officiis consequatur esse quod expedita.",
+      },
+      {
+        "title": "Nulla fringilla ligula elit, non laoreet ipsum rutrum eget",
+        "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit impedit tenetur ipsa cumque fugit modi excepturi amet non sed dolorum, dolore ab reiciendis nemo at mollitia eos ad, quidem blanditiis."
+      },
+      {
+        "title": "Mauris ut suscipit tellus",
+        "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam tempore fugit explicabo aspernatur, hic voluptate impedit facilis. Amet itaque impedit hic delectus dolorum explicabo aliquid necessitatibus pariatur minus, odio eum sint, sit dignissimos. Illum accusantium nisi quas incidunt. Eligendi, iste!"
+      },
+      {
+        "title": "Nullam placerat porta libero, vel maximus augue euismod eget",
+        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, obcaecati cupiditate, quae velit omnis culpa corporis quasi error odit, earum excepturi non natus ea doloribus exercitationem. Fugit perferendis officia reiciendis."
+      }
+    ]
+  }

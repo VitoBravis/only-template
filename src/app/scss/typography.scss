@@ -10,6 +10,18 @@
     line-height: 1.5;
 }
 
+@mixin title {
+    @include font (48, 42, 42, 30);
+}
+
+@mixin spoiler__head-title {
+    @include font (27, 27, 27, 27);
+}
+
+@mixin spoiler__text {
+    @include font (15, 15, 15, 15);
+}
+
 
 // Заголовки
 .h-1 {

@@ -7,11 +7,7 @@ export default class Spoiler extends Component {
 
         this.getNum();
 
-        const spoiles = document.querySelectorAll('.spoiler');
-        for (let elem of spoiles) {
-            elem.addEventListener('click', this.clickHandler)
-        }
-
+        this.nRoot.addEventListener('click', this.clickHandler);
     }
 
     clickHandler = (e: Event) => {

@@ -5,18 +5,22 @@ block title
 
 block content
     main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
-    .wrp
-        h3.title Lorem ipsum dolor
-        ul.spoiler__wrp
-            +spoiler({title: 'Nullam tincidunt vestibulum porttitor', text: 'text'})
-                .text-block Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
-                .text-block Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
-            +spoiler({title: 'Class aptent taciti sociosqu ad litora', text: 'text'})
-                .text-block Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, velit tenetur voluptas est maiores quae officiis consequatur esse quod expedita.
-            +spoiler({title: 'Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', text: 'text'})
-                .text-block Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit impedit tenetur ipsa cumque fugit modi excepturi amet non sed dolorum, dolore ab reiciendis nemo at mollitia eos ad, quidem blanditiis.
-                .text-block Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aperiam laboriosam optio, delectus facere, assumenda esse excepturi fugiat ipsa at numquam quos aspernatur accusamus iste cupiditate laborum qui officia reprehenderit?
-            +spoiler({title: 'Mauris ut suscipit tellus', text: 'text'})
-                .text-block Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam tempore fugit explicabo aspernatur, hic voluptate impedit facilis. Amet itaque impedit hic delectus dolorum explicabo aliquid necessitatibus pariatur minus, odio eum sint, sit dignissimos. Illum accusantium nisi quas incidunt. Eligendi, iste!
-            +spoiler({title: 'Nullam placerat porta libero, vel maximus augue euismod eget', text: 'text'})
-                .text-block Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, obcaecati cupiditate, quae velit omnis culpa corporis quasi error odit, earum excepturi non natus ea doloribus exercitationem. Fugit perferendis officia reiciendis.
+        .wrp
+            h3.title Lorem ipsum dolor
+            ul.spoiler__wrp
+                each item in dataJson.index.spoilers 
+                    +spoiler(item)
+                        //- each text in item.text
+                        .text-block!=item.text
+            //- +spoiler({title: 'Nullam tincidunt vestibulum porttitor', text: 'text'})
+            //-     .text-block Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+            //-     .text-block Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+            //- +spoiler({title: 'Class aptent taciti sociosqu ad litora', text: 'text'})
+            //-     .text-block Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, velit tenetur voluptas est maiores quae officiis consequatur esse quod expedita.
+            //- +spoiler({title: 'Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', text: 'text'})
+            //-     .text-block Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit impedit tenetur ipsa cumque fugit modi excepturi amet non sed dolorum, dolore ab reiciendis nemo at mollitia eos ad, quidem blanditiis.
+            //-     .text-block Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aperiam laboriosam optio, delectus facere, assumenda esse excepturi fugiat ipsa at numquam quos aspernatur accusamus iste cupiditate laborum qui officia reprehenderit?
+            //- +spoiler({title: 'Mauris ut suscipit tellus', text: 'text'})
+            //-     .text-block Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam tempore fugit explicabo aspernatur, hic voluptate impedit facilis. Amet itaque impedit hic delectus dolorum explicabo aliquid necessitatibus pariatur minus, odio eum sint, sit dignissimos. Illum accusantium nisi quas incidunt. Eligendi, iste!
+            //- +spoiler({title: 'Nullam placerat porta libero, vel maximus augue euismod eget', text: 'text'})
+            //-     .text-block Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, obcaecati cupiditate, quae velit omnis culpa corporis quasi error odit, earum excepturi non natus ea doloribus exercitationem. Fugit perferendis officia reiciendis.
