@@ -27,6 +27,6 @@ div.counter {
         }
     }
     &.hidden {
-        display: none;
+        opacity: 0;
     }
 }
