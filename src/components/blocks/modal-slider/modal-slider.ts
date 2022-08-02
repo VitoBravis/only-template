@@ -16,13 +16,13 @@ export default class ModalSlider extends Component {
     }
 
     open = () => {
-        this.nRoot.setAttribute('open', 'open')
-        this.nRoot.classList.add('modal-slider_open');
+        const dialog = this.nRoot as HTMLDialogElement;
+        dialog.show();
     };
 
     close = () => {
-        this.nRoot.removeAttribute('open') ;
-        this.nRoot.classList.remove('modal-slider_open');
+        const dialog = this.nRoot as HTMLDialogElement;
+        dialog.close();
     };
 
     destroy = () => {

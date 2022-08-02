@@ -7,9 +7,8 @@ export default class SwiperBlock extends Component {
     constructor(element: ComponentProps) {
         super(element);
 
-        Swiper.use([Navigation]);
-
         const swiperConfig: SwiperOptions = {
+            modules: [Navigation],
             speed: 400,
             spaceBetween: 100,
             slidesPerView: 1,
