@@ -8,11 +8,18 @@
     letter-spacing: -0.02em;
     line-height: 1;
     font-weight: normal;
-    @include font(30, 60, 60, 80);
+    @include font(64, 48, 42, 30);
 }
 
-@mixin body1 {
-    @include font(14, 14, 16, 16);
+@mixin h3-spoiler {
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-weight: normal;
+    @include font(36, 27, 24, 24);
+}
+
+@mixin spoiler-text {
+    @include font(16, 16, 14, 14);
     line-height: 1.5;
 }
 
@@ -65,6 +72,7 @@ div.counter {
     }
 }
 
+
 // Обычный текст
 
 div.spoiler__text {
@@ -72,3 +80,5 @@ div.spoiler__text {
         @include spoiler-text;
     }
 }
+
+
