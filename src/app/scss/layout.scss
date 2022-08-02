@@ -112,3 +112,25 @@ button {
 [data-modal] {
     cursor: pointer;
 }
+
+.wrapper {
+    max-width: 1920px;
+    padding: 347px 20px 294px 20px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: default;
+}
+
+.counter-title {
+    font-size: 36px;
+    line-height: 42px;
+    color: $counter;
+    margin-bottom: 71px;
+}
+
+.main-counter {
+    font-size: 128px;
+    line-height: 150px;
+    color: $counter;
+    margin-bottom: 108px;
+}

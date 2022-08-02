@@ -36,5 +36,27 @@
                 "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
             ]
         }
+    ],
+    "slider": [
+        {
+            "src": "../../../src/assets/images/swiper-image.jpeg",
+            "alt": "slide-img"
+        },
+        {
+            "src": "../../../src/assets/images/swiper-image-2.jpeg",
+            "alt": "slide-img"
+        },
+        {
+            "src": "../../../src/assets/images/swiper-image-3.jpeg",
+            "alt": "slide-img"
+        },
+        {
+            "src": "../../../src/assets/images/swiper-image-4.jpeg",
+            "alt": "slide-img"
+        },
+        {
+            "src": "../../../src/assets/images/swiper-image-5.jpeg",
+            "alt": "slide-img"
+        }
     ]
 }
