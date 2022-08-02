@@ -1,6 +1,10 @@
 div.modal-slider {
     $root: &;
 
+    position: absolute;
+    z-index: 99;
+    transition: opacity .5s;
+
     background-color: $white-background;
 
     width: 100%;
@@ -80,6 +84,8 @@ div.modal-slider {
     }
 
     &.hidden {
+        z-index: 0;
         opacity: 0;
+        transition: opacity .5s;
     }
 }

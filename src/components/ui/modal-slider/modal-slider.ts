@@ -8,7 +8,7 @@ export default class ModalSlider extends Component {
     count: number = 0;
     activeSlide: number = 0
     slides: Array<any>
-    elements
+    elements: Array<Element>
 
     constructor(element: ComponentProps) {
         super(element);

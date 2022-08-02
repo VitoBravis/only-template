@@ -1,13 +1,14 @@
 div.counter {
     $root: &;
-
+    position: absolute;
+    z-index: 99;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     height: 100%;
-
+    transition: opacity .5s;
     &__title {
         color: $blue-dark;
     }
@@ -27,6 +28,8 @@ div.counter {
         }
     }
     &.hidden {
+        z-index: -1;
+        transition: opacity .5s;
         opacity: 0;
     }
 }
