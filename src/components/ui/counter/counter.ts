@@ -1,39 +1,46 @@
 import Component, { ComponentProps } from '@/base/component';
+import { changeValueCounter } from '@/pages/index';
+
+
+
 
 export default class Counter extends Component {
-     btnDecrement = document.querySelector('.decrement');
-     btnIncrement = document.querySelector('.increment');
-     counterCount = document.querySelector('.counter__count');
-     count: Number = 0;
+    btnDecrement: HTMLElement;
+
+    counterCount: any = document.querySelector('.counter__count');
+    counterValue: number;
+
     constructor(element: ComponentProps) {
         super(element);
 
-        this.btnDecrement?.addEventListener('click', this.handleDecrement);
-        this.btnIncrement?.addEventListener('click', this.handleIncrement);
-        this.counterCount;
-        this.count;
-    }
+        this.counterValue = 0;
+        this.counterCount = this.nRoot.querySelector('.counter__count');
+        this.btnDecrement = this.nRoot.querySelector('.decrement');
 
-
-    handleDecrement = (e: Event) => {
-        e.preventDefault();
-
-        this.count--;
-        this.counterCount.textContent  =`${this.count}`;
-        console.log(this.count)
-
-
+        this.nRoot.addEventListener('click', this.handleChangeCounter)
 
     }
-    handleIncrement = (e: Event) => {
-        e.preventDefault();
 
-        this.count++;
-        this.counterCount.textContent  =`${this.count}`;
-        console.log(this.count)
+
+    handleChangeCounter = (e: Event) => {
+        const decrementBtn = (<HTMLElement>e.target).closest('.decrement');
+        const incrementBtn = (<HTMLElement>e.target).closest('.increment');
+
+        if (!decrementBtn && !incrementBtn) return;
+
+        decrementBtn ? this.decrement() : this.increment();
+
+        changeValueCounter(this.counterValue);
+
+
 
 
     }
+    decrement = () => (this.counterCount.textContent = `${--this.counterValue}`);
+    increment = () => (this.counterCount.textContent = `${++this.counterValue}`);
+
+
+
 
     destroy = () => {
         // Destroy functions

@@ -3,13 +3,12 @@ mixin slider(props)
     .slider&attributes(attributes)
         .swiper.mySwiper
             .swiper-wrapper
-                .swiper-slide
-                    +img({src: '../../assets/images/slide-image1.jpg', alt: 'Слайд1'})
-                .swiper-slide
-                    +img({src: '../../assets/images/slide-image2.png', alt: 'Слайд2'})
-                .swiper-slide
-                    +img({src: '../../assets/images/slide-image3.jpg', alt: 'Слайд3'})
+                each slide in props
+                    +slider-item(slide)
         .swiper-button-next.swiper-button-btn
         .swiper-button-prev.swiper-button-btn
+
+
+
 
 

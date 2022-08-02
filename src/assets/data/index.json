@@ -1,5 +1,18 @@
 {
-    
+    "sliders": [
+        {
+            "src": "../../../src/assets/images/slide-image1.jpg",
+            "alt": "Слайд1"
+        },
+        {
+            "src": "../../../src/assets/images/slide-image2.png",
+            "alt": "Слайд2"
+        },
+        {
+            "src": "../../../src/assets/images/slide-image3.jpg",
+            "alt": "Слайд3"
+        }
+    ],
     "spoiler": [
         {
             "title": "1. Nullam tincidunt vestibulum porttitor",

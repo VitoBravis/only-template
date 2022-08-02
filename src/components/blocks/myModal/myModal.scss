@@ -1,39 +1,68 @@
 .myModal {
     $root: &;
-   
+
+
 
 
     .modal {
-        
+
         width: 100vw;
         height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
         background: #F4F5F9;
+        text-align: center;
 
+
+
+        opacity: 0;
+        visibility: hidden;
         
-      
-     
-
-      
-      
-    
+        transition: opacity 0.3s ease-in;
+                   
+        
         &.open {
             opacity: 1;
-            visibility:visible;
-           
+            visibility: visible;
+            z-index: 100;
+            transition: opacity 0.3s ease-in ;
+
+        }
+
+        .modal__btn {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+
+            color: #FFFFFF;
+
+            padding: 20px 40px;
+            background: #3877EE;
+            border-radius: 30px;
+            margin-top: 30px;
+
+        }
+
+
+
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+
         }
     }
-    
 
-    .modal__body{
+
+    .modal__body {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .modal__text{
+
+    .modal__text {
         color: black;
 
     }
