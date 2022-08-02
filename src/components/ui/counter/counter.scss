@@ -1,41 +1,51 @@
+@import './../../../app/scss/variables.scss';
+
 .counter {
     $root: &;
 
-
-  
     .container {
-    
-        transform: translateY(-40px);
+
+        transform: translateY(-4rem);
         align-items: center;
-        margin-top: 80px;
-    
+        margin-top: 7rem;
+
         .counter__count {
-            padding: 15px 20px;
-           
-            color: #42567A;
+            padding: 1.5rem 2rem;
+
+            color: $counter-color-text;
             font-weight: 700;
-            font-size: 20px;
-            line-height: 30px;
-    
+            font-size: 2rem;
+            line-height: 3rem;
+
             border-radius: 50%;
             background: #F4F5F9;
-            border: 2px solid #303E58;
-            margin: 0 25px;
+            border: .2rem solid #303E58;
+            margin: 0 2.5rem;
             text-align: center;
-            
+            align-items: center;
+
         }
-        
-    
+
+
         .counter__btn {
-            padding: 15px 20px;
-    
-            background: #3877EE;
-            border-radius: 30px;
-            color: #fff;
-            font-size: 15px;
            
-    
-        
+          width: 41px;
+          height: 41px;
+
+            background-color: $btn-color-slider-modal;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 3rem;
+
+
+            &:hover {
+                transition: background-color .2s linear;
+
+                background-color: $btn-color-hover;
+
+            }
+
+
         }
     }
 }

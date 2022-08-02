@@ -4,7 +4,7 @@
     $root: &;
 
     .swiper {
-        margin: 50px 0 65px 0;
+        margin: 5rem 0 6.5rem 0;
 
         max-width: 1427px;
         max-height: 956px;
@@ -12,37 +12,30 @@
         .swiper-slide {
             text-align: center;
 
-
             & img {
-                display: block;
                 width: 1400px;
                 height: 720px;
                 object-fit: cover;
             }
-
         }
-
-
     }
-
-
 
     .swiper-button-btn.swiper-button-next::after,
     .swiper-button-btn.swiper-button-prev::after {
-        font-size: 24px;
+        font-size: 2.4rem;
         background-color: #fff;
-        box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+        box-shadow: 0px 0px 1.5rem rgba(56, 119, 238, 0.1);
         border-radius: 50%;
 
-        padding: 22.5px 25.5px 22.5px 27px;
-      
-        
+        padding: 2.25rem 2.55rem 2.25rem 2.7rem;
     }
-    .swiper-button-btn.swiper-button-next::after{
-        margin-right: 50px;
+
+    .swiper-button-btn.swiper-button-next::after {
+        margin-right: 5rem;
     }
-    .swiper-button-btn.swiper-button-prev::after{
-        margin-left:50px;
+
+    .swiper-button-btn.swiper-button-prev::after {
+        margin-left: 5rem;
     }
 
 

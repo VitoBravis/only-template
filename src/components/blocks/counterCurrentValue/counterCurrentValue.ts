@@ -1,10 +1,13 @@
 import Component, { ComponentProps } from '@/base/component';
-import { state } from "@/pages/index";
+import { state } from '@/pages/index';
+
+
+
 export default class CounterCurrentValue extends Component {
     constructor(element: ComponentProps) {
         super(element);
-        this.nRoot.textContent = '0'
-        document.addEventListener("click", this.changeValue);
+        this.nRoot.textContent = '0';
+        document.addEventListener('click', this.changeValue);
     }
 
     changeValue = () => {

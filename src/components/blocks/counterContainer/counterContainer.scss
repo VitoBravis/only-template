@@ -1,0 +1,51 @@
+@import './../../../app/scss/variables.scss';
+.counterContainer {
+    $root: &;
+    max-width: 1681px;
+    margin: 0 auto;
+    text-align: center;
+    transform: translateY(50%);
+
+    .counter-container__title {
+
+        color: $counter-color-text;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.6rem;
+        line-height: 4.2rem;
+        text-align: center;
+    }
+
+    .counter-container__value {
+        font-weight: 400;
+        font-size: 12.8rem;
+        line-height: 15rem;
+        padding: 6rem 0 11rem 0;
+
+
+        text-align: center;
+
+        color: $counter-color-text;
+    }
+
+    .counter-container__btn {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+
+        color: #FFFFFF;
+
+        padding: 2rem 4rem;
+        background: $btn-color-slider-modal;
+        border-radius: 3rem;
+
+        &:hover {
+            transition: background-color .2s linear;
+
+            background-color: $btn-color-hover;
+
+        }
+      
+
+    }
+}

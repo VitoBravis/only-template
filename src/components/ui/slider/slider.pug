@@ -1,10 +1,9 @@
-
 mixin slider(props)
     .slider&attributes(attributes)
         .swiper.mySwiper
             .swiper-wrapper
                 each slide in props
-                    +slider-item(slide)
+                    +sliderItem(slide)
         .swiper-button-next.swiper-button-btn
         .swiper-button-prev.swiper-button-btn
 

@@ -1,9 +1,7 @@
 extends ../../app/pug/layout
 
-
-
 block content
     div(data-barba="container" data-barba-namespace="common" data-page-namespace="mainPage").content-wrapper
-         +counter-container()
+         +counterContainer()
          +myModal()
             +slider(dataJson.index.sliders)

@@ -14,10 +14,8 @@ export default class MyModal extends Component {
     }
 
     hadndleModalChange = (e: Event) => {
-        const openBtn = (<HTMLElement>e.target).closest(".counter-container__btn");
-        const closeBtn = (<HTMLElement>e.target).closest(".modal__btn");
-        
-    
+        const openBtn = (<HTMLElement>e.target).closest('.counter-container__btn');
+        const closeBtn = (<HTMLElement>e.target).closest('.modal__btn');
 
         if (!openBtn && !closeBtn) return;
 
@@ -27,15 +25,13 @@ export default class MyModal extends Component {
     };
 
     openModal = () => {
+        this.modal.classList.add('is-open');
        
-        this.modal.classList.add('open');
-      
-        
     };
 
     closeModal = () => {
-        this.modal.classList.remove('open');
-       
+        this.modal.classList.remove('is-open');
+
     };
 
     destroy = () => {

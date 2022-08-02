@@ -15,7 +15,7 @@ export default class Counter extends Component {
 
         this.counterValue = 0;
         this.counterCount = this.nRoot.querySelector('.counter__count');
-        this.btnDecrement = this.nRoot.querySelector('.decrement');
+        this.btnDecrement = this.nRoot.querySelector('.--decrement')!;
 
         this.nRoot.addEventListener('click', this.handleChangeCounter)
 
@@ -23,8 +23,8 @@ export default class Counter extends Component {
 
 
     handleChangeCounter = (e: Event) => {
-        const decrementBtn = (<HTMLElement>e.target).closest('.decrement');
-        const incrementBtn = (<HTMLElement>e.target).closest('.increment');
+        const decrementBtn = (<HTMLElement>e.target).closest('.--decrement');
+        const incrementBtn = (<HTMLElement>e.target).closest('.--increment');
 
         if (!decrementBtn && !incrementBtn) return;
 

@@ -1,13 +1,13 @@
 import { ITransitionData } from '@barba/core/dist/core/src/defs';
 import { getComponents, getComponent } from '@/helpers/helpers';
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Keyboard, Navigation } from 'swiper';
 
 import Spoiler from '@/components/ui/spoiler/spoiler';
 import MyModal from '@/components/blocks/myModal/myModal';
 import Slider from '@/components/ui/slider/slider';
 import Counter from '@/components/ui/counter/counter';
-import SliderItem from '@/components/blocks/slider-item/slider-item';
 import CounterCurrentValue from '@/components/blocks/counterCurrentValue/counterCurrentValue';
+import SliderItem from '@/components/blocks/sliderItem/sliderItem';
 
 
 
@@ -23,17 +23,13 @@ export default {
     async beforeEnter({ next }: ITransitionData) {
         try {
             const spoilers = getComponents('spoiler');
-
-
             if (spoilers.length) {
                 for (const spoiler of spoilers) {
                     new Spoiler(spoiler);
                 }
             }
 
-
-            const sliderItems = getComponents('slider-item', next.container);
-
+            const sliderItems = getComponents('sliderItem', next.container);
             if (sliderItems.length) {
                 for (const item of sliderItems) {
                     new SliderItem(item);
@@ -41,51 +37,43 @@ export default {
                 }
             }
 
-
-
-            new Swiper(".swiper", {
+            new Swiper('.swiper', {
+                modules: [Navigation, Keyboard],
                 allowTouchMove: false,
-                modules: [Navigation],
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                slidesPerView: 1,
+                keyboard: {
+                    enabled: true
                 },
-
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
                 on: {
                     slideChange: function (swiper) {
 
-                        const counterCurrentValue = swiper.$wrapperEl.children()[swiper.activeIndex].querySelector('.counter__count')?.textContent;
-
-
+                        state.valueCounter = Number(swiper.$wrapperEl.children()
+                        [swiper.activeIndex]
+                        .querySelector('.counter__count')
+                        ?.textContent);
                     }
-                }
-
-
+                },
+               
             })
-            const counterCurrentValue = getComponents('counterCurrentValue', next.container);
 
+            const counterCurrentValue = getComponents('counterCurrentValue', next.container);
             if(counterCurrentValue.length) {
                 for(const item of counterCurrentValue){
                     new CounterCurrentValue(item)
                 }
             }
 
-
-            const modals = getComponents('myModal', next.container)
-            if (modals.length) {
-
-                for (const item of modals) {
-                    new MyModal(item);
-                }
-            }
-
-            new Slider(getComponent('slider'));
-
-
+            const modal = getComponent('myModal')
+            new MyModal(modal);
+            
+            const slider = getComponent('slider')
+            new Slider(slider);
 
             const counter = getComponents('counter');
-
-
             for (const item of counter) {
                 new Counter(item);
 
