@@ -1,0 +1,18 @@
+mixin modal-slider(props)
+    .modal-slider&attributes(attributes)
+        - var slides = props.index.slides
+
+        +button.modal-slider__close Закрыть
+        .modal-slider__content.swiper
+            .modal-slider__wrapper.swiper-wrapper
+                each slide in slides
+                    +modal-slide(slide)
+
+        .modal-slider__btn.swiper-button-prev
+        .modal-slider__btn.swiper-button-next
+
+        .modal-slider__counter
+            .modal-slider__decrement -
+            .modal-slider__value
+                span
+            .modal-slider__increment +

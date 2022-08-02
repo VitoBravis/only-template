@@ -1,5 +1,11 @@
 
-@mixin h1 {
+@mixin h2-counter {
+    font-size: 36px;
+    line-height: 42px;
+}
+
+@mixin h3-spoiler {
+    letter-spacing: -0.02em;
     line-height: 1;
     font-weight: normal;
     @include font(30, 60, 60, 80);
@@ -10,15 +16,59 @@
     line-height: 1.5;
 }
 
-
-// Заголовки
-.h-1 {
-    @include h1;
+@mixin counter-value {
+    font-size: 128px;
+    line-height: 150px;
 }
 
+@mixin counter-btn-modal {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+}
+
+// Заголовки
+
+div.spoiler {
+    h2 {
+        @include h2-spoiler
+    }
+
+    &__title {
+        h3 {
+            @include h3-spoiler
+        }
+    }
+}
+
+div.counter {
+    &__title {
+        h2 {
+            @include h2-counter
+        }
+    }
+
+    // Counter value
+
+    &__value {
+        span {
+            @include counter-value
+        }
+    }
+
+    // Counter button
+
+    &__btn {
+        button {
+            @include counter-btn-modal
+        }
+    }
+}
 
 // Обычный текст
 
-.body-1 {
-    @include body1;
+div.spoiler__text {
+    p {
+        @include spoiler-text;
+    }
 }

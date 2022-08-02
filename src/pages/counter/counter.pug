@@ -1,0 +1,9 @@
+extends ../../app/pug/layout
+
+block title
+    | counter
+
+block content
+    div(data-barba="container" data-barba-namespace="common" data-page-namespace="counter").content-wrapper
+        +modal-slider(dataJson).hidden
+        +counter
