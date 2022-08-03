@@ -3,20 +3,22 @@ import { getComponent } from "@/helpers/helpers";
 import Slider from "@/components/ui/slider/slider";
 
 export default class ModalSlider extends Component {
-    modalSlider: HTMLElement;
-    button: HTMLElement;
     constructor(element: ComponentProps) {
         super(element);
-        this.modalSlider = this.nRoot;
-        this.button = this.getElement("button")!;
 
-        this.button.addEventListener("click", this.toggleModal);
+        this.nRoot.addEventListener("click", this.clickHandler);
 
         new Slider(getComponent("slider"));
     }
 
+    clickHandler = (e: any) => {
+        const button = e.target.closest(".modal-slider__button");
+        if (!button) return;
+        this.toggleModal();
+    };
+
     toggleModal = () => {
-        this.modalSlider.classList.toggle("open");
+        this.nRoot.classList.toggle("open");
         document.body.classList.toggle("lock");
     };
 }
