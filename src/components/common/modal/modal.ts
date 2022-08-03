@@ -12,8 +12,8 @@ export default class Modal extends Component {
     }
 
     clickHandler = (e: Event) => {
-        const openBtn: HTMLElement | null = (<HTMLElement>e.target).closest('[data-role="modal-open-btn"]');
-        const closeBtn: HTMLElement | null = (<HTMLElement>e.target).closest('[data-role="modal-close-btn"]');
+        const openBtn: HTMLElement | null = (<HTMLElement>e.target).closest('[data-action="open-modal"]');
+        const closeBtn: HTMLElement | null = (<HTMLElement>e.target).closest('[data-action="close-modal"]');
 
 
         if (!openBtn && !closeBtn) return;
