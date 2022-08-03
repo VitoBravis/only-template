@@ -23,6 +23,7 @@ export default class ModalSlider extends Component {
     close = () => {
         const dialog = this.nRoot as HTMLDialogElement;
         dialog.close();
+
     };
 
     destroy = () => {
