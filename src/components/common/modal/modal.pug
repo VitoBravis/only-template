@@ -1,6 +1,6 @@
 mixin modal(props)
     .modal&attributes(attributes)
         .modal__controls
-            +button.modal__close-btn.btn.btn_rounded.btn_primary Закрыть
+            +button.btn.btn_rounded.btn_primary(data-role='modal-close-btn') Закрыть
         .modal__content
             block

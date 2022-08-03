@@ -57,7 +57,9 @@ export default {
                 }
             }
 
-            new Modal(getComponent('modal'));
+            const modal = getComponent('modal');
+
+            if (modal) new Modal(modal);
         } catch (e) {
             console.error(e);
         }

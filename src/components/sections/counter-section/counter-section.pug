@@ -3,4 +3,4 @@ mixin counter-section(props)
         +container.container_static.counter-section__data
             h2.counter-section__title= 'Значение счетчика на активном слайде:'
             +main-counter.counter-section__value
-            +button.modal__open-btn.btn_primary.btn_rounded Открыть
+            +button.btn_primary.btn_rounded(data-role='modal-open-btn'  data-modal-id='carousel') Открыть
