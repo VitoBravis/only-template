@@ -18,10 +18,9 @@ export default class Counter extends Component {
 
         if (!btn) return;
 
-        const action = btn.dataset.action;
+        const action = <'increment' | 'decrement'>btn.dataset.action;
 
-        if (action === 'increment') this.increment();
-        if (action === 'decrement') this.decrement()
+        this[action]?.();
     };
 
     increment = () => {
