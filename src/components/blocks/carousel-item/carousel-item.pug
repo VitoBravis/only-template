@@ -1,0 +1,6 @@
+mixin carousel-item(slide)
+    .carousel-item.swiper-slide&attributes(attributes)
+        .carousel__img-wrapper
+            +img(slide).carousel__img
+        .carousel__slide-counter
+            +counter
