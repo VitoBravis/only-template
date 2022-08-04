@@ -4,17 +4,9 @@ mixin modal(props)
             button.modal__button!= 'Закрыть'
             .swiper
                 .swiper-wrapper
-                    .swiper-slide
-                        +img({src: '../../assets/images/swiper_image.jpg', alt: 'картинка'}).swiper_image
-                        +counter
-                    .swiper-slide
-                        +img({src: '../../assets/images/swiper_image.jpg', alt: 'картинка'}).swiper_image
-                        +counter
-                    .swiper-slide
-                        +img({src: '../../assets/images/swiper_image.jpg', alt: 'картинка'}).swiper_image
-                        +counter
-                    .swiper-slide
-                        +img({src: '../../assets/images/swiper_image.jpg', alt: 'картинка'}).swiper_image
-                        +counter
+                    each slide in props
+                        .swiper-slide
+                            +img(slide.img).swiper_image
+                            +counter
             .swiper-button-prev
             .swiper-button-next

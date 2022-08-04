@@ -1,3 +1,17 @@
 {
-    "title": "Hello World!"
+    "title": "Hello World!",
+    "sliders": [
+        {
+            "img": {"src": "../../assets/images/swiper_image.jpg", "alt": "картинка"}
+        },
+        {
+            "img": {"src": "../../assets/images/swiper_image.jpg", "alt": "картинка"}
+        },
+        {
+            "img": {"src": "../../assets/images/swiper_image.jpg", "alt": "картинка"}
+        },
+        {
+            "img": {"src": "../../assets/images/swiper_image.jpg", "alt": "картинка"}
+        }
+    ]
 }

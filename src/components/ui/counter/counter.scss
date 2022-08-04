@@ -6,7 +6,7 @@
 
     &__button-inc,
     &__button-dec {
-        background: #3877EE;
+        background: $modalBtn;
         width: 41px;
         height: 41px;
         border-radius: 50%;
@@ -18,7 +18,7 @@
         justify-content: center;
         width: 56px;
         height: 56px;
-        border: 2px solid #303E58;
+        border: 2px solid $counterBorder;
         border-radius: 50%;
         background: #F4F5F9;
         font-family: 'Cera Pro';

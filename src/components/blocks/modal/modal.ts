@@ -11,16 +11,14 @@ export default class Modal extends Component {
     textElement: HTMLElement | any;
     initialCounters: Counter[];
 
-    constructor(element: ComponentProps) {
+    constructor(element: ComponentProps, counterElement: HTMLElement) {
         super(element);
         this.closeBtn = this.getElement("button")!;
-        this.textElement = this.findRenderElement();
-        this.initialCounters = [];
-        this.value = 0;
-
-        getComponents("counter", this.nRoot).forEach((component) =>
-            this.initialCounters.push(new Counter(component))
+        this.textElement = counterElement;
+        this.initialCounters = getComponents("counter", this.nRoot).map(
+            (component) => new Counter(component)
         );
+        this.value = 0;
 
         this.swiper = new Swiper(".swiper", {
             modules: [Navigation],
@@ -60,9 +58,5 @@ export default class Modal extends Component {
         } else {
             this.textElement.textContent = "Нет счётчиков";
         }
-    };
-
-    findRenderElement = () => {
-        return document.querySelector(".counter-value") as HTMLElement;
     };
 }
