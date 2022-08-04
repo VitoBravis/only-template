@@ -10,6 +10,15 @@
     line-height: 1.5;
 }
 
+@mixin title1 {
+    @include font(24, 27, 24, 27);
+}
+
+
+@mixin text1 {
+    @include font(15, 14, 15, 15);
+}
+
 
 // Заголовки
 .h-1 {
@@ -22,3 +31,4 @@
 .body-1 {
     @include body1;
 }
+

@@ -1,0 +1,62 @@
+.spoiler-item {
+    $root: &;
+    border-bottom: 1px solid $border-color;
+    overflow: hidden;
+
+    &__titleActive {
+        color: $accent-color !important
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+        
+    &__container {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            align-items: flex-start;
+        }
+    }
+        
+    &__title {
+        font-size: 36px;
+        line-height: 1.2;
+        color: $main-text-color;
+
+        @include title1
+    }
+        
+    &__text {
+        max-width: 942px;
+        width: 100%;
+        max-height: 0;
+        font-size: 20px;
+        line-height: 1.5;
+        color: $second-text-color;
+        opacity: 0.8;
+        transition: max-height 0.3s ease-out;
+
+        @include media-breakpoint-up(xxl) {
+            max-width: 840px;
+        }
+    
+        @include media-breakpoint-up(xl) {
+            max-width: 640px;
+        }
+    
+        @include media-breakpoint-up(md) {
+            max-width: 612px;
+        }
+        @include text1
+    }
+
+                &__textActive {
+                    padding-bottom: 20px;
+                }
+}

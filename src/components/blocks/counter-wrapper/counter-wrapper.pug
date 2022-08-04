@@ -1,0 +1,5 @@
+mixin counter-wrapper(props)
+    .counter-wrapper&attributes(attributes)
+        h1.counter-wrapper__title Значение счетчика на активном слайде:
+        span.counter-wrapper__span 1
+        +button-counter({text:"Открыть"})

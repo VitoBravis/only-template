@@ -1,0 +1,20 @@
+mixin modal(props)
+    .modal&attributes(attributes)
+        +button-counter({text:"Закрыть"})
+        .swiper 
+            .swiper-wrapper
+                .swiper-slide
+                    +img({src:'/src/assets/images/javascr.jpg', alt: 'Mask'})
+                .swiper-slide 
+                    +img({src: '/src/assets/images/js.jpg', alt: 'Mask'})
+                .swiper-slide 
+                    +img({src: '/src/assets/images/jss.jpg', alt: 'Mask'})
+            .swiper-pagination
+            .swiper-button-prev
+                +svg("left")
+            .swiper-button-next
+                +svg("rigth")
+            .swiper-button-prev.swiper-btn-prev
+                +svg("plus")
+            .swiper-button-next.swiper-btn-next
+                +svg("min")

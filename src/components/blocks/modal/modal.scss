@@ -1,0 +1,93 @@
+.modal {
+    $root: &;
+    display: none;
+    padding-top: 32px;
+    background: $main-background;
+
+    &__active{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.swiper {
+    padding: 0 260px !important;
+    margin-top: 78px;
+
+    &-wrapper{
+        height: 720px !important;
+    }
+
+    &-pagination-bullet{
+        display: none;
+
+        &-active{
+            display: block;
+            margin: 0 auto;
+            width: 56px;
+            height: 56px;
+            padding-top: 11px;
+            font-family: "Cera Pro";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.5;
+            color: $accent-counter;
+            border: 2px solid $border-color-counter;
+            border-radius: 56px;        
+        }
+    }
+
+    &-button-prev,
+    &-button-next{
+        z-index: 100000;
+        position: absolute;
+        top: calc(50% - 30px);
+        padding-top: 23px;
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        background: $white;
+    }
+
+    &-button-prev{
+        left: 50px;
+
+        &>svg{
+            width: 8px;
+            height: 15px;
+        }
+    }
+
+    &-button-next {
+        right: 50px;
+
+        &>svg {
+            width: 8px;
+            height: 15px;
+        }
+    }
+
+    &-btn-prev,
+    &-btn-next {
+        padding-top: 15px;
+        width: 41px;
+        height: 41px;
+        border-radius: 41px;
+        background: $second-background;
+        color: $white;
+        top: 93.5%;
+    }
+
+    &-btn-prev{
+        left: 45%;
+    }
+
+    &-btn-next {
+        right: 45%;
+    }
+}

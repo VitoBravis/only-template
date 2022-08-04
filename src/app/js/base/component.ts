@@ -1,6 +1,7 @@
 import { REDUCE_MOTION } from '@/variables/variables';
 
 export type ComponentProps<T = HTMLElement> = {
+    map(arg0: (item: any) => import("../../../components/blocks/spoiler/spoiler").default);
     name: string;
     component: T | null;
 };

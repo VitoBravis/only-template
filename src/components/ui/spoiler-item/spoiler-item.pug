@@ -1,0 +1,8 @@
+mixin spoiler-item(props)
+    li.spoiler-item&attributes(attributes)
+        .spoiler-item__container 
+            h3.spoiler-item__title=props.title
+            +button
+        .spoiler-item__wrapper 
+             p.spoiler-item__text=props.text
+        
