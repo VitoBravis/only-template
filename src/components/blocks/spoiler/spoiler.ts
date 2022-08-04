@@ -7,6 +7,7 @@ export default class Spoiler extends Component {
         this.nRoot.addEventListener("click",this.onHandleToggler
         )
     }
+    
 
     onHandleToggler = (e: any) => {    
         

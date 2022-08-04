@@ -1,0 +1,23 @@
+.counter-wrapper {
+    $root: &;
+    &__title{
+        margin-bottom: 70px;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 1.17;
+        text-align: center;
+        color: $accent-counter;
+    }
+
+    &__span{
+        font-family: 'Roboto';
+        font-style: normal;
+        display: block;
+        margin-bottom: 108px;
+        font-weight: 400;
+        font-size: 128px;
+        line-height: 1.17;
+        text-align: center;
+        color: $accent-counter;
+    }
+}
