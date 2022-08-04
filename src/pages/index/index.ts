@@ -57,9 +57,20 @@ export default {
                 }
             }
 
-            const modal = getComponent('modal');
+            const modals = getComponents('modal').map((modal) => new Modal(modal));
 
-            if (modal) new Modal(modal);
+            function modalClickHander(e: Event) {
+                const openBtn = (<HTMLElement>e.target).closest<HTMLElement>('[data-action="open-modal"]');
+
+                if (!openBtn) return;
+
+                const targetModal = modals.find((modal) => modal.id === openBtn.dataset.modalId);
+
+                targetModal?.open();
+            }
+
+            document.addEventListener('click', modalClickHander);
+
         } catch (e) {
             console.error(e);
         }

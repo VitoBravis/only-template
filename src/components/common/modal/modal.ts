@@ -1,45 +1,28 @@
 import Component, { ComponentProps } from '@/base/component';
 
 export default class Modal extends Component {
-    modal: HTMLElement | null;
+    id: string;
+    closeBtn: HTMLElement;
 
     constructor(element: ComponentProps) {
         super(element);
 
-        this.modal = null;
-
-        document.addEventListener('click', this.clickHandler);
+        this.id = this.nRoot.id;
+        this.closeBtn = this.nRoot.querySelector<HTMLElement>('[data-action="close-modal"]')!;
     }
 
-    clickHandler = (e: Event) => {
-        const openBtn: HTMLElement | null = (<HTMLElement>e.target).closest('[data-action="open-modal"]');
-        const closeBtn: HTMLElement | null = (<HTMLElement>e.target).closest('[data-action="close-modal"]');
-
-
-        if (!openBtn && !closeBtn) return;
-
-        if (openBtn) {
-            this.modal = document.getElementById(`${openBtn.dataset.modalId}`);
-            this.open();
-        }
-
-        if (closeBtn) this.close();
-    };
-
     open = () => {
-        if (!this.modal) return;
-
         document.body.style.overflow = 'hidden';
 
-        this.modal.style.zIndex = '9999';
-        this.modal.classList.add('modal_visible');
+        this.nRoot.style.zIndex = '9999';
+        this.nRoot.classList.add('modal_visible');
+
+        this.closeBtn.addEventListener('click', this.close, { once: true });
     };
 
     close = () => {
-        if (!this.modal) return;
-
         document.body.style.overflow = '';
 
-        this.modal.classList.remove('modal_visible');
+        this.nRoot.classList.remove('modal_visible');
     };
 }
