@@ -1,0 +1,10 @@
+mixin modal(props)
+    .modal&attributes(attributes)
+        h1.modal__title Значение счетчика на активном слайде:
+        p.current__value 0
+        +button({title: 'Открыть'})(class= 'button__open-close')
+        .modal__content
+            +button({title: 'Закрыть'})(class= 'button__open-close')
+            .swiper
+                +slider
+
