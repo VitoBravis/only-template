@@ -1,21 +1,49 @@
 import Component, { ComponentProps } from "@/base/component";
+import Slider from "@/components/ui/slider/slider";
+import { getComponent } from "@/helpers/helpers";
 
 export default class Modal extends Component {
+    content: HTMLElement;
+    value: HTMLElement;
+    slider: Slider;
+
     constructor(element: ComponentProps) {
         super(element);
         this.nRoot.addEventListener("click", this.clickHandler);
+        this.content = this.getElement("content") as HTMLElement;
+        this.value = this.getElement("current-value") as HTMLElement;
+        this.slider = new Slider(getComponent("slider", this.nRoot));
+
     }
 
-    clickHandler = (e: Event) => {
-        const modalContent = this.nRoot.children[3]
-        const activeSlide = (<HTMLElement>e.target).closest(".swiper-slide-active")
-
-        if((<HTMLElement>e.target).closest(".button__open-close")) {
-            modalContent.classList.toggle('open')
-        }
-        if(activeSlide) {
-            let valueActiveSlide = activeSlide.children[1].children[1].innerHTML;
-            this.nRoot.children[1].innerHTML = valueActiveSlide
-        }
+    open = () => {
+        this.content.classList.add("open");
     };
+    close = () => {
+        this.content.classList.remove("open");
+        this.value.textContent = this.slider.getActiveCounter().getValue()
+
+    };
+    clickHandler = (e: Event) => {
+        if ((<HTMLElement>e.target).closest(".button__open-close")) {
+
+            if (this.content.classList.contains("open")) {
+                this.close();
+            } else {
+                this.open();
+            }
+        }
+        //     const activeSlide = (<HTMLElement>e.target).closest(".swiper-slide-active");
+        //
+        //     if ((<HTMLElement>e.target).closest(".button__open-close")) {
+        //         this.content.classList.toggle("open");
+        //     }
+        //     if (activeSlide) {
+        //         let valueActiveSlide = activeSlide.querySelector(".counter__value");
+        //         if (valueActiveSlide) {
+        //             this.value.innerHTML = valueActiveSlide.innerHTML;
+        //         }
+        //     }
+    };
+
 }

@@ -9,10 +9,8 @@ export default {
     namespace: 'common',
     async beforeEnter({ next }: ITransitionData) {
         try {
-            new Spoiler(getComponent('spoiler'))
+            // new Spoiler(getComponent('spoiler'))
             new Modal(getComponent('modal'))
-            new Slider(getComponent('slider'))
-            new Counter(getComponent('counter'))
 
         } catch (e) {
             console.error(e);

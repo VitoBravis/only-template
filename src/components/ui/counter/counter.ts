@@ -1,29 +1,31 @@
 import Component, { ComponentProps } from "@/base/component";
 
 export default class Counter extends Component {
-    counters: NodeListOf<Element>;
+    value: Element | null;
 
     constructor(element: ComponentProps) {
         super(element);
-        this.counters = document.querySelectorAll(".counter");
-        this.counters.forEach(counter => {
-            counter.addEventListener("click", (e: Event) => this.clickHandler(e, counter));
-        });
+        this.nRoot.addEventListener("click", this.clickHandler);
+        this.value = this.nRoot.querySelector(".counter__value");
     }
 
-    clickHandler = (e: Event, counter: Element) => {
+    clickHandler = (e: Event) => {
         const target = e.target;
-        const counterValue = counter.querySelector(".counter__value");
-        if (!counterValue) return;
-        let value = +(counterValue.innerHTML);
+        let value = Number(this.getValue());
         if ((<HTMLElement>target).closest(".button__slider")) {
             if ((<HTMLElement>target).classList.contains("plus")) {
                 value++;
             } else {
                 --value;
             }
-            counterValue.innerHTML = String(value);
+            this.setValue(String(value));
         }
     };
 
+    setValue = (value: string) => {
+        this.value!.textContent = value;
+    };
+    getValue = () => {
+        return this.value!.textContent;
+    };
 }
