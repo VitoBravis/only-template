@@ -21,7 +21,7 @@ export default class Modal extends Component {
     };
     close = () => {
         this.content.classList.remove("open");
-        this.value.textContent = this.slider.getActiveCounter().getValue()
+        this.value.textContent = this.slider.getActiveCounter().getValue();
 
     };
     clickHandler = (e: Event) => {
@@ -33,17 +33,6 @@ export default class Modal extends Component {
                 this.open();
             }
         }
-        //     const activeSlide = (<HTMLElement>e.target).closest(".swiper-slide-active");
-        //
-        //     if ((<HTMLElement>e.target).closest(".button__open-close")) {
-        //         this.content.classList.toggle("open");
-        //     }
-        //     if (activeSlide) {
-        //         let valueActiveSlide = activeSlide.querySelector(".counter__value");
-        //         if (valueActiveSlide) {
-        //             this.value.innerHTML = valueActiveSlide.innerHTML;
-        //         }
-        //     }
     };
 
 }

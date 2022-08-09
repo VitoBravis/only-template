@@ -13,7 +13,7 @@ export default class Slider extends Component {
     constructor(props: ComponentProps) {
         super(props);
         this.counters = getComponents("counter", this.nRoot).map((counter) => new Counter(counter));
-        this.activeCounter = {} as Counter;
+        this.activeCounter = this.counters[0] as Counter;
         this.swiper = new Swiper(this.nRoot, {
             modules: [Navigation],
             navigation: {
@@ -21,10 +21,6 @@ export default class Slider extends Component {
                 prevEl: ".swiper-button-prev"
             }
         });
-        /*
-        Обработчик slideChange срабатывает только при переключении между слайдами,
-         если открыть модалку и сразу закрыть, то будет ошибка.
-         */
         this.swiper.on("slideChange", this.onSlideChange);
     }
 
