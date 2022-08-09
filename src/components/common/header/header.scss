@@ -9,4 +9,10 @@
         width: 40px;
         height: 18px;
     }
+    &__navbar {
+        display: flex;
+        &-item {
+            padding: 0 5px;
+        }
+    }
 }

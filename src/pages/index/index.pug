@@ -5,4 +5,10 @@ block title
 
 block content
     main(data-barba="container" data-barba-namespace="common" data-page-namespace="index")
-        h1.h-1!= dataJson.index.title
+        +spoiler([
+            {title: 'Spoiler 1', text: '1Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+            {title: 'Spoiler 2', text: '2Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+            {title: 'Spoiler 3', text: '3Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+            {title: 'Spoiler 4', text: '4Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+            {title: 'Spoiler 5', text: '5Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+        ])

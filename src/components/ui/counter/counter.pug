@@ -1,0 +1,5 @@
+mixin counter(props)
+    .counter&attributes(attributes)
+        +button({ title: '-' }).button__slider.minus
+        span.counter__value!=props.value
+        +button({ title: '+' }).button__slider.plus
