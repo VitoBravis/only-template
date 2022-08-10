@@ -1,0 +1,9 @@
+mixin spoiler(props)
+    .spoiler&attributes(attributes)
+        .spoiler__head
+            p.spoiler__head-title!= props.title
+                span.spoiler__head-icon
+
+        .spoiler__collapse
+            each content in props.contents
+                .spoiler__content!= content
