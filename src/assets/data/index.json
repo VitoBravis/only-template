@@ -1,5 +1,9 @@
 {
     "title": "Lorem ipsum dolor",
+    "rotes": [
+        { "name": "Задание 1", "path": "/" },
+        { "name": "Задание 2", "path": "/counter.html" }
+    ],
     "spoiler": [
         {
             "title": "1. Nullam tincidunt vestibulum porttitor",

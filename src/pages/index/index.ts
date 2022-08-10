@@ -7,12 +7,21 @@ import Spoiler from '@/components/ui/spoiler/spoiler';
 import MainCounter from '@/components/ui/main-counter/main-counter';
 import CarouselItem from '@/components/blocks/carousel-item/carousel-item';
 import Modal from '@/components/common/modal/modal';
+import HeaderMenu from '@/components/blocks/header-menu/header-menu';
+
+
+const headerMenuElem = getComponent('header__menu');
+let headerMenu: HeaderMenu;
+
+if (headerMenuElem.component) {
+    headerMenu = new HeaderMenu(headerMenuElem);
+}
 
 const counterState = {
     value: 0,
 };
 
-const mainCounter = new MainCounter(getComponent('main-counter'));
+let mainCounter = { value: 0 };
 
 export const watchedCounter = onChange(counterState, (_, value) => {
     mainCounter.value = value as number;
@@ -22,13 +31,13 @@ export default {
     namespace: 'common',
     async beforeEnter({ next }: ITransitionData) {
         try {
-            const spoilers = getComponents('spoiler');
+            headerMenu.path = next.url.path as string;
 
-            if (spoilers.length) {
-                for (const spoiler of spoilers) {
-                    new Spoiler(spoiler);
-                }
-            }
+            getComponents('spoiler').map((spoiler) => new Spoiler(spoiler))
+
+            const mainCounterElem = getComponent('main-counter');
+
+            if (mainCounterElem.component) mainCounter = new MainCounter(mainCounterElem);
 
             new Swiper(".swiper", {
                 modules: [Navigation],
@@ -49,13 +58,7 @@ export default {
                 }
             });
 
-            const carouselItems = getComponents('carousel-item');
-
-            if (carouselItems.length) {
-                for (const carouselItem of carouselItems) {
-                    new CarouselItem(carouselItem);
-                }
-            }
+            getComponents('carousel-item').map((item) => new CarouselItem(item));
 
             const modals = getComponents('modal').map((modal) => new Modal(modal));
 
@@ -70,7 +73,6 @@ export default {
             }
 
             document.addEventListener('click', modalClickHander);
-
         } catch (e) {
             console.error(e);
         }

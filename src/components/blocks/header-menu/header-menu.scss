@@ -1,0 +1,30 @@
+.header__menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.header__menu-item {
+    margin-left: em(40);
+}
+
+.header__menu-link {
+    display: block;
+    padding: em(9) 0;
+    line-height: 1;
+}
+
+.header__menu-link_active {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: em(9);
+        width: 100%;
+        height: em(1);
+        background-color: currentColor;
+    }
+}
