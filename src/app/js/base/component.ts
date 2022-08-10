@@ -20,7 +20,7 @@ abstract class Component {
     public nRootName: string;
 
     protected constructor({name, component}: ComponentProps) {
-        if (!component) throw new Error('Отсутствует корневой элемент');
+        if (!component) throw new Error('Отсутствует корневой элемент у ' + name);
 
         this.nRoot = component;
         this.nRootName = name;

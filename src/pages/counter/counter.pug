@@ -1,0 +1,10 @@
+extends ../../app/pug/layout
+
+block title
+    | Счётчик
+
+block content
+    main(data-barba="container" data-barba-namespace="common" data-page-namespace="counter")
+        +counter-wrapper
+            +modal-slider
+                +counter
