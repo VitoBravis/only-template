@@ -1,0 +1,10 @@
+mixin slider(props)
+    .slider&attributes(attributes)
+        .slider__wrapper.swiper-wrapper
+            each slide in props
+                .slider__slide.swiper-slide
+                    .slider__slide-img
+                        +img({ src: slide.src, alt: slide.alt })
+                    +counter
+    .swiper-button-prev
+    .swiper-button-next

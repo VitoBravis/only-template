@@ -1,5 +1,5 @@
 
-@mixin h2-counter {
+@mixin h2-modal {
     font-size: 36px;
     line-height: 42px;
 }
@@ -23,12 +23,12 @@
     line-height: 1.5;
 }
 
-@mixin counter-value {
+@mixin modal-value {
     font-size: 128px;
     line-height: 150px;
 }
 
-@mixin counter-btn-modal {
+@mixin btn-modal {
     font-size: 16px;
     line-height: 19px;
     font-weight: 700;
@@ -48,27 +48,24 @@ div.spoiler {
     }
 }
 
-div.counter {
+div.modal {
     &__title {
         h2 {
-            @include h2-counter
+            @include h2-modal
         }
     }
 
     // Counter value
 
-    &__value {
-        span {
-            @include counter-value
-        }
+    &__count {
+        @include modal-value
     }
 
     // Counter button
 
-    &__btn {
-        button {
-            @include counter-btn-modal
-        }
+    &__button-open,
+    &__button-close {
+        @include btn-modal
     }
 }
 

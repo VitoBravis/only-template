@@ -5,5 +5,5 @@ export default class Header extends Component {
         super(element);
     }
 
-    destroy = () => {};
+    destroy = () => { };
 }
