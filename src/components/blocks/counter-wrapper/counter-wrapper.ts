@@ -3,7 +3,7 @@ import { getComponent } from "@/helpers/helpers";
 import Counter from "@/components/ui/counter/counter";
 import { debounceTime } from "rxjs/operators";
 import ModalSlider from "@/components/blocks/modal-slider/modal-slider";
-import { Subscription } from "rxjs";
+import { fromEvent, Subscription } from "rxjs";
 
 export default class CounterWrapper extends Component {
     counter: Counter | undefined;
@@ -27,8 +27,9 @@ export default class CounterWrapper extends Component {
             this.modal = new ModalSlider(findModal);
         }
         this.openBtn = this.getElement('button-open')
-        this.openBtn?.addEventListener('click', () => this.modal?.open())
-
+        if(this.openBtn){
+            fromEvent(this.openBtn, 'click').subscribe(() => this.modal?.open())
+        }
     }
 
     setCount = (value: number) => {

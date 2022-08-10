@@ -15,9 +15,9 @@ export default class Counter extends Component {
         this.increaseBtn = this.getElement('btn-increase');
         this.decreaseBtn = this.getElement('btn-decrease');
         this.counterView = this.getElement('value__text');
-        this.decreaseBtn && this.increaseBtn && this.counterView ?
-            this.init() :
-            null;
+        if (this.decreaseBtn && this.increaseBtn && this.counterView){
+            this.init();
+        }
     };
 
     init() {
@@ -36,10 +36,8 @@ export default class Counter extends Component {
     }
 
     updateValue = () => {
-        this.counterView ?
-            this.counterView.innerText = this.count.toString() :
-            null;
-    };
+        if (this.counterView) this.counterView.innerText = this.count.toString();
+    }
 
     setCount = (value: number) => this.count = value;
     getCount = () => this.count;
