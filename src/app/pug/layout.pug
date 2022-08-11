@@ -9,7 +9,12 @@ html(lang="ru")
         title
             block title
 
-    body(data-barba="wrapper")
-        +header
-        block content
-        +footer
+    body
+        .transition-in
+        .transition-out
+            .transition-out__top
+            .transition-out__bottom
+        div(data-barba="wrapper")
+            +header
+            block content
+            +footer

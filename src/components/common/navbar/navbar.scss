@@ -1,0 +1,18 @@
+.navbar {
+    $root: &;
+
+    &__link {
+        color: $black;
+        text-transform: uppercase;
+
+        &:hover {
+            border-bottom: 1px solid rgba(0,0,0, .6);
+        }
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+        &_current {
+            border-bottom: 1px solid black;
+        }
+    }
+}

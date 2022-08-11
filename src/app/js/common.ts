@@ -6,6 +6,7 @@ import common from '@/pages/index/index';
 import {getComponent, resize, setVhCssVariable} from '@/helpers/helpers';
 import Header from "@/components/common/header/header";
 import Footer from "@/components/common/footer/footer";
+import { slideShutter, slideDown, slideOn } from "./transitions";
 
 // SVG
 const requireAll = (r: __WebpackModuleApi.RequireContext) => r.keys().forEach(r);
@@ -30,5 +31,18 @@ barba.init({
     prefetchIgnore: '/bitrix',
     prevent: ({ el }) => el?.id?.indexOf('bx') !== -1 || el?.classList.contains('no-barba'),
     views: [common],
-    requestError: () => false
+    requestError: () => false,
+    transitions: [{
+        name: 'slide-transition-main',
+        once(data) {
+            slideOn(data);
+        },
+        async leave(data) {
+            return slideDown(data);
+        },
+        async enter(data) {
+            data.current.container.remove();
+            return slideShutter(data);
+        },
+    }]
 });
