@@ -1,0 +1,11 @@
+mixin spoiler(props)
+
+    .spoiler&attributes(attributes)
+        h1.spoiler__title Spoiler
+        ul.spoiler__list
+            each spoiler in props
+                li.spoiler__element
+                    button.spoiler__head
+                        span.spoiler__head-title=spoiler.title
+
+                    .spoiler__collapse=spoiler.text

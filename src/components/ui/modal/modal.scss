@@ -1,0 +1,39 @@
+.modal {
+    $root: &;
+    height: 95.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #42567A;
+    transition: all 0.8s ease 0s;
+
+    &__title {
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 71px;
+    }
+
+    &__current-value {
+        font-weight: 400;
+        font-size: 128px;
+        line-height: 150px;
+        margin-bottom: 108px;
+    }
+    &__content {
+        position: fixed;
+        background-color: #F4F5F9;
+        height: 100%;
+        width: 100%;
+        padding-top: 32px;
+        text-align: center;
+        min-width: 0;
+        transition: all 0.8s ease 0s;
+        z-index: -1;
+        transform: perspective(600px) translate(0px, -100%);
+        &.open {
+            transform: perspective(600px) translate(0px, 0);
+            z-index: 1;
+        }
+    }
+}
