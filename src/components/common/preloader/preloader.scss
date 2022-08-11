@@ -1,0 +1,16 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    transform-origin: top;
+    transform: scaleY(100%);
+    width: 100vw;
+    height: 100vw;
+    background-color: $preloader-color;
+    transition: transform $preloader-duration;
+}
+
+.preloader_hidden {
+    transform: scaleY(0);
+}

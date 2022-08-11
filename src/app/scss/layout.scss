@@ -78,6 +78,8 @@ button {
 
 [data-barba="container"] {
     position: relative;
+    opacity: 0;
+    transition: opacity $duration $preloader-duration + .01;
 }
 
 .object-fit {

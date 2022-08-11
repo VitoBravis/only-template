@@ -1,0 +1,19 @@
+.transition {
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    transform-origin: bottom;
+    transform: scaleY(100%);
+    width: 100vw;
+    height: 100vw;
+    background-color: $preloader-color;
+    transition: transform 0s, visibility 0s $preloader-duration;
+}
+
+.transition_hidden {
+    visibility: hidden;
+    transform: scaleY(0);
+    transition: transform $preloader-duration * 2, visibility 0s $preloader-duration;
+}
