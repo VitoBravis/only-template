@@ -28,4 +28,8 @@ export default class Spoiler extends Component {
             content.style.maxHeight = `${content.scrollHeight}px`;
         }
     };
+
+    destroy = () => {
+        this.nRoot.removeEventListener('click', this.clickHandler);
+    };
 }

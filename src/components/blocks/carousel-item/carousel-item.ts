@@ -32,4 +32,9 @@ export default class CarouselItem extends Component {
     decrement = () => {
         watchedCounter.value = this.counter.value;
     };
+
+    destroy = () => {
+        this.counter.destroy();
+        this.nRoot.removeEventListener('click', this.clickHandler);
+    };
 }

@@ -10,6 +10,21 @@ import Modal from '@/components/common/modal/modal';
 import HeaderMenu from '@/components/blocks/header-menu/header-menu';
 
 
+let spoilers: Spoiler[] = [];
+let carouselItems: CarouselItem[] = [];
+
+let modals: Modal[] = [];
+
+function modalClickHander(e: Event) {
+    const openBtn = (<HTMLElement>e.target).closest<HTMLElement>('[data-action="open-modal"]');
+
+    if (!openBtn) return;
+
+    const targetModal = modals.find((modal) => modal.id === openBtn.dataset.modalId);
+
+    targetModal?.open();
+}
+
 const headerMenuElem = getComponent('header__menu');
 let headerMenu: HeaderMenu;
 
@@ -33,7 +48,7 @@ export default {
         try {
             headerMenu.path = next.url.path as string;
 
-            getComponents('spoiler').map((spoiler) => new Spoiler(spoiler))
+            spoilers = getComponents('spoiler').map((spoiler) => new Spoiler(spoiler));
 
             const mainCounterElem = getComponent('main-counter');
 
@@ -58,26 +73,20 @@ export default {
                 }
             });
 
-            getComponents('carousel-item').map((item) => new CarouselItem(item));
+            carouselItems = getComponents('carousel-item').map((item) => new CarouselItem(item));
 
-            const modals = getComponents('modal').map((modal) => new Modal(modal));
-
-            function modalClickHander(e: Event) {
-                const openBtn = (<HTMLElement>e.target).closest<HTMLElement>('[data-action="open-modal"]');
-
-                if (!openBtn) return;
-
-                const targetModal = modals.find((modal) => modal.id === openBtn.dataset.modalId);
-
-                targetModal?.open();
-            }
+            modals = getComponents('modal').map((modal) => new Modal(modal));
 
             document.addEventListener('click', modalClickHander);
         } catch (e) {
             console.error(e);
         }
     },
-    beforeLeave() { },
+    beforeLeave() {
+        document.removeEventListener('click', modalClickHander);
+        spoilers.forEach((spoiler) => spoiler.destroy());
+        carouselItems.forEach((item) => item.destroy());
+    },
 
     afterLeave() { },
 };
