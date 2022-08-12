@@ -3,10 +3,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 90px;
 
     svg {
         fill: black;
         width: 40px;
         height: 18px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    &__link {
+        text-decoration: none;
+        cursor: pointer;
+        font-family: $font-roboto-name;
+        font-size: 16px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $headerLink;
+    }
+    &__link.active {
+        text-decoration: underline;
     }
 }

@@ -2,4 +2,10 @@ mixin header(props)
     header&attributes(attributes).header
         a(href="/").header__logo
             +svg('only')
+        nav.header__menu
+            ul.header__list
+                li.header__item
+                    a(href="/").header__link!= "Задание 1"
+                li.header__item
+                    a(href="/Counter.html").header__link!= "Задание 2"
         p header
