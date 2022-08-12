@@ -18,11 +18,16 @@ export default class ModalSlider extends Component {
 
     open = () => {
         const dialog = this.nRoot as HTMLDialogElement;
+        dialog.classList.add('modal-slider_open');
         dialog.show();
     };
 
     close = () => {
         const dialog = this.nRoot as HTMLDialogElement;
+        const subscribe = fromEvent(dialog, 'transitionend').subscribe(() => {
+            dialog.classList.remove('modal-slider_open');
+            subscribe.unsubscribe();
+        })
         dialog.close();
 
     };

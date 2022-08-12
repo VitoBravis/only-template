@@ -18,6 +18,9 @@
 
     &[open] {
         opacity: 1;
+    }
+
+    &_open {
         z-index: 1000;
     }
 
