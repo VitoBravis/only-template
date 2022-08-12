@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100vw;
     background-color: $preloader-color;
-    transition: transform 0s, visibility 0s $preloader-duration;
+    transition: transform 0s, visibility 0s .3s;
 }
 
 .transition_hidden {

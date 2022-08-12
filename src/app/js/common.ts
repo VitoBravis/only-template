@@ -51,22 +51,20 @@ barba.init({
     views: [common],
     transitions: [
         {
-            sync: true,
-            once(data) {
-                data.next.container.style.opacity = '1';
+            once() {
                 preloader.hide();
             },
-            leave(data) {
-                data.current.container.style.opacity = '0';
+            leave() {
                 preloader.show();
                 transition.show();
+
+                return new Promise<void>((resolve) => {
+                    setTimeout(resolve, 500);
+                });
             },
-            enter(data) {
-                setTimeout(() => {
-                    data.next.container.style.opacity = '1';
-                    preloader.hide();
-                    transition.hide();
-                }, 1010);
+            enter() {
+                preloader.hide();
+                transition.hide();
             },
         }
     ],
