@@ -1,4 +1,16 @@
 {
+
+    "routes" : [
+        {
+            "name": "Задание 1",
+            "path": "/"
+        },
+        {
+            "name": "Задание 2",
+            "path": "/mainPage.html"
+        }
+    ],
+
     "sliders": [
         {
             "src": "../../../src/assets/images/slide-image1.jpg",
