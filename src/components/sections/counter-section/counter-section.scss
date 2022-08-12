@@ -1,0 +1,19 @@
+.counter-section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: $gray-dark;
+    text-align: center;
+    background-color: #E5E5E5;
+}
+
+.counter-section__title {
+    margin-bottom: em(71, 36);
+    font-size: rem(36);
+}
+
+.counter-section__value {
+    margin-bottom: em(108, 128);
+    font-size: rem(128);
+    line-height: 1.17;
+}

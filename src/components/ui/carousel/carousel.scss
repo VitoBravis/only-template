@@ -1,0 +1,24 @@
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel__btn {
+    margin: 0 rem(20);
+}
+
+.carousel__btn_prev {
+    svg {
+        transform: rotate(180deg);
+        margin-right: .2em;
+    }
+}
+
+.carousel__btn_next {
+    svg { margin-left: .2em; }
+}
+
+.carousel__inner {
+    max-width: rem(1400);
+}

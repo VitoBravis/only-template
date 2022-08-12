@@ -1,0 +1,5 @@
+mixin header-menu(props)
+    ul.header-menu(role='navigation')&attributes(attributes)
+        each route, ndx in props
+            li.header-menu__item
+                a(href!= route.path class=(ndx === 0 ? 'header-menu__link_active' : '')).header-menu__link!= route.name

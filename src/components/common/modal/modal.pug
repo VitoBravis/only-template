@@ -1,0 +1,6 @@
+mixin modal(props)
+    .modal&attributes(attributes)
+        .modal__controls
+            +button.btn.btn_rounded.btn_primary(data-action='close-modal') Закрыть
+        .modal__content
+            block

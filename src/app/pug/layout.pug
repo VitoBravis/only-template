@@ -9,7 +9,9 @@ html(lang="ru")
         title
             block title
 
-    body(data-barba="wrapper")
+    body(class="body-1" data-barba="wrapper")
         +header
         block content
         +footer
+        +transition
+        +preloader

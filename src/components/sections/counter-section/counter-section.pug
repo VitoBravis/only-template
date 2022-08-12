@@ -1,0 +1,6 @@
+mixin counter-section(props)
+    .counter-section&attributes(attributes)
+        +container.container_static.counter-section__data
+            h2.counter-section__title= 'Значение счетчика на активном слайде:'
+            +main-counter.counter-section__value
+            +button.btn_primary.btn_rounded(data-action='open-modal'  data-modal-id='carousel') Открыть

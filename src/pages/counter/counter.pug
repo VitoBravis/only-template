@@ -1,0 +1,10 @@
+extends ../../app/pug/layout
+
+block title
+    | Counter
+
+block content
+    div(data-barba="container" data-barba-namespace="common" data-page-namespace="counter").content-wrapper
+        +counter-section
+        +modal#carousel
+            +carousel(dataJson.index.slides)
