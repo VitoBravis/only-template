@@ -1,21 +1,21 @@
-.header__menu {
+.header-menu {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     text-transform: uppercase;
 }
 
-.header__menu-item {
+.header-menu__item {
     margin-left: em(40);
 }
 
-.header__menu-link {
+.header-menu__link {
     display: block;
     padding: em(9) 0;
     line-height: 1;
 }
 
-.header__menu-link_active {
+.header-menu__link_active {
     position: relative;
 
     &::after {

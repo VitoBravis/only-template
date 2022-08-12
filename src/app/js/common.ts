@@ -36,7 +36,9 @@ if (transitionElem.component) {
 
 barba.use(barbaPrefetch);
 
-barba.hooks.beforeEnter((_data) => { });
+barba.hooks.beforeEnter((_data) => {
+    header.update(_data?.next);
+});
 
 barba.hooks.afterEnter((_data) => { });
 

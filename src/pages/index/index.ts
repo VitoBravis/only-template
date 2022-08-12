@@ -7,8 +7,6 @@ import Spoiler from '@/components/ui/spoiler/spoiler';
 import MainCounter from '@/components/ui/main-counter/main-counter';
 import CarouselItem from '@/components/blocks/carousel-item/carousel-item';
 import Modal from '@/components/common/modal/modal';
-import HeaderMenu from '@/components/blocks/header-menu/header-menu';
-
 
 let spoilers: Spoiler[] = [];
 let carouselItems: CarouselItem[] = [];
@@ -25,13 +23,6 @@ function modalClickHander(e: Event) {
     targetModal?.open();
 }
 
-const headerMenuElem = getComponent('header__menu');
-let headerMenu: HeaderMenu;
-
-if (headerMenuElem.component) {
-    headerMenu = new HeaderMenu(headerMenuElem);
-}
-
 const counterState = {
     value: 0,
 };
@@ -46,8 +37,6 @@ export default {
     namespace: 'common',
     async beforeEnter({ next }: ITransitionData) {
         try {
-            headerMenu.path = next.url.path as string;
-
             spoilers = getComponents('spoiler').map((spoiler) => new Spoiler(spoiler));
 
             const mainCounterElem = getComponent('main-counter');

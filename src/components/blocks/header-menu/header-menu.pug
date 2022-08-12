@@ -1,5 +1,5 @@
 mixin header-menu(props)
-    ul.header__menu(role='navigation')&attributes(attributes)
+    ul.header-menu(role='navigation')&attributes(attributes)
         each route, ndx in props
-            li.header__menu-item
-                a(href!= route.path class=(ndx === 0 ? 'header__menu-link_active' : '')).header__menu-link!= route.name
+            li.header-menu__item
+                a(href!= route.path class=(ndx === 0 ? 'header-menu__link_active' : '')).header-menu__link!= route.name
