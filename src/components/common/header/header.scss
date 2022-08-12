@@ -1,5 +1,6 @@
 .header {
     $root: &;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,6 +20,7 @@
     }
 
     &__link {
+        position: relative;
         text-decoration: none;
         cursor: pointer;
         font-family: $font-roboto-name;
@@ -27,7 +29,22 @@
         text-transform: uppercase;
         color: $headerLink;
     }
-    &__link.active {
-        text-decoration: underline;
+    &__link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: $headerLink;
+        transition: .3s ease-in;
+    }
+
+    &__link:hover::before {
+        width: 100%;
+    }
+
+    &__link.active::before {
+        width: 100%;
     }
 }

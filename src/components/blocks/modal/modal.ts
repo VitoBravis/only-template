@@ -59,4 +59,8 @@ export default class Modal extends Component {
             this.textElement.textContent = "Нет счётчиков";
         }
     };
+
+    destroy = () => {
+        this.closeBtn.removeEventListener('click', this.onClose)
+    }
 }

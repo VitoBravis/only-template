@@ -20,5 +20,7 @@ export default class ModalSection extends Component {
         });
     }
 
-    
+    destroy = () => {
+        this.modal.destroy();
+    }
 }

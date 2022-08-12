@@ -6,6 +6,7 @@ import common from "@/pages/index/index";
 import { getComponent, resize, setVhCssVariable } from "@/helpers/helpers";
 import Header from "@/components/common/header/header";
 import Footer from "@/components/common/footer/footer";
+import PageTransition from "@/components/common/pageTransition/pageTransition";
 
 // SVG
 const requireAll = (r: __WebpackModuleApi.RequireContext) =>
@@ -17,6 +18,7 @@ resize(setVhCssVariable);
 
 export const header = new Header(getComponent("header"));
 export const footer = new Footer(getComponent("footer"));
+export const pageTransition = new PageTransition(getComponent("pageTransition"));
 
 barba.use(barbaPrefetch);
 
@@ -26,12 +28,14 @@ barba.hooks.afterEnter((_data) => {});
 
 barba.hooks.before((_data) => {});
 
+barba.hooks.once(pageTransition.once())
+
 function pageAnimIn(container: any) {
-    console.log(container)
+    pageTransition.leavePage();
 }
 
 function pageAnimOut(container: any) {
-    console.log(container)
+    pageTransition.enterPage();
 }
 barba.init({
     timeout: 500000,
@@ -44,11 +48,11 @@ barba.init({
         {
             name: "base",
 
-            async leave(data) {
-                await pageAnimIn(data.current.container);
+            leave(data) {
+                pageAnimIn(data.current.container);
             },
-            async enter(data) {
-                await pageAnimOut(data.next.container);
+            enter(data) {
+                pageAnimOut(data.next.container);
             },
         },
     ],
