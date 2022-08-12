@@ -30,7 +30,7 @@ export default class HeaderMenu extends Component {
 
     private setActiveItem = () => {
         this.items.forEach((item) => {
-            if (item.getAttribute('href') === this._path) {
+            if (item.pathname === this._path) {
                 item.classList.add('header-menu__link_active');
             }
         });
