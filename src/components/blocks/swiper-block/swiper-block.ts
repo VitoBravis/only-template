@@ -25,5 +25,6 @@ export default class SwiperBlock extends Component {
 
     destroy = () => {
         // Destroy functions
+        this.swiper?.destroy(true, true);
     }
 }

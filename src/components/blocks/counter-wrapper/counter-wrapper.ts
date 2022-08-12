@@ -38,5 +38,8 @@ export default class CounterWrapper extends Component {
 
     destroy = () => {
         // Destroy functions
+        this.modal?.destroy();
+        this.counter?.destroy();
+        this.subscribe?.unsubscribe();
     }
 }

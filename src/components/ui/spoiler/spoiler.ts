@@ -1,5 +1,4 @@
 import Component, { ComponentProps } from '@/base/component';
-import { resize } from "@/helpers/helpers";
 
 export default class Spoiler extends Component {
     isOpen = false;
@@ -13,8 +12,6 @@ export default class Spoiler extends Component {
         this.contentElement = this.getElement('content');
         this.headElement = this.getElement('head');
         this.collapseElement = this.getElement('collapse');
-
-        resize(() => this.isOpen ? this.setCollapseHeight(this.getScrollHeight()) : null);
     }
 
     open(): void {
@@ -43,5 +40,9 @@ export default class Spoiler extends Component {
      */
     setCollapseHeight(value: string): any  {
         this.collapseElement ? this.collapseElement.style.height = value : null;
+    }
+
+    destroy = () => {
+        // Destroy functions
     }
 }

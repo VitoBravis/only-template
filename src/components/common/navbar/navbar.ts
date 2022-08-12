@@ -1,4 +1,5 @@
 import Component, { ComponentProps } from '@/base/component';
+import { fromEvent } from "rxjs";
 
 export default class Navbar extends Component {
     links: Array<HTMLLinkElement> | undefined;
@@ -8,8 +9,7 @@ export default class Navbar extends Component {
         super(element);
 
         this.links = this.getElements('link');
-        this.nRoot.addEventListener('click', this.onClick);
-
+        fromEvent(this.nRoot, 'click').subscribe(this.onClick)
         this.init();
     }
 
@@ -33,7 +33,7 @@ export default class Navbar extends Component {
     setCurrent = (link: HTMLLinkElement) => {
         this.current?.classList.remove('navbar__link_current');
         this.current = link;
-        link.classList.add('navbar__link_current');
+        this.current.classList.add('navbar__link_current');
     }
 
     destroy = () => {

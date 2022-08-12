@@ -1,6 +1,7 @@
 import Component, { ComponentProps } from '@/base/component';
 import SwiperBlock from "@/components/blocks/swiper-block/swiper-block";
 import { getComponent } from "@/helpers/helpers";
+import { fromEvent } from "rxjs";
 
 export default class ModalSlider extends Component {
     closeBtn: HTMLElement | undefined;
@@ -10,7 +11,7 @@ export default class ModalSlider extends Component {
         super(element);
 
         this.closeBtn = this.getElement('button-close');
-        this.closeBtn?.addEventListener('click', () => this.close());
+        if(this.closeBtn) fromEvent(this.closeBtn, 'click').subscribe(this.close)
         const findSwiper = getComponent('swiper-block', this.nRoot);
         if (findSwiper) this.swiperBlock = new SwiperBlock(findSwiper);
     }

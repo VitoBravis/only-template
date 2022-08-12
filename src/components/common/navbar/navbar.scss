@@ -6,13 +6,13 @@
         text-transform: uppercase;
 
         &:hover {
-            border-bottom: 1px solid rgba(0,0,0, .6);
+            border-bottom: 2px solid $black;
         }
         &:not(:last-child) {
             margin-right: 40px;
         }
         &_current {
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid $black;
         }
     }
 }

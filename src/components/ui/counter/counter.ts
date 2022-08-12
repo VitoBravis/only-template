@@ -1,5 +1,5 @@
 import Component, { ComponentProps } from '@/base/component';
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, fromEvent, Observable } from "rxjs";
 
 export default class Counter extends Component {
     count: number = 2;
@@ -23,8 +23,14 @@ export default class Counter extends Component {
     init() {
         this.value$ = new BehaviorSubject<number>(this.count);
         this.valueChange$ = this.value$.asObservable();
-        this.decreaseBtn?.addEventListener('click', () => this.onClick('decrease'));
-        this.increaseBtn?.addEventListener('click', () => this.onClick('increase'));
+        if(this.decreaseBtn && this.increaseBtn) {
+            fromEvent(this.decreaseBtn, 'click').subscribe(() => {
+                this.onClick('decrease')
+            })
+            fromEvent(this.increaseBtn, 'click').subscribe(() => {
+                this.onClick('increase')
+            })
+        }
         this.updateValue();
     }
 
@@ -44,5 +50,6 @@ export default class Counter extends Component {
 
     destroy = () => {
         // Destroy functions
+        this.value$?.complete();
     }
 }

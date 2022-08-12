@@ -1,18 +1,26 @@
 import Component, { ComponentProps } from '@/base/component';
 import Spoiler from "@/components/ui/spoiler/spoiler";
-import { getComponents } from "@/helpers/helpers";
+import { getComponents, resize } from "@/helpers/helpers";
+import { fromEvent, Subscription } from "rxjs";
 
 export default class SpoilerWrapper extends Component {
     spoilerElements: Array<ComponentProps>;
     spoilers: Array<Spoiler>;
     opened: Spoiler | null = null;
+    onResize: Subscription | undefined;
 
     constructor(element: ComponentProps) {
         super(element);
 
         this.spoilerElements = getComponents('spoiler', this.nRoot);
-        this.spoilers = this.spoilerElements.map((spoiler: ComponentProps<HTMLElement>) => new Spoiler(spoiler));
-        this.nRoot.addEventListener('click', this.clickHandler);
+        this.spoilers = this.spoilerElements.map((spoiler: ComponentProps<HTMLElement>) =>
+            new Spoiler(spoiler)
+        );
+        fromEvent(this.nRoot, 'click').subscribe(this.clickHandler)
+
+        this.onResize = resize(() => {
+            if(this.opened) this.opened.setCollapseHeight(this.opened.getScrollHeight());
+        });
     }
 
     clickHandler = (e: Event) => {
@@ -44,5 +52,8 @@ export default class SpoilerWrapper extends Component {
 
     destroy = () => {
         // Destroy functions
+        // this.nRoot.removeEventListener('click', this.clickHandler);
+        this.onResize?.unsubscribe()
+        this.spoilers.forEach((spoiler) => spoiler.destroy());
     }
 }
