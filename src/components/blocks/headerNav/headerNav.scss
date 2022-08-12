@@ -1,3 +1,22 @@
 .headerNav {
     $root: &;
+
+    .nav__link {
+
+        font-size: 1.6rem;
+        line-height: 100%;
+  
+        text-transform: uppercase;
+        color: #232323;
+        padding-right: 4rem;
+        cursor: pointer;
+
+        &._active{
+            text-decoration: underline;
+
+        }
+        &:last-child{
+            padding-right: 0;
+        }
+    }
 }

@@ -1,0 +1,22 @@
+.transition {
+    $root: &;
+    height: 100vh;
+    width: 100vw;
+    background-color: #1e1e24;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    will-change: transform;
+    transform: translateY(-100vh);
+
+    visibility: visible;
+
+
+    &._hidden{
+        visibility: hidden;
+        transform: scaleY(0);
+
+    }
+}

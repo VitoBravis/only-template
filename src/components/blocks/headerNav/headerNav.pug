@@ -1,2 +1,6 @@
 mixin headerNav(props)
-    .headerNav&attributes(attributes)
+    nav.headerNav&attributes(attributes)
+        each route, ndx in props
+            .header__nav-item
+                a(href!= route.path class=(ndx === 0 ? 'header__menu-link_active' : '')).nav__link!= route.name
+

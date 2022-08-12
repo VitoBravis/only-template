@@ -1,12 +1,13 @@
 import 'core-js/stable';
 import '../scss/common.scss';
 import barba from '@barba/core';
-import barbaCss from '@barba/css'
 import barbaPrefetch from '@barba/prefetch';
 import common from '@/pages/index/index';
 import { getComponent, resize, setVhCssVariable } from '@/helpers/helpers';
 import Header from "@/components/common/header/header";
 import Footer from "@/components/common/footer/footer";
+import Preloader from '@/components/common/preloader/preloader';
+import Transition from '@/components/common/transition/transition';
 
 // SVG
 const requireAll = (r: __WebpackModuleApi.RequireContext) => r.keys().forEach(r);
@@ -17,6 +18,24 @@ resize(setVhCssVariable);
 
 export const header = new Header(getComponent('header'));
 export const footer = new Footer(getComponent('footer'));
+
+//const preloader = new Preloader(getComponent('preloader'));
+
+
+const preloader = getComponent('preloader');
+let preloaderItem: Preloader;
+if (preloader.component) {
+    preloaderItem = new Preloader(preloader);
+    console.log(preloader)
+}else {
+    console.error('sdf');
+}
+
+const transition = getComponent('transition');
+let transitionItem: Transition;
+if (transition.component) {
+     transitionItem = new Transition(transition);
+}
 
 barba.use(barbaPrefetch);
 
@@ -31,10 +50,27 @@ barba.init({
 
     transitions: [
         {
-            once() { },
-            leave() { },
+            sync: true,
+            once(data) {
+                data.next.container.style.opacity = '1';
+                preloaderItem.hideAnim();
+            },
+            leave(data) { 
+                data.current.container.style.opacity = '0';
+                preloaderItem.showAnim();
+                transitionItem.showAnim();
+                
+               
+            },
 
-            enter() { },
+            enter(data) { 
+                setTimeout(() => {
+                    data.next.container.style.opacity = '1';
+                    preloaderItem.hideAnim();
+                    transitionItem.hideAnim();
+                  
+                }, 1010);
+            },
 
 
         }
