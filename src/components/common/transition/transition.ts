@@ -10,7 +10,8 @@ export default class Transition extends Component {
         this.enter = this.getElement("enter") as HTMLElement;
     }
 
-    show = () => {
+   show = () => {
+
         this.leave.classList.add("iter");
         setTimeout(() => {
             this.enter.style.transform = "translateY(0vh)";

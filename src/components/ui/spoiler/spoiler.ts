@@ -18,6 +18,8 @@ export default class Spoiler extends Component {
         } else {
             spoilerCollapse.style.height = `${spoilerCollapse.scrollHeight}px`
         }
-
+    }
+    destroy =  () =>{
+        this.nRoot.removeEventListener("click", this.clickHandler)
     }
 }

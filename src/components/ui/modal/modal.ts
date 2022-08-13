@@ -22,7 +22,7 @@ export default class Modal extends Component {
     close = () => {
         this.content.classList.remove("open");
         this.value.textContent = this.slider.getActiveCounter().getValue();
-
+        this.slider.counters.forEach(counter=>counter.destroy())
     };
     clickHandler = (e: Event) => {
         if ((<HTMLElement>e.target).closest(".button__open-close")) {
@@ -34,5 +34,8 @@ export default class Modal extends Component {
             }
         }
     };
+    destroy =  () =>{
+        this.nRoot.removeEventListener("click", this.clickHandler)
+    }
 
 }

@@ -1,26 +1,30 @@
-import { ITransitionData } from '@barba/core/dist/core/src/defs';
+import { ITransitionData } from "@barba/core/dist/core/src/defs";
 import Spoiler from "@/components/ui/spoiler/spoiler";
-import {getComponent} from "@/helpers/helpers";
+import { getComponent } from "@/helpers/helpers";
 import Modal from "@/components/ui/modal/modal";
-import Slider from "@/components/ui/slider/slider";
-import Counter from "@/components/ui/counter/counter";
-import TransitionOut from "@/components/common/transition-out/transition-out";
-import Transition from "@/components/common/transition/transition";
 
+let spoiler = {} as Spoiler;
+let modal = {} as Modal;
 export default {
-    namespace: 'common',
+    namespace: "common",
     async beforeEnter({ next }: ITransitionData) {
         try {
-            // new Spoiler(getComponent('spoiler'))
-            // new Modal(getComponent('modal'))
+            if (next.url.path === "/") {
+                spoiler = new Spoiler(getComponent("spoiler"));
+            }
+            if (next.url.path === "/task2.html"){
+                modal = new Modal(getComponent("modal"))
+            }
 
         } catch (e) {
             console.error(e);
         }
     },
     beforeLeave() {
-
+        spoiler.destroy();
+        modal.destroy();
     },
 
-    afterLeave() {},
+    afterLeave() {
+    }
 };

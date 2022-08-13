@@ -28,4 +28,7 @@ export default class Counter extends Component {
     getValue = () => {
         return this.value!.textContent;
     };
+    destroy =  () =>{
+        this.nRoot.removeEventListener("click", this.clickHandler)
+    }
 }
