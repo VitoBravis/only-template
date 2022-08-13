@@ -27,14 +27,14 @@ let preloaderItem: Preloader;
 if (preloader.component) {
     preloaderItem = new Preloader(preloader);
     console.log(preloader)
-}else {
+} else {
     console.error('sdf');
 }
 
 const transition = getComponent('transition');
 let transitionItem: Transition;
 if (transition.component) {
-     transitionItem = new Transition(transition);
+    transitionItem = new Transition(transition);
 }
 
 barba.use(barbaPrefetch);
@@ -50,26 +50,27 @@ barba.init({
 
     transitions: [
         {
-            sync: true,
-            once(data) {
-                data.next.container.style.opacity = '1';
+
+            once() {
+
                 preloaderItem.hideAnim();
+                transitionItem.hideAnim();
+         
+              
             },
-            leave(data) { 
-                data.current.container.style.opacity = '0';
-                preloaderItem.showAnim();
+           leave() {
+
                 transitionItem.showAnim();
-                
-               
+              
             },
 
-            enter(data) { 
-                setTimeout(() => {
-                    data.next.container.style.opacity = '1';
-                    preloaderItem.hideAnim();
+            enter() {
+                setTimeout( () => {
                     transitionItem.hideAnim();
-                  
-                }, 1010);
+     
+                } 
+                , 200)
+               
             },
 
 

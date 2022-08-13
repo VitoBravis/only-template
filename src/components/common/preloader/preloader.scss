@@ -2,16 +2,18 @@
     $root: &;
     height: 100vh;
     width: 100vw;
-    background-color: #1e1e24;
+    background-color: $black;
     z-index: 99999;
     position: fixed;
     top: 0;
     left: 0;
     will-change: height;
     transition: height .9s;
-    transform: translateY(100%);
+    
 
     &._hidden{ 
-        transform: translateY(0);
+    
+   
+        height: 0vh;
     }
 }
