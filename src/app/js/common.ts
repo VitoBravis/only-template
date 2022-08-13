@@ -19,6 +19,7 @@ resize(setVhCssVariable);
 export const header = new Header(getComponent("header"));
 export const footer = new Footer(getComponent("footer"));
 export const pageTransition = new PageTransition(getComponent("pageTransition"));
+const TRANSITION_TIME = pageTransition.getTransitionTime();
 
 barba.use(barbaPrefetch);
 
@@ -50,6 +51,7 @@ barba.init({
 
             leave(data) {
                 pageAnimIn(data.current.container);
+                return new Promise<void>((resolve) => setTimeout(resolve, TRANSITION_TIME));
             },
             enter(data) {
                 pageAnimOut(data.next.container);
