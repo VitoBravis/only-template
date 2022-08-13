@@ -58,8 +58,6 @@ barba.init({
                     transition.hide();
                 }, 2000);
 
-
-                // await pageOut(data.current.container)
             }
         }
     ]
