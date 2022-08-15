@@ -45,6 +45,6 @@ export default class Spoiler extends Component {
 
 
     destroy = () => {
-        // Destroy functions
+        this.nRoot.removeEventListener('click', this.handlerClick);
     }
 }

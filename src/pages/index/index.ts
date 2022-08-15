@@ -8,6 +8,7 @@ import Slider from '@/components/ui/slider/slider';
 import Counter from '@/components/ui/counter/counter';
 import CounterCurrentValue from '@/components/blocks/counterCurrentValue/counterCurrentValue';
 import SliderItem from '@/components/blocks/sliderItem/sliderItem';
+import HeaderNav from '@/components/blocks/headerNav/headerNav';
 
 
 
@@ -17,6 +18,8 @@ export const state = {
 export const changeValueCounter = (value: number) => {
     state.valueCounter = value;
 };
+let modalEl = {} as  MyModal;
+let spoilerEl = {} as Spoiler
 
 export default {
     namespace: 'common',
@@ -25,7 +28,7 @@ export default {
             const spoilers = getComponents('spoiler');
             if (spoilers.length) {
                 for (const spoiler of spoilers) {
-                    new Spoiler(spoiler);
+                    spoilerEl =new Spoiler(spoiler);
                 }
             }
 
@@ -53,23 +56,30 @@ export default {
 
                         state.valueCounter = Number(swiper.$wrapperEl.children()
                         [swiper.activeIndex]
-                        .querySelector('.counter__count')
-                        ?.textContent);
+                            .querySelector('.counter__count')
+                            ?.textContent);
                     }
                 },
-               
+
             })
 
             const counterCurrentValue = getComponents('counterCurrentValue', next.container);
-            if(counterCurrentValue.length) {
-                for(const item of counterCurrentValue){
+            if (counterCurrentValue.length) {
+                for (const item of counterCurrentValue) {
                     new CounterCurrentValue(item)
                 }
             }
 
+            const headerMenu = getComponent('headerNav');
+            let headerMenuItem: HeaderNav;
+
+            if (headerMenu.component) {
+                headerMenuItem = new HeaderNav(headerMenu);
+            }
+
             const modal = getComponent('myModal')
-            new MyModal(modal);
-            
+             modalEl =  new MyModal(modal);
+
             const slider = getComponent('slider')
             new Slider(slider);
 
@@ -84,6 +94,9 @@ export default {
         }
     },
     beforeLeave() {
+        modalEl.destroy();
+        spoilerEl.destroy();
+        
 
     },
 

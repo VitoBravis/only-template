@@ -26,10 +26,8 @@ const preloader = getComponent('preloader');
 let preloaderItem: Preloader;
 if (preloader.component) {
     preloaderItem = new Preloader(preloader);
-    console.log(preloader)
-} else {
-    console.error('sdf');
-}
+   
+} 
 
 const transition = getComponent('transition');
 let transitionItem: Transition;
@@ -69,7 +67,7 @@ barba.init({
                     transitionItem.hideAnim();
      
                 } 
-                , 200)
+                , 100)
                
             },
 

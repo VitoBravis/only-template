@@ -35,6 +35,6 @@ export default class MyModal extends Component {
     };
 
     destroy = () => {
-        // Destroy functions
+        document.removeEventListener('click', this.hadndleModalChange)
     }
 }

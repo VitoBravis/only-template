@@ -1,22 +1,30 @@
 .headerNav {
     $root: &;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 
-    .nav__link {
+    .header__nav-item {
+        margin-right: 2rem;
 
-        font-size: 1.6rem;
-        line-height: 100%;
-  
-        text-transform: uppercase;
-        color: #232323;
-        padding-right: 4rem;
-        cursor: pointer;
-
-        &._active{
-            text-decoration: underline;
-
+        &:last-child {
+            margin-right: 0;
         }
-        &:last-child{
-            padding-right: 0;
+        .nav__link {
+
+            font-size: 1.6rem;
+            line-height: 100%;
+
+            text-transform: uppercase;
+            color: $link-color-navigation;
+
+            cursor: pointer;
+
+            &._active {
+                text-decoration: underline;
+
+            }
+
         }
     }
 }
