@@ -1,0 +1,17 @@
+.myButton {
+    $root: &;
+
+    button {
+        width: 147px;
+        height: 63px;
+        background: #3877EE;
+        border-radius: 30px;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
+}

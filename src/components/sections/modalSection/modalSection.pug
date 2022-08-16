@@ -1,0 +1,6 @@
+mixin modalSection(props)
+    .modalSection&attributes(attributes)
+        h1.modalSection__title!= 'Значение счетчика на активном слайде:'
+            p.modalSection__counter-value!= 'Открой:)'
+            button.modalSection__open-modal!= 'открыть'
+        +modal(dataJson.index.sliders)

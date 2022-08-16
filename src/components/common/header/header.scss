@@ -1,12 +1,50 @@
 .header {
     $root: &;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 90px;
 
     svg {
         fill: black;
         width: 40px;
         height: 18px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    &__link {
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: $font-roboto-name;
+        font-size: 16px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $headerLink;
+    }
+    &__link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: $headerLink;
+        transition: .3s ease-in;
+    }
+
+    &__link:hover::before {
+        width: 100%;
+    }
+
+    &__link.active::before {
+        width: 100%;
     }
 }

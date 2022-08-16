@@ -1,0 +1,47 @@
+.pageTransition {
+    $root: &;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 50;
+    background-color: none;
+    visibility: hidden;
+    height: 0;
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        z-index: 50;
+        width: 100%;
+        height: 0;
+        background-color: $transitionsBackground;
+        transition: 1s ease-in;
+
+    }
+    &__top {
+        position: fixed;
+        z-index: 50;
+        top: 0;
+        height: 0;
+        width: 100%;
+        background-color: $transitionsBackground;
+        transition: none;
+    }
+
+    &__bottom {
+        position: fixed;
+        z-index: 50;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        background-color: $transitionsBackground;
+        transition: none;
+    }
+
+}
+
+.pageTransition.leave {
+    visibility: visible;
+}
