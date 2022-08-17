@@ -18,7 +18,7 @@ try {
     const folderPath = path.join('src', 'pages', pageName);
 
     // const viewsPathJs = path.join('src', 'app', 'js', 'views.ts');
-    const viewsPathScss = path.join('src', 'app', 'scss', 'views.scss');
+    const viewsPathScss = path.join('src', 'app', 'scss', 'components.scss');
 
     // const importViewJs = `import ${pageName} from '../../pages/${pageName}/${pageName}';\nexport { ${pageName} };\n`;
     const importViewScss = `@import '../../pages/${pageName}/${pageName}';\n`;

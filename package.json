@@ -6,11 +6,11 @@
     "scripts": {
         "dev": "webpack serve --mode=development",
         "build": "webpack --mode=production",
-        "component:create": "node ./scripts/component/create.js",
-        "component:remove": "node ./scripts/component/remove.js",
+        "component-create": "node ./scripts/component/create.js",
+        "component-remove": "node ./scripts/component/remove.js",
         "component:list": "node ./scripts/component/list.js",
-        "page:create": "node ./scripts/page/create.js",
-        "page:remove": "node ./scripts/page/remove.js"
+        "page-create": "node ./scripts/page/create.js",
+        "page-remove": "node ./scripts/page/remove.js"
     },
     "author": "Only",
     "license": "ISC",
@@ -68,6 +68,6 @@
         "axios": "^0.27.2",
         "core-js": "^3.23.3",
         "rxjs": "^7.5.5",
-        "swiper": "^8.3.0"
+        "swiper": "^8.3.2"
     }
 }

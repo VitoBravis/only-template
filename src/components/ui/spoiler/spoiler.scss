@@ -1,0 +1,71 @@
+div.spoiler {
+    &__wrapper {
+        $root: &;
+        user-select: none;
+
+        h2 {
+            color: $dark-teal;
+            border-bottom: 1px solid #E6E6E6;
+        }
+
+        .spoiler__content {
+            border-bottom: 1px solid #E6E6E6;
+
+            .spoiler__title {
+                position: relative;
+
+                h3 {
+                    width: 90%;
+                    color: $dark-teal;
+                    text-align: left;
+                    transition: color .15s;
+
+                    &:hover {
+                        color: $sibur-dna;
+                    }
+
+                    &.open {
+                        color: $sibur-dna;
+                    }
+                }
+
+                .spoiler__closeModal {
+                    position: absolute;
+                    right: 0;
+                    cursor: pointer;
+                    transition: all .5s;
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        background: #02818a;
+                    }
+
+                    &::before {
+                        transform: rotate(-45deg);
+                    }
+
+                    &::after {
+                        transform: rotate(45deg);
+                    }
+
+                    &:hover,
+                    &.active {
+                        transform: rotate(-135deg);
+                    }
+                }
+            }
+
+            .spoiler__text {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 1s;
+            }
+        }
+    }
+}
+/*
+transition: all .5s;
+*/

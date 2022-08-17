@@ -1,14 +1,13 @@
+@import './mixins.scss';
+
 $grid-columns: 24;
 $col-width: 100vw / $grid-columns;
 
-$offset-sides: (
-    desktop: $col-width,
+$offset-sides: (desktop: $col-width,
     tablet: vw(40, md),
-    mobile: vw(24, xs)
-);
+    mobile: vw(24, xs));
 
-$breakpoints: (
-    xs: 375,
+$breakpoints: (xs: 375,
     sm: 640,
     md: 768,
     lg: 1024,
@@ -17,3 +16,135 @@ $breakpoints: (
     xxxl: 1600,
     fhd: 1920,
 );
+
+div.spoiler {
+    &__wrapper {
+        padding: 100px 160px;
+
+        h2 {
+            padding-bottom: 80px;
+        }
+
+        div.spoiler__content {
+            div.spoiler__title {
+                h3 {
+                    padding: 30px 0;
+                }
+
+                .spoiler__closeModal {
+                    top: 45%;
+                    width: 20px;
+                    height: 20px;
+
+                    &::before,
+                    &::after {
+                        top: 9px;
+                        width: 20*1.4 + px;
+                        height: 2px;
+                        right: -4px;
+                    }
+                }
+            }
+
+            div.spoiler__text {
+                p {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(xxl) {
+            padding: 80px 120px;
+
+            h2 {
+                padding-bottom: 60px;
+            }
+
+            div.spoiler__content {
+                div.spoiler__title {
+                    h3 {
+                        padding: 24px 0;
+                    }
+                }
+
+                div.spoiler__text {
+                    p {
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-down(xl) {
+            padding: 70px 107px;
+
+            h2 {
+                padding-bottom: 56px;
+            }
+
+            div.spoiler__content {
+                div.spoiler__title {
+                    h3 {
+                        padding: 20px 0;
+                    }
+                }
+
+                div.spoiler__text {
+                    p {
+                        padding-bottom: 16px;
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 60px 40px;
+
+            h2 {
+                padding-bottom: 50px;
+            }
+
+            div.spoiler__content {
+                div.spoiler__title {
+                    h3 {
+                        padding: 24px 0;
+                    }
+                }
+
+                div.spoiler__text {
+                    p {
+                        padding-bottom: 16px;
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-down(xs) {
+            padding: 50px 24px;
+
+            h2 {
+                padding-bottom: 40px;
+            }
+
+            div.spoiler__content {
+                div.spoiler__title {
+                    h3 {
+                        padding: 20px 0;
+                    }
+                }
+
+                div.spoiler__text {
+                    p {
+                        padding-bottom: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+div.modal {
+    &__count {
+        margin: 71px 0 108px 0;
+    }
+}
