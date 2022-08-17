@@ -2,4 +2,7 @@ mixin header(props)
     header&attributes(attributes).header
         a(href="/").header__logo
             +svg('only')
-        p Intership
+
+        .header__navigation
+            a.header__link(href='/') Task 1
+            a.header__link(href='/counter.html') Task 2

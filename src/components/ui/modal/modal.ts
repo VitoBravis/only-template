@@ -37,4 +37,7 @@ export default class Modal extends Component {
 
     };
 
+    destroy = () => {
+        this.nRoot.removeEventListener('click', this.onClick)
+    }
 }
