@@ -1,0 +1,13 @@
+mixin modal(props)
+    .modal&attributes(attributes)
+        - var slides = props.index.slides
+
+        .modal__title
+            h2 Значение счетчика
+        .modal__count
+        button.modal__button.open Открыть
+
+        .modal__content.hidden
+            button.modal__button.close Закрыть
+            .modal__swiper.swiper
+                +slider(slides)

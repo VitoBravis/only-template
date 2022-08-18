@@ -1,0 +1,16 @@
+mixin spoiler(props)
+    .spoiler&attributes(attributes)
+        .spoiler__wrapper
+            - var spoilers = props.index.spoilers
+            - var titleContent = props.index.title
+
+            h2= titleContent
+
+            each spoiler in spoilers
+                .spoiler__content
+                    .spoiler__title
+                        h3= spoiler.title
+                        .spoiler__closeModal
+                    .spoiler__text
+                        each spoilerText in spoiler.paragraphs
+                            p= spoilerText.text
