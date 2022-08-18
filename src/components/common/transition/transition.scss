@@ -1,23 +1,63 @@
 .transition {
     $root: &;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
+    &__enter {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999999;
 
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
 
-    transform-origin: right;
-    transform: scaleX(100%);
-    transition: all 1s;
+        background-color: #1e1e24;
 
-    background-color: $grey;
+        will-change: transform;
+        transform: translateY(-100vh);
 
-    &.hidden {
-        transform: scaleX(0);
-        transition: all .8s;
-        z-index: -1;
+        &.iter {
+            transition: transform .6s;
+            transform: translateY(0vh);
+        }
+    }
+
+
+    &__out {
+        &-top,
+        &-bottom {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #1e1e24;
+
+            will-change: transform;
+            transition: transform 1s ease-out;
+        }
+
+        &-top {
+            position: fixed;
+            top: 0;
+            z-index: 999999;
+
+            transform: translateY(-100vh);
+
+            &.hidden {
+                transition: transform 1s ease-out;
+                transform: translateY(-50vh);
+            }
+        }
+
+        &-bottom {
+            position: fixed;
+            top: 0;
+            z-index: 999999;
+
+            transform: translateY(100vh);
+
+            &.hidden {
+                transform: translateY(50vh);
+            }
+        }
     }
 }

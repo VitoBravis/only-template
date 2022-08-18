@@ -26,16 +26,10 @@ if (transition.component) transitionComponent = new Transition(transition);
 barba.use(barbaPrefetch);
 
 barba.hooks.beforeEnter((_data) => {
-    console.log(_data)
 });
 
 barba.hooks.afterEnter((_data) => {
-    header.link.forEach(link => {
-        location.pathname === link.getAttribute('href') ?
-            link.classList.toggle('active')
-        :
-            link.classList.toggle('active')
-    });
+    header.update()
 });
 
 barba.hooks.before((_data) => { });
@@ -49,18 +43,14 @@ barba.init({
 
     transitions: [
         {
-            once() {
-                transitionComponent.toggleVisible()
-            },
             leave() {
-                transitionComponent.toggleVisible();
-
+                transitionComponent.leave();
                 return new Promise<void>((resolve) => {
-                    setTimeout(resolve, 800);
+                    setTimeout(resolve, 2000);
                 });
             },
             enter() {
-                transitionComponent.toggleVisible();
+                transitionComponent.enter();
             },
         }
     ]
