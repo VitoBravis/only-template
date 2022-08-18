@@ -115,10 +115,15 @@ button {
 
 .wrapper {
     max-width: 1920px;
-    padding: 347px 20px 294px 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     margin: 0 auto;
     text-align: center;
     cursor: default;
+}
+.wrapper-counter {
+    padding-top: 347px;
+    padding-bottom: 294px;
 }
 
 .counter-title {
