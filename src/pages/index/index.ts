@@ -16,13 +16,10 @@ const result = document.querySelector(".main-counter")!;
 
 export const watchedState = onChange(state, (path) => {
     if (path) {
-        let i = 0;
-        for (let amount of state.counter.mainCount.values()) {
-            if (i == state.counter.activeSlide) {
-                result.textContent = amount;
-            }
-            i = i + 1;
-        }
+        const amount = Array.from(state.counter.mainCount.values())[
+            state.counter.activeSlide
+        ];
+        result.textContent = amount;
     }
 });
 

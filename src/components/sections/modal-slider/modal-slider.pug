@@ -1,5 +1,5 @@
 mixin modal-slider(props)
     .modal-slider&attributes(attributes)
         .modal-slider__wrapper
-            +button({text: "Закрыть", class: "modal-slider__button"})
+            +button.modal-slider__button Закрыть
             +slider(dataJson.index.slider)
