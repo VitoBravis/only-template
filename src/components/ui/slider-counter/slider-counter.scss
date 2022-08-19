@@ -1,0 +1,43 @@
+.slider-counter {
+    $root: &;
+    max-width: 1920px - 839px - 839px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__dec-btn,
+    &__inc-btn {
+        width: 40px;
+        height: 40px;
+        background-color: $button-counter;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        & svg {
+            width: 10px;
+        }
+        &:hover {
+            background-color: darken($color: $button-counter, $amount: 10%);
+        }
+    }
+    &__block {
+        width: 56px;
+        height: 56px;
+        border: 2px solid $button-slider-border;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        color: $counter;
+        cursor: default;
+    }
+}

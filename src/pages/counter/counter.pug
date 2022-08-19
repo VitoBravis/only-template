@@ -1,0 +1,12 @@
+extends ../../app/pug/layout
+
+block title
+    | counter
+
+block content
+    div(data-barba="container" data-barba-namespace="common" data-page-namespace="counter").content-wrapper
+        .wrapper.wrapper-counter
+            h1.counter-title Значение счетчика на активном слайде:
+            .main-counter 0
+            +button.modal-slider__button.open-modal-btn Открыть
+            +modal-slider

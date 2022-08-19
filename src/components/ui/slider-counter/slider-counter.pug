@@ -1,0 +1,7 @@
+mixin slider-counter(props)
+    .slider-counter&attributes(attributes)
+        +button.slider-counter__dec-btn
+            +svg('count-minus')
+        .slider-counter__block 1
+        +button.slider-counter__inc-btn
+            +svg('count-plus')

@@ -4,7 +4,7 @@ $col-width: 100vw / $grid-columns;
 $offset-sides: (
     desktop: $col-width,
     tablet: vw(40, md),
-    mobile: vw(24, xs)
+    mobile: vw(24, xs),
 );
 
 $breakpoints: (
@@ -17,3 +17,16 @@ $breakpoints: (
     xxxl: 1600,
     fhd: 1920,
 );
+
+$title: #012b34;
+$spoiler-title: #02818a;
+$text: #000402;
+$counter: #42567a;
+$white: #ffffff;
+$modal-bg: #f4f5f9;
+$button-counter: #3877ee;
+$button-slider-shadow: rgba(56, 119, 238, 0.1);
+$button-slider-border: #303e58;
+$transition-bg: #1e1e24;
+$header-link: #232323;
+$header-border: #000000;

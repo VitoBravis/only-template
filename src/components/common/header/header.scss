@@ -1,12 +1,35 @@
 .header {
-    $root: &;
+    &__nav {
+        display: flex;
+        justify-content: center;
+        padding: 20px 69px;
+        flex-wrap: wrap;
+    }
+    &__item {
+        padding: 17px 20px;
+    }
+    &__link {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $header-link;
+        &.active {
+            border-bottom: 1px solid $header-border;
+        }
+        &:hover {
+            border-bottom: 1px solid $header-border;
+        }
+    }
+}
+.logo {
+    position: absolute;
+    left: 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    height: 93px;
     svg {
-        fill: black;
-        width: 40px;
-        height: 18px;
+        width: 69px;
+        height: 24px;
     }
 }
