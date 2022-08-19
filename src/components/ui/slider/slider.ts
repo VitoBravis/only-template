@@ -17,6 +17,11 @@ export default class Slider extends Component {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+            on: {
+                init: function () {
+                    watchedState.counter.activeSlide = 0;
+                },
+            },
         });
 
         this.map = new Map();
