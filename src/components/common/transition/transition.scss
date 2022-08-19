@@ -1,0 +1,43 @@
+.transition {
+    &__abs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+    }
+    &__leave {
+        background-color: $transition-bg;
+        transform: translateY(-100vh);
+        &.active {
+            transition: transform 1s ease;
+            transform: translateY(0vh);
+        }
+    }
+    &__enter {
+        transform: translateY(-100vh);
+        &.active {
+            transform: translateY(0vh);
+        }
+        &-top {
+            background-color: $transition-bg;
+            width: 100vw;
+            height: 50vh;
+            &.active {
+                transition: transform 1s ease;
+                transform: translateY(-50vh);
+            }
+        }
+        &-bottom {
+            background-color: $transition-bg;
+            top: 50vh;
+            width: 100vw;
+            height: 50vh;
+            &.active {
+                transition: transform 1s ease;
+                transform: translateY(50vh);
+            }
+        }
+    }
+}

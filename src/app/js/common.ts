@@ -6,6 +6,9 @@ import common from "@/pages/index/index";
 import { getComponent, resize, setVhCssVariable } from "@/helpers/helpers";
 import Header from "@/components/common/header/header";
 import Footer from "@/components/common/footer/footer";
+import Transition from "@/components/common/transition/transition";
+
+const transition = new Transition(getComponent("transition"));
 
 // SVG
 const requireAll = (r: __WebpackModuleApi.RequireContext) =>
@@ -22,15 +25,29 @@ barba.use(barbaPrefetch);
 
 barba.hooks.beforeEnter((_data) => {});
 
-barba.hooks.afterEnter((_data) => {});
+barba.hooks.afterEnter((_data) => {
+    header.update();
+});
 
 barba.hooks.before((_data) => {});
 
 barba.init({
-    timeout: 500000,
+    timeout: 50000,
     prefetchIgnore: "/bitrix",
     prevent: ({ el }) =>
         el?.id?.indexOf("bx") !== -1 || el?.classList.contains("no-barba"),
     views: [common],
     requestError: () => false,
+    transitions: [
+        {
+            name: "base",
+            leave() {
+                transition.leave();
+                return new Promise((resolve) => setTimeout(resolve, 1000));
+            },
+            enter() {
+                transition.enter();
+            },
+        },
+    ],
 });

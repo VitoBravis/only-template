@@ -13,12 +13,12 @@
         font-size: 16px;
         line-height: 100%;
         text-transform: uppercase;
-        color: #232323;
+        color: $header-link;
         &.active {
-            border-bottom: 1px solid #000000;
+            border-bottom: 1px solid $header-border;
         }
         &:hover {
-            border-bottom: 1px solid #000000;
+            border-bottom: 1px solid $header-border;
         }
     }
 }

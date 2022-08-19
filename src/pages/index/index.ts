@@ -14,13 +14,10 @@ const state = {
 export const watchedState = onChange(state, (path) => {
     const result = document.querySelector(".main-counter")!;
     if (path) {
-        let i = 0;
-        for (let amount of state.counter.mainCount.values()) {
-            if (i == state.counter.activeSlide) {
-                result.textContent = amount;
-            }
-            i = i + 1;
-        }
+        const amount = Array.from(state.counter.mainCount.values())[
+            state.counter.activeSlide
+        ];
+        result.textContent = amount;
     }
 });
 
@@ -28,12 +25,12 @@ export default {
     namespace: "common",
     async beforeEnter({ next }: ITransitionData) {
         try {
-            if (next.url.path === "/") {
+            if (location.pathname === "/") {
                 if (getComponent("spoiler").component) {
                     getComponents("spoiler").map((item) => new Spoiler(item));
                 }
             }
-            if (next.url.path === "/counter.html") {
+            if (location.pathname === "/counter.html") {
                 const modal = new ModalSlider(getComponent("modal-slider"));
 
                 const openModalBtn = document.querySelector(".open-modal-btn");

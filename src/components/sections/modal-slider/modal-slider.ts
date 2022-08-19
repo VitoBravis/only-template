@@ -21,4 +21,8 @@ export default class ModalSlider extends Component {
         this.nRoot.classList.toggle("open");
         document.body.classList.toggle("lock");
     };
+
+    destroy = () => {
+        this.nRoot.addEventListener("click", this.clickHandler);
+    };
 }

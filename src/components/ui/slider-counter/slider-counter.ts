@@ -32,4 +32,8 @@ export default class SliderCounter extends Component {
         this.block.textContent = `${this.count}`;
         watchedState.counter.mainCount.set(this, this.count);
     };
+
+    destroy = () => {
+        this.nRoot.addEventListener("click", this.clickHandler);
+    };
 }
