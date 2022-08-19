@@ -1,0 +1,130 @@
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 221px;
+    cursor: default;
+    @include media-breakpoint-down(fhd) {
+        max-width: none;
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+    @include media-breakpoint-down(xxl) {
+        padding: 80px 120px 240px 120px;
+    }
+    @include media-breakpoint-down(xl) {
+        padding: 70px 107px 145px 107px;
+    }
+    @include media-breakpoint-down(md) {
+        padding: 60px 40px 327px 40px;
+    }
+    @include media-breakpoint-down(xs) {
+        padding: 50px 24px 12px 24px;
+    }
+}
+.title {
+    @include font(64, 48, 42, 30);
+    line-height: 100%;
+    color: $title;
+    letter-spacing: -0.02em;
+    margin-bottom: 80px;
+    @include media-breakpoint-down(xxl) {
+        margin-bottom: 60px;
+    }
+    @include media-breakpoint-down(xl) {
+        font-size: 42px;
+        margin-bottom: 56px;
+    }
+    @include media-breakpoint-down(xs) {
+        margin-bottom: 40px;
+    }
+}
+.spoiler {
+    &__element {
+        padding: 30px 0 30px 0;
+        border-top: 1px solid #e6e6e6;
+        &:last-child {
+            border-bottom: 1px solid #e6e6e6;
+        }
+        @include media-breakpoint-down(xxl) {
+            padding: 24px 0 24px 0;
+        }
+        @include media-breakpoint-down(xl) {
+            padding: 20px 0 20px 0;
+        }
+        @include media-breakpoint-down(md) {
+            padding: 24px 0 24px 0;
+        }
+        @include media-breakpoint-down(xs) {
+            padding: 20px 0 20px 0;
+        }
+    }
+    &__head {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        &-title {
+            @include font(36, 27, 24, 24);
+            line-height: 120%;
+            color: $spoiler-title;
+            cursor: pointer;
+            margin-right: 10px;
+            text-align: left;
+        }
+        &-icon {
+            transition: transform 300ms;
+            &.active {
+                transform: rotate(135deg);
+            }
+            svg {
+                margin-top: 3px;
+                height: 20px;
+                width: 20px;
+                @include media-breakpoint-down(xxl) {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+    }
+    &__collapse {
+        max-width: 942px;
+        overflow: hidden;
+        opacity: 0.8;
+        max-height: 0;
+        transition: max-height 300ms;
+        overflow: hidden;
+    }
+    &__content {
+        p {
+            @include font(20, 15, 15, 15);
+            line-height: 150%;
+            color: $text;
+            &:first-child {
+                margin-top: 30px;
+                @include media-breakpoint-down(xxl) {
+                    margin-top: 20px;
+                }
+                @include media-breakpoint-down(xl) {
+                    margin-top: 16px;
+                }
+            }
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            @include media-breakpoint-down(xxl) {
+                max-width: 840px;
+            }
+            @include media-breakpoint-down(xl) {
+                max-width: 640px;
+            }
+            @include media-breakpoint-down(md) {
+                max-width: 612px;
+            }
+            @include media-breakpoint-down(xs) {
+                max-width: 100%;
+            }
+        }
+    }
+}

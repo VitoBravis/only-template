@@ -1,0 +1,45 @@
+.swiper {
+    $root: &;
+    padding: 77px 0 77px 0;
+    position: relative;
+    &-slide__img {
+        max-width: 1400px;
+        cursor: pointer;
+        margin: 0 auto;
+        & img {
+            height: 720px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &-button-prev,
+    &-button-next {
+        background: $white;
+        box-shadow: 0px 0px 15px $button-slider-shadow;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        cursor: pointer;
+        top: 50%;
+        z-index: 1;
+        & svg {
+            height: 15px;
+            width: 7.5px;
+        }
+        &:hover {
+            border: 2px solid $button-slider-border;
+        }
+    }
+    &-button-next {
+        transform: translateY(-85px) rotate(180deg);
+        right: 0;
+    }
+    &-button-prev {
+        left: 0;
+        transform: translateY(-85px);
+    }
+}

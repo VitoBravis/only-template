@@ -1,0 +1,13 @@
+mixin slider(props)
+    .slider&attributes(attributes)
+        .swiper
+            .swiper-wrapper
+                each dataSlider in props
+                    .swiper-slide
+                        .swiper-slide__img
+                            +img(dataSlider)
+                        +slider-counter 
+            +button.swiper-button-prev
+                +svg('slider')
+            +button.swiper-button-next
+                +svg('slider')

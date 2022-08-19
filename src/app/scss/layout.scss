@@ -6,8 +6,8 @@ html {
     text-rendering: optimizeLegibility;
     position: relative;
     //height: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 * {
@@ -15,6 +15,7 @@ html {
 }
 
 body {
+    min-width: 375px;
     position: relative;
     //height: 100%;
     padding: 0;
@@ -26,7 +27,13 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -37,7 +44,8 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -88,7 +96,7 @@ button {
 
 .barba-leave-active,
 .barba-enter-active {
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .barba-leave,
@@ -103,4 +111,34 @@ button {
 
 [data-modal] {
     cursor: pointer;
+}
+
+.wrapper {
+    max-width: 1920px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: default;
+}
+.wrapper-counter {
+    padding-top: 347px;
+    padding-bottom: 294px;
+}
+
+.counter-title {
+    font-size: 36px;
+    line-height: 42px;
+    color: $counter;
+    margin-bottom: 71px;
+}
+
+.main-counter {
+    font-size: 128px;
+    line-height: 150px;
+    color: $counter;
+    margin-bottom: 108px;
+}
+.lock {
+    overflow: hidden;
 }

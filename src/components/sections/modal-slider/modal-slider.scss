@@ -1,0 +1,45 @@
+.modal-slider {
+    $root: &;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $modal-bg;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        & .modal-slider__wrapper {
+            transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+            opacity: 1;
+        }
+    }
+    &__wrapper {
+        padding: 32px 50px 80px 50px;
+        max-width: 1920px;
+        text-align: center;
+        margin: 0 auto;
+        transition: all 0.8s ease 0s;
+        opacity: 0;
+        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    }
+    &__button {
+        $root: &;
+        padding: 20px 40px;
+        background-color: $button-counter;
+        border-radius: 30px;
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+        font-weight: 700;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: darken($color: $button-counter, $amount: 10%);
+        }
+    }
+}
