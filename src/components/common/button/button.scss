@@ -1,0 +1,17 @@
+.button {
+    $root: &;
+    color: #FFFFFF;
+    background-color: #3877EE;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    &__open-close {
+        padding: 20px 40px;
+    }
+
+    &__slider {
+        width: 40px;
+        height: 40px;
+        padding: 10px 15px
+    }
+}

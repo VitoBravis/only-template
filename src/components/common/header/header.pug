@@ -2,4 +2,9 @@ mixin header(props)
     header&attributes(attributes).header
         a(href="/").header__logo
             +svg('only')
-        p header
+        ul.header__navbar
+            li.header__navbar-item
+                a.header__navbar-link(href="/") ЗАДАНИЕ 1
+            li.header__navbar-item
+                a.header__navbar-link(href="/task2.html") ЗАДАНИЕ 2
+

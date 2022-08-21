@@ -1,0 +1,18 @@
+mixin slider(props)
+    .slider.swiper&attributes(attributes)
+        .swiper-wrapper
+            .swiper-slide
+                .swiper-slide__img
+                    +img({src: '../../../src/assets/images/page1.jpg', alt: 'slide 1'})
+                +counter({value: '0'})
+            .swiper-slide
+                .swiper-slide__img
+                    +img({src: '../../../src/assets/images/page2.jpg', alt: 'slide 2'})
+                +counter({value: '0'})
+            .swiper-slide
+                .swiper-slide__img
+                    +img({src: '../../../src/assets/images/page3.jpg', alt: 'slide 3'})
+                +counter({value: '0'})
+        .swiper-button-prev
+        .swiper-button-next
+

@@ -1,0 +1,36 @@
+.slider {
+    $root: &;
+
+    .swiper-wrapper {
+        .swiper-slide {
+            padding: 50px 0;
+
+            &__img {
+                align-items: center;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        position: absolute;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        color: #3877EE;
+    }
+
+    .swiper-button-prev::after {
+        left: 50px;
+        padding: 22px 27px 22px 25px;
+    }
+
+    .swiper-button-next::after {
+        right: 50px;
+        padding: 22px 25px 22px 27px;
+    }
+
+
+}

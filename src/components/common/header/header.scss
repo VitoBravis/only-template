@@ -1,12 +1,55 @@
 .header {
     $root: &;
+    position: fixed;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    z-index: 1;
 
     svg {
+        margin: 32px 0 32px 40px;
         fill: black;
-        width: 40px;
-        height: 18px;
+        width: 68px;
+        height: 24px;
+    }
+
+    &__navbar {
+        display: flex;
+        position: absolute;
+        left: 43%;
+
+        &-item {
+            padding: 0 20px;
+        }
+
+        &-link {
+            display: inline-block;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                right: 0;
+                bottom: -3px;
+                width: 0;
+                height: 1px;
+                background-color: black;
+                transition: width .3s cubic-bezier(.47,0,.745,.715);
+            }
+
+            &:hover:after,
+            &:focus:after,
+            &.active:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                display: block;
+                left: 0;
+                bottom: -3px;
+                height: 1px;
+                transition: width .3s cubic-bezier(.47,0,.745,.715);
+            }
+        }
     }
 }
