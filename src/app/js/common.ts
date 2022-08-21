@@ -27,13 +27,7 @@ barba.hooks.beforeEnter((_data) => {
 });
 
 barba.hooks.afterEnter((_data) => {
-    header.link.forEach(link => {
-        if (location.href === link.href) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
-        }
-    });
+    header.update();
 });
 
 barba.hooks.before((_data) => {
@@ -50,14 +44,11 @@ barba.init({
         {
             name: "default-transition",
             leave(data: ITransitionData) {
-                transition.show();
+                transition.hide();
+                return new Promise<void>((res) => setTimeout(res, 600));
             },
             enter(data: ITransitionData) {
-
-                setTimeout(() => {
-                    transition.hide();
-                }, 2000);
-
+                transition.show();
             }
         }
     ]

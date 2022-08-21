@@ -10,20 +10,19 @@ export default class Transition extends Component {
         this.enter = this.getElement("enter") as HTMLElement;
     }
 
-   show = () => {
-
-        this.leave.classList.add("iter");
-        setTimeout(() => {
-            this.enter.style.transform = "translateY(0vh)";
-            this.leave.classList.remove("iter");
-            Array.from(this.enter.children).forEach(el => el.classList.add("trans"));
-        }, 1000);
-
-    };
     hide = () => {
-        this.enter.style.transform = "translateY(150vh)";
-        Array.from(this.enter.children).forEach(el => el.classList.remove("trans"));
+        this.leave.classList.add("iter");
+    };
 
+
+    show = () => {
+        this.enter.style.transform = "translateY(0vh)";
+        this.leave.classList.remove("iter");
+        Array.from(this.enter.children).forEach(el => el.classList.add("trans"));
+        setTimeout(() => {
+            this.enter.style.transform = "translateY(150vh)";
+            Array.from(this.enter.children).forEach(el => el.classList.remove("trans"));
+        }, 1000);
     };
 
     destroy = () => {
