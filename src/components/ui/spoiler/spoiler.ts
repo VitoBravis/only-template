@@ -10,7 +10,7 @@ export default class Spoiler extends Component {
         
         this.spoilerItems = this.getElements('item');
         this.nRoot.addEventListener('click', this.handlerClick);
-        // this.nRoot.children[1].childNodes.forEach(el => {el.addEventListener('click', this.handlerClick);})
+      
 
     }
 

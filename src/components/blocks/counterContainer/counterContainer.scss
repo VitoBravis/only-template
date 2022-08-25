@@ -6,7 +6,7 @@
     text-align: center;
     transform: translateY(50%);
 
-    .counter-container__title {
+    & .__title {
 
         color: $counter-color-text;
         font-style: normal;
@@ -14,9 +14,11 @@
         font-size: 3.6rem;
         line-height: 4.2rem;
         text-align: center;
-    }
 
-    .counter-container__value {
+       
+        
+    }
+    & .__value {
         font-weight: 400;
         font-size: 12.8rem;
         line-height: 15rem;
@@ -28,7 +30,7 @@
         color: $counter-color-text;
     }
 
-    .counter-container__btn {
+    & .__btn {
         font-weight: 700;
         font-size: 1.6rem;
         line-height: 1.9rem;
@@ -48,4 +50,5 @@
       
 
     }
+
 }

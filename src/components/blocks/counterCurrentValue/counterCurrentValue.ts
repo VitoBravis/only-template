@@ -7,13 +7,13 @@ export default class CounterCurrentValue extends Component {
     constructor(element: ComponentProps) {
         super(element);
         this.nRoot.textContent = '0';
-        document.addEventListener('click', this.changeValue);
+        
     }
 
-    changeValue = () => {
-        if (this.nRoot.textContent === `${state.valueCounter}`) return;
+    changeValue = (value: Number) => {
+     
 
-        this.nRoot.textContent = `${state.valueCounter}`;
+        this.nRoot.textContent = `${value}`;
     };
     destroy = () => {
         // Destroy functions

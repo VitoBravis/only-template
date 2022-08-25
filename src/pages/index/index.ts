@@ -1,13 +1,12 @@
 import { ITransitionData } from '@barba/core/dist/core/src/defs';
 import { getComponents, getComponent } from '@/helpers/helpers';
-import Swiper, { Keyboard, Navigation } from 'swiper';
+
 
 import Spoiler from '@/components/ui/spoiler/spoiler';
-import MyModal from '@/components/blocks/myModal/myModal';
-import Slider from '@/components/ui/slider/slider';
-import Counter from '@/components/ui/counter/counter';
+
 import CounterCurrentValue from '@/components/blocks/counterCurrentValue/counterCurrentValue';
-import SliderItem from '@/components/blocks/sliderItem/sliderItem';
+import CounterContainer from '@/components/blocks/counterContainer/counterContainer';
+
 
 
 
@@ -29,36 +28,6 @@ export default {
                 }
             }
 
-            const sliderItems = getComponents('sliderItem', next.container);
-            if (sliderItems.length) {
-                for (const item of sliderItems) {
-                    new SliderItem(item);
-
-                }
-            }
-
-            new Swiper('.swiper', {
-                modules: [Navigation, Keyboard],
-                allowTouchMove: false,
-                slidesPerView: 1,
-                keyboard: {
-                    enabled: true
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                on: {
-                    slideChange: function (swiper) {
-
-                        state.valueCounter = Number(swiper.$wrapperEl.children()
-                        [swiper.activeIndex]
-                        .querySelector('.counter__count')
-                        ?.textContent);
-                    }
-                },
-               
-            })
 
             const counterCurrentValue = getComponents('counterCurrentValue', next.container);
             if(counterCurrentValue.length) {
@@ -67,17 +36,15 @@ export default {
                 }
             }
 
-            const modal = getComponent('myModal')
-            new MyModal(modal);
-            
-            const slider = getComponent('slider')
-            new Slider(slider);
-
-            const counter = getComponents('counter');
-            for (const item of counter) {
-                new Counter(item);
+            const counterCointainer = getComponent('counterContainer', next.container)
+            if(counterCointainer.component){
+                new CounterContainer(counterCointainer)
 
             }
+          
+           
+            
+            
 
         } catch (e) {
             console.error(e);
