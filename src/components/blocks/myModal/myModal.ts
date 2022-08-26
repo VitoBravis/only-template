@@ -12,8 +12,8 @@ export default class MyModal extends Component {
 
         this.onClose = onCloseCallback;
 
-        this.modal = document.querySelector('.modal')!;
-        this.modalBtn = document.querySelector('.__btn')
+      
+       
         this.slider = new Slider(getComponent('slider', this.nRoot));
 
         document.addEventListener('click', this.hadndleModalChange);
@@ -32,8 +32,8 @@ export default class MyModal extends Component {
     };
 
     openModal = () => {
-        console.log(1)
-        this.modal.classList.add('is-open');
+
+        this.nRoot.classList.add('is-open');
 
     };
 

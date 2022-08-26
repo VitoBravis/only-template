@@ -1,6 +1,6 @@
 mixin slider(props)
     .slider&attributes(attributes)
-        .swiper.mySwiper
+        .swiper.slider__swiper-container
             .swiper-wrapper
                 each slide in props
                     +sliderItem(slide)

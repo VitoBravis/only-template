@@ -8,12 +8,14 @@ import Swiper, { Keyboard, Navigation } from 'swiper';
 
 export default class Slider extends Component {
   swiper: Swiper;
-  sliderItems: any
+  sliderItems: any;
+  swiperContainer: HTMLElement;
 
 
   constructor(element: ComponentProps) {
     super(element);
 
+    this.swiperContainer = this.getElement('swiper-container');
     this.sliderItems = getComponents('sliderItem', this.nRoot)
 
     if (this.sliderItems.length) {
@@ -21,7 +23,7 @@ export default class Slider extends Component {
         new SliderItem(item);
 
       }
-      this.swiper = new Swiper('.swiper', {
+      this.swiper = new Swiper( this.swiperContainer, {
         modules: [Navigation, Keyboard],
         allowTouchMove: false,
         slidesPerView: 1,
