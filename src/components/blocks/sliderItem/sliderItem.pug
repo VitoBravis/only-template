@@ -1,0 +1,6 @@
+mixin sliderItem(props)
+    .sliderItem.swiper-slide&attributes(attributes)
+        .slider__img-content
+            +img(props).img-slider
+        .slider__slide-counter
+            +counter()

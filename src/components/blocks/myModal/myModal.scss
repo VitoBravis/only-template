@@ -1,0 +1,68 @@
+@import './../../../app/scss/variables.scss';
+.myModal {
+    $root: &;
+    .modal {
+
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background: #F4F5F9;
+        text-align: center;
+        display: block;
+
+
+
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease;
+                   
+        
+        &.is-open {
+            
+            opacity: 1;
+            visibility: visible;
+       
+      
+
+        }
+
+        .modal__btn {
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+
+            color: #FFFFFF;
+
+            padding: 2rem 4rem;
+            background: $btn-color-slider-modal;
+            border-radius: 3rem;
+            margin-top: 3rem;
+
+            &:hover {
+                transition: background-color .2s linear;
+
+                background-color: $btn-color-hover;
+
+            }
+
+        }
+
+        
+    }
+
+
+    .modal__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal__text {
+        color: black;
+
+    }
+}
