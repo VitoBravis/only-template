@@ -1,0 +1,30 @@
+.headerNav {
+    $root: &;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+
+    .header__nav-item {
+        margin-right: 2rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        .nav__link {
+
+            font-size: 1.6rem;
+            line-height: 100%;
+
+            text-transform: uppercase;
+            color: $link-color-navigation;
+
+            cursor: pointer;
+
+            &._active {
+                text-decoration: underline;
+
+            }
+
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.transition {
+    $root: &;
+
+    &__enter {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999999;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: $transition-animation-color;
+
+        will-change: transform;
+        transform: translateY(-119vh);
+
+        &.iter {
+            transition: transform .6s;
+            transform: translateY(0vh);
+        }
+    }
+
+
+    &__out {
+
+        &-top,
+        &-bottom {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: $transition-animation-color;
+
+            will-change: transform;
+            transition: transform 1s ease-out;
+        }
+
+        &-top {
+            position: fixed;
+            top: 0;
+            z-index: 999999;
+
+            transform: translateY(-100vh);
+
+            &._hidden {
+                transition: transform 1s ease-out;
+                transform: translateY(-50vh);
+            }
+        }
+
+        &-bottom {
+            position: fixed;
+            top: 0;
+            z-index: 999999;
+
+            transform: translateY(100vh);
+
+            &._hidden {
+                transform: translateY(50vh);
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,6 @@
+mixin headerNav(props)
+    nav.headerNav&attributes(attributes)
+        each route in props
+            .header__nav-item
+                a(href!= route.path).nav__link!= route.name
+
