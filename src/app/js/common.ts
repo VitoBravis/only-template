@@ -26,8 +26,8 @@ const preloader = getComponent('preloader');
 let preloaderItem: Preloader;
 if (preloader.component) {
     preloaderItem = new Preloader(preloader);
-   
-} 
+
+}
 
 const transition = getComponent('transition');
 let transitionItem: Transition;
@@ -39,7 +39,7 @@ barba.use(barbaPrefetch);
 
 barba.hooks.beforeEnter((_data) => { });
 
-barba.hooks.afterEnter((_data) => { });
+barba.hooks.afterEnter((_data) => { header.updateLinksActive()});
 
 barba.hooks.before((_data) => { });
 
@@ -52,23 +52,20 @@ barba.init({
             once() {
 
                 preloaderItem.hideAnim();
-                transitionItem.hideAnim();
-         
-              
+               
             },
-           leave() {
+            leave() {
 
-                transitionItem.showAnim();
-              
+             
+                transitionItem.hideAnim();
+                
+                return new Promise<void>((resolve) => {
+                    setTimeout(resolve, 2000);
+                });
             },
 
             enter() {
-                setTimeout( () => {
-                    transitionItem.hideAnim();
-     
-                } 
-                , 100)
-               
+                transitionItem.showAnim();
             },
 
 

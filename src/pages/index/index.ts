@@ -8,7 +8,7 @@ import Slider from '@/components/ui/slider/slider';
 import Counter from '@/components/ui/counter/counter';
 import CounterCurrentValue from '@/components/blocks/counterCurrentValue/counterCurrentValue';
 import SliderItem from '@/components/blocks/sliderItem/sliderItem';
-import HeaderNav from '@/components/blocks/headerNav/headerNav';
+
 
 
 
@@ -70,12 +70,7 @@ export default {
                 }
             }
 
-            const headerMenu = getComponent('headerNav');
-            let headerMenuItem: HeaderNav;
-
-            if (headerMenu.component) {
-                headerMenuItem = new HeaderNav(headerMenu);
-            }
+          
 
             const modal = getComponent('myModal')
              modalEl =  new MyModal(modal);
